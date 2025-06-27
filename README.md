@@ -4,12 +4,12 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 ## Pages And Features
 
 - Home
-- Whoarewe
+- AboutUs
 - Test
-- Isaf
+- aid
 - Team
 - News
-- Contact
+- ContactUs
 
 
 ## Getting Started
