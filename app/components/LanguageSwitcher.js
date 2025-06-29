@@ -24,10 +24,10 @@ export default function LanguageSwitcher() {
         className="language-selector flex items-center gap-2 pointer-fine:cursor-pointer hover:opacity-80 transition-opacity"
         aria-label={`Switch to ${locale === 'en' ? 'Arabic' : 'English'}`}
       >
+        <Globe className="w-4 h-4" />
         <span className="text-sm font-medium">
           {locale === 'en' ? t('en', 'navbar.arabic') : t('ar', 'navbar.english')}
         </span>
-        <Globe className="w-4 h-4" />
       </button>
     </div>
   );

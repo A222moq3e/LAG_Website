@@ -25,8 +25,8 @@ export default function Navbar() {
     <div className="flex justify-between items-center">
       <div className="container mx-auto flex flex-row justify-between items-center p-4">
         <div className="flex justify-between items-center gap-2">
-          <span className="text-2xl font-bold">LAG</span>
           <User className="w-6 h-6" />
+          <span className="text-2xl font-bold">LAG</span>
         </div>
 
         <ul className="flex gap-12 justify-center items-center">
