@@ -2,35 +2,51 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Globe, User } from 'lucide-react';
-
+import { User } from 'lucide-react';
+import { useParams } from 'next/navigation';
+import { t } from '../lib/i18n';
+import LanguageSwitcher from './LanguageSwitcher';
 
 export default function Navbar() {
+  const params = useParams();
+  const locale = params?.locale || 'en';
+
+  const navItems = [
+    { href: `/${locale}`, label: 'navbar.home' },
+    { href: `/${locale}/about-us`, label: 'navbar.about' },
+    { href: `/${locale}/quiz`, label: 'navbar.quiz' },
+    { href: `/${locale}/aid`, label: 'navbar.aid' },
+    { href: `/${locale}/team`, label: 'navbar.team' },
+    { href: `/${locale}/news`, label: 'navbar.news' },
+    { href: `/${locale}/contact-us`, label: 'navbar.contact' },
+  ];
+
   return (
     <div className="flex justify-between items-center">
-        <div className=" container mx-auto p-4 flex flex-row justify-between items-center gap-4">
+      <div className="container mx-auto flex flex-row justify-between items-center p-4">
         <div className="flex justify-between items-center gap-2">
-                <span className="text-2xl font-bold">LAG</span>
-                <User className="w-6 h-6" />
-            </div>
-
-
-            <ul className="flex gap-12 justify-center items-center">
-                <li><Link href="/">Home</Link> </li>  
-                <li><Link href="/about">About</Link></li>
-                <li><Link href="/quiz">Mashy Quiz</Link></li>
-                <li><Link href="/aid">Es3af LAG</Link></li>
-                <li><Link href="/team">Team</Link></li>
-                <li><Link href="/news">News</Link> </li>
-                <li><Link href="/contact-us">Contact</Link></li>
-            </ul>
-            <div className="flex justify-between items-center ">
-                <button className="language-selector flex items-center gap-2 pointer-fine:cursor-pointer">
-                    <span>عربي</span>
-                    <Globe  />
-                </button>
-            </div>
+          <span className="text-2xl font-bold">LAG</span>
+          <User className="w-6 h-6" />
         </div>
+
+        <ul className="flex gap-12 justify-center items-center">
+          {navItems.map((item) => (
+            <li key={item.href}>
+              <Link 
+                href={item.href} 
+                className="hover:text-blue-600 transition-colors"
+                dir={locale === 'ar' ? 'rtl' : 'ltr'}
+              >
+                {t(locale, item.label)}
+              </Link>
+            </li>
+          ))}
+        </ul>
+        
+        <div className="flex justify-between items-center">
+          <LanguageSwitcher />
+        </div>
+      </div>
     </div>
-  )
+  );
 }

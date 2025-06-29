@@ -1,0 +1,46 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "quiz": "Mashy Quiz",
+    "aid": "Es3af LAG",
+    "team": "Team",
+    "news": "News",
+    "contact": "Contact",
+    "arabic": "عربي",
+    "english": "English"
+  },
+  "footer": {
+    "copyright": "© 2024 Developed by .... All rights reserved."
+  },
+  "pages": {
+    "home": {
+      "title": "Welcome to LAG",
+      "description": "Your trusted partner in gaming and entertainment"
+    },
+    "about": {
+      "title": "About Us",
+      "description": "Learn more about our team and mission"
+    },
+    "quiz": {
+      "title": "Mashy Quiz",
+      "description": "Test your knowledge with our interactive quiz"
+    },
+    "aid": {
+      "title": "Es3af LAG",
+      "description": "Get help and support when you need it"
+    },
+    "team": {
+      "title": "Our Team",
+      "description": "Meet the amazing people behind LAG"
+    },
+    "news": {
+      "title": "Latest News",
+      "description": "Stay updated with the latest from LAG"
+    },
+    "contact": {
+      "title": "Contact Us",
+      "description": "Get in touch with our team"
+    }
+  }
+} 
