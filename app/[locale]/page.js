@@ -19,8 +19,8 @@ export default async function Home({ params }) {
         {/* Dark blur overlay for better text readability */}
         <div className="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
         
-        <div className="flex flex-col justify-center items-center gap-4 relative z-10">
-          <h1 className="text-5xl font-bold text-center main-gradient-text drop-shadow-lg">
+        <div className="flex flex-col justify-center items-center gap-8 relative z-10">
+          <h1 className="text-5xl font-bold text-center main-gradient-text font-orbitron drop-shadow-lg p-4">
             {t(currentLocale, 'pages.home.title')}
           </h1>
           <p className="text-xl text-center text-gray-100 max-w-2xl drop-shadow-md">
@@ -32,8 +32,26 @@ export default async function Home({ params }) {
         </div>
       </section>
       <section className="flex flex-col gap-4">
-        <div className="flex flex-col justify-center items-center gap-4">   
-          <h1>Who We Are</h1>
+        <div className="flex flex-col justify-center items-center gap-4 h-screen">   
+          <h1 className="text-4xl font-bold text-center main-gradient-text drop-shadow-lg">
+            Who We Are
+          </h1>
+          <div className="flex flex-row gap-4">
+            <div className="flex flex-col gap-4">
+              <div className="flex flex-row gap-4">
+                <h2>Our Mission</h2>
+                {/* <Image src="/controllerImage.png" alt="Controller" width={50} height={50} /> */}
+              </div>
+              <p>To bridge the gap between gaming and mental wellness creating a supportive community for gamers.</p>
+            </div>
+            <div className="flex flex-col gap-4">
+              <div className="flex flex-row gap-4">
+                <h2>Our Vision</h2>
+                {/* <Image src="/controllerImage.png" alt="Controller" width={50} height={50} /> */}
+              </div>
+              <p>A world where every gamer has access to mental health resources in a language they understand.</p>
+            </div>
+          </div>
         </div>
       </section>
     </div>
