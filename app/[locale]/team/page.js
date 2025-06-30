@@ -1,16 +1,17 @@
 import React from 'react';
 import { t } from '../../lib/i18n';
 
-export default function Team({ params }) {
-  const locale = params?.locale || 'en';
+export default async function Team({ params }) {
+  const { locale } = await params;
+  const currentLocale = locale || 'en';
 
   return (
     <div className="container mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold text-center mb-8">
-        {t(locale, 'pages.team.title')}
+        {t(currentLocale, 'pages.team.title')}
       </h1>
       <p className="text-lg text-center text-gray-600 max-w-2xl mx-auto">
-        {t(locale, 'pages.team.description')}
+        {t(currentLocale, 'pages.team.description')}
       </p>
     </div>
   );
