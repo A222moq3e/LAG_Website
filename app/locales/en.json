@@ -16,7 +16,19 @@
   "pages": {
     "home": {
       "title": "Where Healthy Gaming Begins",
-      "description": "LAG - Mental Wellness Meets E-Sports Culture"
+      "description": "LAG - Mental Wellness Meets E-Sports Culture",
+      "cta_button": "Start Your Journey",
+      "who_we_are": {
+        "title": "Who We Are",
+        "mission": {
+          "title": "Our Mission",
+          "description": "To bridge the gap between gaming and mental wellness, creating a supportive community for gamers."
+        },
+        "vision": {
+          "title": "Our Vision", 
+          "description": "A world where every gamer has access to mental health resources in a language they understand."
+        }
+      }
     },
     "about": {
       "title": "About Us",
