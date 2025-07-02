@@ -40,7 +40,19 @@
     },
     "contact": {
       "title": "Contact Us",
-      "description": "Get in touch with our team"
+      "description": "Get in touch with our team",
+      "form": {
+        "name": "Name",
+        "email": "Email",
+        "message": "Message",
+        "submit": "Send Message"
+      },
+      "info": {
+        "email": "Email",
+        "phone": "Phone Number",
+        "location": "Location",
+        "address": "Imam University, Riyadh"
+      }
     }
   }
 } 
