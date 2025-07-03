@@ -5,6 +5,14 @@ import { t } from '../../../lib/i18n';
 import { quizQuestions } from '../../../data/quizQuestions';
 import Link from 'next/link';
 
+/**
+ * Renders a localized, multi-step quiz interface with progress tracking and results display.
+ *
+ * Displays quiz questions sequentially, allows users to select answers, and calculates a performance score upon completion. Supports right-to-left layout for Arabic and dynamically localizes all text. Shows a results summary with performance level, percentage, and suggested activities, and provides options to retake the quiz or learn more.
+ *
+ * @param {Object} params - Route parameters containing the locale.
+ * @returns {JSX.Element} The rendered quiz questions and results interface.
+ */
 export default function QuizQuestions({ params }) {
   const { locale } = params || {};
   const currentLocale = locale || 'ar';

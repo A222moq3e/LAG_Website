@@ -4,6 +4,11 @@ import React from 'react';
 import { t } from '../../lib/i18n';
 import Link from 'next/link';
 
+/**
+ * Renders the quiz landing page with a visually rich, localized introduction and a start button.
+ * 
+ * Displays a full-screen gradient background with a centered card containing an animated icon, localized headings and description, interactive emoji icons, and a button to begin the quiz in the selected locale.
+ */
 export default function Quiz({ params }) {
   const { locale } = params || {};
   const currentLocale = locale || 'ar';
