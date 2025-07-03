@@ -21,6 +21,9 @@ export default function Quiz({ params }) {
                   viewBox="0 0 24 24"
                   fill="currentColor"
                   className="w-24 h-24 text-cyan-400 drop-shadow-lg animate-pulse"
+                  aria-hidden="true"
+                  role="img"
+                  aria-label="Lightning bolt quiz icon"
                 >
                   <path d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
@@ -40,11 +43,11 @@ export default function Quiz({ params }) {
               </p>
 
               <div className="flex justify-center items-center gap-6">
-                <span className="text-3xl hover:scale-110 transition-transform">🎮</span>
-                <span className="text-3xl hover:scale-110 transition-transform">⚡</span>
-                <span className="text-3xl hover:scale-110 transition-transform">❤️</span>
-                <span className="text-3xl hover:scale-110 transition-transform">🧠</span>
-                <span className="text-3xl hover:scale-110 transition-transform">🏆</span>
+                  <span className="text-3xl hover:scale-110 transition-transform" role="img" aria-label="Gaming">🎮</span>
+                  <span className="text-3xl hover:scale-110 transition-transform" role="img" aria-label="Energy">⚡</span>
+                  <span className="text-3xl hover:scale-110 transition-transform" role="img" aria-label="Health">❤️</span>
+                  <span className="text-3xl hover:scale-110 transition-transform" role="img" aria-label="Brain">🧠</span>
+                  <span className="text-3xl hover:scale-110 transition-transform" role="img" aria-label="Achievement">🏆</span>
               </div>
 
               <Link
