@@ -1,8 +1,13 @@
-import Image from "next/image";
-import { t } from '../lib/i18n';
+"use client"
 
-export default async function Home({ params }) {
-  const { locale } = await params;
+import Image from "next/image";
+import { ChevronDown, ArrowDown } from 'lucide-react';
+import { t } from '../lib/i18n';
+import { useParams } from 'next/navigation';
+
+export default function Home() {
+  const params = useParams();
+  const locale = params?.locale;
   const currentLocale = locale || 'en';
 
   return (
@@ -27,14 +32,42 @@ export default async function Home({ params }) {
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-center text-gray-100 max-w-3xl drop-shadow-md px-4">
             {t(currentLocale, 'pages.home.description')}
           </p>
-          <button className="main-bg-gradient text-white font-bold px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 text-sm sm:text-base md:text-lg rounded-lg cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+          <button 
+            className="main-bg-gradient text-white font-bold px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 text-sm sm:text-base md:text-lg rounded-lg cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 flex items-center gap-2 md:gap-3"
+            onClick={() => {
+              document.getElementById('who-we-are-section')?.scrollIntoView({ 
+                behavior: 'smooth' 
+              });
+            }}
+          >
             {t(currentLocale, 'pages.home.cta_button')}
+            <ArrowDown className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
           </button>
+        </div>
+
+        {/* Scroll Down Indicator */}
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
+          <div 
+            className="flex flex-col items-center gap-1 cursor-pointer group"
+            onClick={() => {
+              document.getElementById('who-we-are-section')?.scrollIntoView({ 
+                behavior: 'smooth' 
+              });
+            }}
+          >
+            <span className="text-white/80 text-sm md:text-base font-medium group-hover:text-white transition-colors duration-300">
+              {t(currentLocale, 'pages.home.scroll_down')}
+            </span>
+            <div className="flex flex-col items-center -space-y-2">
+              <ChevronDown className="w-5 h-5 md:w-6 md:h-6 text-white/80 group-hover:text-white transition-colors duration-300 animate-bounce" />
+              <ChevronDown className="w-5 h-5 md:w-6 md:h-6 text-white/60 group-hover:text-white/80 transition-colors duration-300 animate-bounce" style={{ animationDelay: '0.2s' }} />
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Who We Are Section */}
-      <section className="py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900 to-black">
+      <section id="who-we-are-section" className="py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900 to-black">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col justify-center items-center gap-8 md:gap-12">   
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center main-gradient-text drop-shadow-lg">
