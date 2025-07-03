@@ -27,29 +27,29 @@ export default async function Home({ params }) {
             {t(currentLocale, 'pages.home.description')}
           </p>
           <button className="main-bg-gradient text-white font-bold px-8 py-4 rounded-lg cursor-pointer shadow-lg hover:shadow-xl transition-shadow">
-            Start Your Journey
+            {t(currentLocale, 'pages.home.cta_button')}
           </button>
         </div>
       </section>
       <section className="flex flex-col gap-4">
         <div className="flex flex-col justify-center items-center gap-4 h-screen">   
           <h1 className="text-4xl font-bold text-center main-gradient-text drop-shadow-lg">
-            Who We Are
+            {t(currentLocale, 'pages.home.who_we_are.title')}
           </h1>
           <div className="flex flex-row gap-4">
             <div className="flex flex-col gap-4">
               <div className="flex flex-row gap-4">
-                <h2>Our Mission</h2>
+                <h2>{t(currentLocale, 'pages.home.who_we_are.mission.title')}</h2>
                 {/* <Image src="/controllerImage.png" alt="Controller" width={50} height={50} /> */}
               </div>
-              <p>To bridge the gap between gaming and mental wellness creating a supportive community for gamers.</p>
+              <p>{t(currentLocale, 'pages.home.who_we_are.mission.description')}</p>
             </div>
             <div className="flex flex-col gap-4">
               <div className="flex flex-row gap-4">
-                <h2>Our Vision</h2>
+                <h2>{t(currentLocale, 'pages.home.who_we_are.vision.title')}</h2>
                 {/* <Image src="/controllerImage.png" alt="Controller" width={50} height={50} /> */}
               </div>
-              <p>A world where every gamer has access to mental health resources in a language they understand.</p>
+              <p>{t(currentLocale, 'pages.home.who_we_are.vision.description')}</p>
             </div>
           </div>
         </div>
