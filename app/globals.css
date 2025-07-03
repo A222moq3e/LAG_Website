@@ -163,4 +163,16 @@
   body {
     @apply bg-background text-foreground;
   }
+  
+  /* Smooth scrolling for better UX */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Responsive text sizing for better mobile experience */
+  @media (max-width: 640px) {
+    .main-gradient-text {
+      line-height: 1.2;
+    }
+  }
 }
