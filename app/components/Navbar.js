@@ -57,9 +57,9 @@ export default function Navbar() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16 md:h-20">
             {/* Logo */}
-            <div className="flex items-center gap-2 flex-shrink-0">
+            <Link href={`/${locale}`} className="flex items-center gap-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200">
               <span className="text-xl md:text-2xl font-bold main-gradient-text">LAG</span>
-            </div>
+            </Link>
 
             {/* Desktop Navigation */}
             <ul className="hidden md:flex gap-6 lg:gap-8 xl:gap-12 justify-center items-center">

@@ -21,7 +21,7 @@ export default function LanguageSwitcher() {
     <div className="flex items-center gap-2">
       <button
         onClick={() => handleLanguageChange(locale === 'en' ? 'ar' : 'en')}
-       className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-white/20 bg-gradient-to-r from-[#2C2C4A] to-[#3D2B5A] bg-opacity-30 backdrop-blur-md text-white text-sm font-medium transition-opacity hover:opacity-80"
+       className="flex items-center gap-2 px-3 py-1.5 rounded-lg border border-white/20 bg-gradient-to-r from-[#2C2C4A] to-[#3D2B5A] bg-opacity-30 backdrop-blur-md text-white text-sm font-medium transition-opacity hover:opacity-80 cursor-pointer"
         aria-label={`Switch to ${locale === 'en' ? 'Arabic' : 'English'}`}
       >
         <Globe className="w-4 h-4" />
