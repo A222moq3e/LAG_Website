@@ -11,7 +11,11 @@
     "english": "English"
   },
   "footer": {
-    "copyright": "© 2024 Developed by .... All rights reserved."
+    "title": "LAG Initiative",
+    "description": "Connecting psychological traits with gaming culture",
+    "followUs": "Follow Us",
+    "privacyPolicy": "Privacy & Policy",
+    "copyright": "© 2024 LAG Initiative. All rights reserved."
   },
   "quiz": {
     "title": "Mashy",
