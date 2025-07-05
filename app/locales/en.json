@@ -33,7 +33,7 @@
           "description": "To bridge the gap between gaming and mental wellness, creating a supportive community for gamers."
         },
         "vision": {
-          "title": "Our Vision", 
+          "title": "Our Vision",
           "description": "A world where every gamer has access to mental health resources in a language they understand."
         }
       }
@@ -59,7 +59,44 @@
     },
     "team": {
       "title": "Our Team",
-      "description": "Meet the amazing people behind LAG"
+      "description": "Meet the amazing people behind LAG",
+      "stats": {
+        "support": {
+          "value": "24/7",
+          "label": "Support"
+        },
+        "satisfaction": {
+          "value": "95%",
+          "label": "Satisfaction Rate"
+        },
+        "workshops": {
+          "value": "+50",
+          "label": "Workshops"
+        },
+        "members": {
+          "value": "+1000",
+          "label": "Community Members"
+        }
+      },
+      "members": {
+        "raghad": {
+          "name": "Rahaf Almutairi",
+          "position": "Community Development Manager",
+          "specialization": "Community Development",
+          "description": "Specialized in building and managing communities and enhancing user experience within digital platforms."
+        },
+        "ahmad": {
+          "name": "Ahmad Almutairi",
+          "position": "CEO & Founder",
+          "specialization": "Academic Psychology",
+          "description": "Specialized in academic psychology with expertise in mental health and comprehensive psychological assessment."
+        }
+      },
+      "joinTeam": {
+        "title": "Join Our Team",
+        "description": "Are you ready to be part of an amazing journey? We're looking for passionate individuals who want to make a difference in the gaming and mental health community.",
+        "buttonText": "Contact Us"
+      }
     },
     "news": {
       "title": "Latest News",
@@ -154,4 +191,4 @@
   "common": {
     "loading": "Loading..."
   }
-} 
+}
