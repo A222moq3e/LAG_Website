@@ -1,12 +1,12 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, use } from 'react';
 import { t } from '../../../lib/i18n';
 import { quizQuestions } from '../../../data/quizQuestions';
 import Link from 'next/link';
 
 export default function QuizQuestions({ params }) {
-  const { locale } = params || {};
+  const { locale } = use(params) || {};
   const currentLocale = locale || 'ar';
   const isRTL = currentLocale === 'ar';
 

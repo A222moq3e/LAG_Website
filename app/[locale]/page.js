@@ -1,14 +1,64 @@
 "use client"
 
 import Image from "next/image";
-import { ChevronDown, ArrowDown } from 'lucide-react';
+import { ChevronDown, ArrowDown, Target, Eye } from 'lucide-react';
 import { t } from '../lib/i18n';
 import { useParams } from 'next/navigation';
+import { useEffect, useRef, useState } from 'react';
 
 export default function Home() {
   const params = useParams();
   const locale = params?.locale;
   const currentLocale = locale || 'en';
+  
+  // Animation states
+  const [mounted, setMounted] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const [titleVisible, setTitleVisible] = useState(false);
+  const [missionVisible, setMissionVisible] = useState(false);
+  const [visionVisible, setVisionVisible] = useState(false);
+  
+  const sectionRef = useRef(null);
+  const titleRef = useRef(null);
+  const missionRef = useRef(null);
+  const visionRef = useRef(null);
+
+  // Ensure client-side only animations
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
+
+    const observerOptions = {
+      threshold: 0.2,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          if (entry.target === sectionRef.current) {
+            setIsVisible(true);
+          } else if (entry.target === titleRef.current) {
+            setTimeout(() => setTitleVisible(true), 200);
+          } else if (entry.target === missionRef.current) {
+            setTimeout(() => setMissionVisible(true), 400);
+          } else if (entry.target === visionRef.current) {
+            setTimeout(() => setVisionVisible(true), 600);
+          }
+        }
+      });
+    }, observerOptions);
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    if (titleRef.current) observer.observe(titleRef.current);
+    if (missionRef.current) observer.observe(missionRef.current);
+    if (visionRef.current) observer.observe(visionRef.current);
+
+    return () => observer.disconnect();
+  }, [mounted]);
 
   return (
     <div className="flex flex-col">
@@ -26,7 +76,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
         
         <div className="flex flex-col justify-center items-center gap-6 md:gap-8 relative z-10 max-w-4xl mx-auto text-center">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center main-gradient-text font-orbitron drop-shadow-lg px-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center main-gradient-text font-orbitron drop-shadow-lg leading-relaxed py-2 w-full">
             {t(currentLocale, 'pages.home.title')}
           </h1>
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-center text-gray-100 max-w-3xl drop-shadow-md px-4">
@@ -67,41 +117,68 @@ export default function Home() {
       </section>
 
       {/* Who We Are Section */}
-      <section id="who-we-are-section" className="py-16 md:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900 to-black">
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col justify-center items-center gap-8 md:gap-12">   
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center main-gradient-text drop-shadow-lg">
-              {t(currentLocale, 'pages.home.who_we_are.title')}
-            </h1>
+      <section 
+        ref={sectionRef}
+        id="who-we-are-section" 
+        className="py-24 md:py-32 lg:py-40 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900 to-black min-h-screen flex items-center"
+      >
+        <div className="max-w-7xl mx-auto w-full">
+          <div className="flex flex-col justify-center items-center gap-16 md:gap-20 lg:gap-24">   
+                         <div 
+               ref={titleRef}
+               className={`transition-all duration-1000 ease-out transform ${
+                 mounted && titleVisible 
+                   ? 'opacity-100 translate-y-0' 
+                   : mounted ? 'opacity-0 translate-y-12' : ''
+               }`}
+             >
+                             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center main-gradient-text drop-shadow-lg leading-relaxed py-2">
+                 {t(currentLocale, 'pages.home.who_we_are.title')}
+               </h1>
+            </div>
             
             {/* Mission and Vision Cards */}
-            <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 w-full max-w-5xl">
+            <div className="flex flex-col xl:flex-row gap-12 lg:gap-16 xl:gap-20 w-full max-w-6xl">
               {/* Mission Card */}
-              <div className="flex flex-col gap-4 md:gap-6 flex-1 p-6 md:p-8 bg-gray-800/80 backdrop-blur-sm rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-700/50 hover:border-purple-500/30">
-                <div className="flex flex-row items-center gap-4">
-                  <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-lg">
-                    <span className="text-white text-xl md:text-2xl font-bold">M</span>
-                  </div>
-                  <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">
-                    {t(currentLocale, 'pages.home.who_we_are.mission.title')}
-                  </h2>
-                </div>
-                <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed">
+                             <div 
+                 ref={missionRef}
+                 className={`flex flex-col gap-6 md:gap-8 flex-1 p-8 md:p-10 lg:p-12 bg-gray-800/80 backdrop-blur-sm rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500 border border-gray-700/50 hover:border-purple-500/50 hover:scale-105 transform ${
+                   mounted && missionVisible 
+                     ? 'opacity-100 translate-x-0' 
+                     : mounted ? 'opacity-0 -translate-x-12' : ''
+                 }`}
+               >
+                                 <div className="flex flex-row items-center gap-6">
+                   <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-2xl">
+                     <Target className="w-8 h-8 md:w-10 md:h-10 text-white" />
+                   </div>
+                   <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">
+                     {t(currentLocale, 'pages.home.who_we_are.mission.title')}
+                   </h2>
+                 </div>
+                 <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed">
                   {t(currentLocale, 'pages.home.who_we_are.mission.description')}
                 </p>
               </div>
 
               {/* Vision Card */}
-              <div className="flex flex-col gap-4 md:gap-6 flex-1 p-6 md:p-8 bg-gray-800/80 backdrop-blur-sm rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-700/50 hover:border-teal-500/30">
-                <div className="flex flex-row items-center gap-4">
-                  <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-green-500 to-teal-600 rounded-full flex items-center justify-center shadow-lg">
-                    <span className="text-white text-xl md:text-2xl font-bold">V</span>
-                  </div>
-                  <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">
-                    {t(currentLocale, 'pages.home.who_we_are.vision.title')}
-                  </h2>
-                </div>
-                <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed">
+                             <div 
+                 ref={visionRef}
+                 className={`flex flex-col gap-6 md:gap-8 flex-1 p-8 md:p-10 lg:p-12 bg-gray-800/80 backdrop-blur-sm rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500 border border-gray-700/50 hover:border-teal-500/50 hover:scale-105 transform ${
+                   mounted && visionVisible 
+                     ? 'opacity-100 translate-x-0' 
+                     : mounted ? 'opacity-0 translate-x-12' : ''
+                 }`}
+               >
+                                 <div className="flex flex-row items-center gap-6">
+                   <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-r from-green-500 to-teal-600 rounded-full flex items-center justify-center shadow-2xl">
+                     <Eye className="w-8 h-8 md:w-10 md:h-10 text-white" />
+                   </div>
+                   <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">
+                     {t(currentLocale, 'pages.home.who_we_are.vision.title')}
+                   </h2>
+                 </div>
+                 <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-relaxed">
                   {t(currentLocale, 'pages.home.who_we_are.vision.description')}
                 </p>
               </div>

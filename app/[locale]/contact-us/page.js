@@ -8,7 +8,7 @@ export default async function ContactUs({ params }) {
 
   return (
     <div className="container mx-auto px-4 py-8 bg-background text-foreground mt-12">
-      <h1 className="text-4xl font-bold text-center mb-8 main-gradient-text">
+      <h1 className="text-4xl font-bold text-center mb-8 main-gradient-text leading-relaxed py-2">
         {t(currentLocale, 'pages.contact.title')}
       </h1>
       <p className="text-lg text-center text-muted-foreground max-w-2xl mx-auto mb-12">

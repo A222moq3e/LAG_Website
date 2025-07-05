@@ -35,7 +35,7 @@ export default function Navbar() {
 
   const navItems = [
     { href: `/${locale}`, label: 'navbar.home' },
-    { href: `/${locale}/about-us`, label: 'navbar.about' },
+    { href: `/${locale}#who-we-are-section`, label: 'navbar.about' },
     { href: `/${locale}/quiz`, label: 'navbar.quiz' },
     { href: `/${locale}/aid`, label: 'navbar.aid' },
     { href: `/${locale}/team`, label: 'navbar.team' },
