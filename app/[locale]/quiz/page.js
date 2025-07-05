@@ -1,11 +1,11 @@
 'use client';
 
-import React from 'react';
+import React, { use } from 'react';
 import { t } from '../../lib/i18n';
 import Link from 'next/link';
 
 export default function Quiz({ params }) {
-  const { locale } = params || {};
+  const { locale } = use(params) || {};
   const currentLocale = locale || 'ar';
 
   return (

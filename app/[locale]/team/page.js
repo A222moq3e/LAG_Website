@@ -61,7 +61,7 @@ export default async function Team({ params }) {
     <div className="container mx-auto px-4 py-20">
       {/* Header Section */}
       <div className="text-center mb-16">
-        <h1 className="text-5xl font-bold mb-6 main-gradient-text leading-tight">
+        <h1 className="text-5xl font-bold mb-6 main-gradient-text leading-relaxed py-2">
           {t(currentLocale, "pages.team.title")}
         </h1>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
