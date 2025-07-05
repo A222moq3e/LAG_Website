@@ -15,7 +15,14 @@ export default async function NewsDetail({ params }) {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8 max-w-3xl">
+    <div className="container mx-auto px-4 py-8 max-w-3xl mt-10">
+      {newsItem.image && (
+        <img
+          src={newsItem.image}
+          alt={newsItem.title}
+          className="w-full h-64 object-cover rounded-lg mb-6"
+        />
+      )}
       <h1 className="text-3xl font-bold mb-4">{newsItem.title}</h1>
       {newsItem.date && (
         <p className="text-sm text-gray-600 mb-6">

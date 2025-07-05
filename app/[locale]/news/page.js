@@ -15,8 +15,8 @@ export default async function News({ params }) {
   const news = await getAllNews();
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-4xl font-bold text-center mb-8">
+    <div className="container mx-auto px-4 py-8 mt-10">
+      <h1 className="text-4xl font-bold text-center mb-8 main-gradient-text">
         {t(currentLocale, 'pages.news.title')}
       </h1>
       <p className="text-lg text-center text-gray-600 max-w-2xl mx-auto mb-8">
@@ -32,8 +32,15 @@ export default async function News({ params }) {
             key={item.id}
             className="bg-white dark:bg-gray-900 rounded-lg shadow hover:shadow-lg transition-transform duration-200 hover:-translate-y-1"
           >
-            <Link href={`/${currentLocale}/news/${item.id}`} className="block h-full p-6">
-              <article className="h-full flex flex-col justify-between">
+            <Link href={`/${currentLocale}/news/${item.id}`} className="block h-full">
+              {item.image && (
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-44 object-cover rounded-t-lg"
+                />
+              )}
+              <article className="p-6 flex flex-col gap-4">
                 <header>
                   <h2 className="text-xl font-semibold mb-2 line-clamp-2">
                     {item.title}
@@ -56,7 +63,10 @@ export default async function News({ params }) {
                   </p>
                 )}
 
-                <span className="mt-4 inline-flex items-center text-indigo-600 dark:text-indigo-400 font-medium">
+                <span
+                  className="mt-2 inline-flex items-center font-medium"
+                  style={{ color: 'var(--primary-blue-light)' }}
+                >
                   Read more &rarr;
                 </span>
               </article>

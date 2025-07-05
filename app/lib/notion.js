@@ -30,11 +30,20 @@ export async function getAllNews() {
     const date = properties.Date?.date?.start ?? null;
     const excerpt = properties.Excerpt?.rich_text?.[0]?.plain_text ?? "";
 
+    // Prefer page cover, fallback to a property named "Image" of type files
+    let image =
+      page.cover?.external?.url ||
+      page.cover?.file?.url ||
+      properties.Image?.files?.[0]?.external?.url ||
+      properties.Image?.files?.[0]?.file?.url ||
+      null;
+
     return {
       id: page.id,
       title,
       date,
       excerpt: excerpt || null,
+      image,
     };
   });
 }
@@ -47,6 +56,16 @@ export async function getNewsById(id) {
 
   const { properties } = page;
 
+  const excerpt = properties.Excerpt?.rich_text?.[0]?.plain_text ?? "";
+
+  // Prefer page cover, fallback to a property named "Image" of type files
+  let image =
+    page.cover?.external?.url ||
+    page.cover?.file?.url ||
+    properties.Image?.files?.[0]?.external?.url ||
+    properties.Image?.files?.[0]?.file?.url ||
+    null;
+
   return {
     id: page.id,
     title:
@@ -54,6 +73,7 @@ export async function getNewsById(id) {
       properties.Name?.title?.[0]?.plain_text ??
       "Untitled",
     date: properties.Date?.date?.start ?? null,
-    excerpt: properties.Excerpt?.rich_text?.[0]?.plain_text ?? "",
+    excerpt: excerpt || null,
+    image,
   };
 }
