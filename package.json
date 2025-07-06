@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@calcom/atoms": "^1.0.114",
     "@hookform/resolvers": "^5.1.1",
     "@notionhq/client": "^3.1.3",
     "@radix-ui/react-dialog": "^1.1.14",
