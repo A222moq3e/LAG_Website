@@ -24,10 +24,11 @@ export default function Aid({ params }) {
   // For demo purposes, using placeholder Calendly URLs
   // Replace these with actual Calendly URLs for each doctor
   const calendlyUrls = {
-    doctor1: "https://calendly.com/abofahadhg/doctor-1",
-    doctor2: "https://calendly.com/abofahadhg/doctor-2", 
-    doctor3: "https://calendly.com/abofahadhg/doctor-3"
+    doctor1: "https://calendly.com/username/doctor-1?primary_color=9D00FF&background_color=0A0A0A&text_color=ffffff",
+    doctor2: "https://calendly.com/username/doctor-2?primary_color=00C7D3&background_color=0A0A0A&text_color=ffffff", 
+    doctor3: "https://calendly.com/username/doctor-3?primary_color=2C006F&background_color=0A0A0A&text_color=ffffff"
   };
+
 
   const handleCardClick = (doctorKey) => {
     setSelectedDoctor(doctorKey);
