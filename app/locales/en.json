@@ -60,7 +60,32 @@
     },
     "aid": {
       "title": "Es3af LAG",
-      "description": "Get help and support when you need it"
+      "description": "Get help and support when you need it",
+      "doctorCards": {
+        "title": "Book Your Consultation",
+        "subtitle": "Choose from our available mental health professionals",
+        "doctor1": {
+          "name": "Dr. John Doe",
+          "specialty": "Lorem ipsum dolor sit amet",
+          "experience": "Lorem ipsum dolor sit amet",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "buttonText": "Book Consultation"
+        },
+        "doctor2": {
+          "name": "Dr. John Doe",
+          "specialty": "Lorem ipsum dolor sit amet",
+          "experience": "Lorem ipsum dolor sit amet",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
+          "buttonText": "Book Consultation"
+        },
+        "doctor3": {
+          "name": "Dr. John Doe",
+          "specialty": "Lorem ipsum dolor sit amet",
+          "experience": "Lorem ipsum dolor sit amet",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse.",
+          "buttonText": "Book Consultation"
+        }
+      }
     },
     "team": {
       "title": "Our Team",
