@@ -8,14 +8,14 @@ import { getAllNews } from "../../lib/notion";
 export const revalidate = 60;
 
 export default async function News({ params }) {
-  const { locale } = params;
+  const { locale } =  await params;
   const currentLocale = locale || 'en';
 
   // Fetch news items from Notion (server-side)
   const news = await getAllNews();
 
   return (
-    <div className="container mx-auto px-4 py-8 mt-10">
+    <div className="container mx-auto px-4 py-8">
       <h1 className="text-4xl font-bold text-center mb-8 main-gradient-text">
         {t(currentLocale, 'pages.news.title')}
       </h1>
@@ -25,14 +25,14 @@ export default async function News({ params }) {
 
       {/* News list */}
       <ul
-        className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto"
+        className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto"
       >
         {news.map((item) => (
           <li
             key={item.id}
-            className="bg-white dark:bg-gray-900 rounded-lg shadow hover:shadow-lg transition-transform duration-200 hover:-translate-y-1"
+            className="bg-gradient-card p-0.25 rounded-lg shadow hover:shadow-lg transition-transform duration-200 hover:-translate-y-1"
           >
-            <Link href={`/${currentLocale}/news/${item.id}`} className="block h-full">
+            <Link href={`/${currentLocale}/news/${item.id}`} className="block h-full bg-white dark:bg-gray-900 rounded-lg overflow-hidden">
               {item.image && (
                 <img
                   src={item.image}
@@ -67,7 +67,7 @@ export default async function News({ params }) {
                   className="mt-2 inline-flex items-center font-medium"
                   style={{ color: 'var(--primary-blue-light)' }}
                 >
-                  Read more &rarr;
+                  {t(currentLocale, 'pages.news.read_more')}
                 </span>
               </article>
             </Link>

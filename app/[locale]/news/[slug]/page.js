@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { t } from '../../../lib/i18n';
 import { getNewsById } from '../../../lib/notion';
@@ -31,9 +32,14 @@ export default async function NewsDetail({ params }) {
       )}
       {newsItem.excerpt && <p className="mb-4">{newsItem.excerpt}</p>}
       {/* Add more detailed rendering or blocks here as needed */}
-      <p className="mt-12 text-center text-gray-500">
-        {t(currentLocale, 'pages.news.back_to_list') || '← Back to news list'}
-      </p>
+      <div className="mt-12 flex justify-center">
+        <Link
+          href={`/${currentLocale}/news`}
+          className="inline-flex items-center px-6 py-3 main-bg-gradient hover:opacity-90 text-white font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg"
+        >
+          {t(currentLocale, 'pages.news.back_to_list') || '← Back to news list'}
+        </Link>
+      </div>
     </div>
   );
 } 
