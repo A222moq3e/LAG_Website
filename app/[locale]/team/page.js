@@ -50,7 +50,7 @@ export default async function Team({ params }) {
       positionEn: "Co-Founder",
       positionAr: "الشريك المؤسس",
       linkedinUrl: "https://www.linkedin.com/in/faisal-alfallaj-17a9ba306",
-      avatarUrl: "/team/faisal-alfallaj.jpg",
+      avatarUrl: "/team/faisal-alfallaj.jpeg",
     },
     // Head of Operations
     {
@@ -59,17 +59,17 @@ export default async function Team({ params }) {
       positionEn: "Head of Operations",
       positionAr: "رئيس العمليات",
       linkedinUrl: "https://www.linkedin.com/in/abdullah-alqhtani-0a964433b",
-      avatarUrl: "/team/abdullah-alqahtani.jpg",
+      avatarUrl: "/team/abdullah-alqahtani.jpeg",
     },
     // Managers
     {
-      nameEn: "Raseel Zurban",
-      nameAr: "رسيل زربان",
+      nameEn: "Raseel Hashim",
+      nameAr: "رسيل هاشم",
       positionEn: "Manager of HR",
       positionAr: "مديرة الموارد البشرية",
       linkedinUrl:
         "https://www.linkedin.com/in/%D8%B1%D8%B3%D9%8A%D9%84-%D9%87%D8%A7%D8%B4%D9%85%F0%9F%87%B8%F0%9F%87%A6-88300a197",
-      avatarUrl: "/team/raseel-zurban.jpg",
+      avatarUrl: "/team/raseel-hashim.jpg",
     },
     {
       nameEn: "Reema Al-Shahri",
@@ -77,7 +77,7 @@ export default async function Team({ params }) {
       positionEn: "PR Manager",
       positionAr: "مديرة العلاقات العامة",
       linkedinUrl: "https://www.linkedin.com/in/reema-alshehri-6b3331290",
-      avatarUrl: "/team/reema-al-shahri.jpg",
+      avatarUrl: "/team/reema-al-shahri.jpeg",
     },
     // Leads
     {
@@ -119,7 +119,7 @@ export default async function Team({ params }) {
       positionEn: "Activities Leader",
       positionAr: "قائدة الأنشطة",
       linkedinUrl: "https://www.linkedin.com/in/faten-alanazi-10a74b28b",
-      avatarUrl: "/team/faten-al-anazi.jpg",
+      avatarUrl: null, // No image available
     },
     // Specialists
     {
@@ -128,7 +128,7 @@ export default async function Team({ params }) {
       positionEn: "ECO - PR",
       positionAr: "مسؤول العلاقات العامة (ECO)",
       linkedinUrl: "https://www.linkedin.com/in/azam-alharbi",
-      avatarUrl: "/team/azzam-alharbi.jpg",
+      avatarUrl: "/team/azzam-alharbi.jpeg",
     },
     // General Members
     {
@@ -137,7 +137,7 @@ export default async function Team({ params }) {
       positionEn: "Member",
       positionAr: "عضو",
       linkedinUrl: "https://www.linkedin.com/in/deemah-alaklaby",
-      avatarUrl: "/team/deemah-alaklaby.jpg",
+      avatarUrl: null, // No image available
     },
     // Web Developers
     {
@@ -165,12 +165,20 @@ export default async function Team({ params }) {
       avatarUrl: null, // No image available
     },
     {
-      nameEn: "Saleh Al-Obailan",
+      nameEn: "Saleh Alobailan",
       nameAr: "صالح العبيلان",
       positionEn: "Web Developer",
       positionAr: "مطور ويب",
       linkedinUrl: "https://www.linkedin.com/in/salehalobaylan",
-      avatarUrl: "/team/saleh-al-obailan.jpg",
+      avatarUrl: "/team/saleh-alobailan.jpg",
+    },
+    {
+      nameEn: "Yaser Alshareef",
+      nameAr: "ياسر الشريف",
+      positionEn: "Web Developer",
+      positionAr: "مطور ويب",
+      linkedinUrl: "https://www.linkedin.com/in/yaser-alshareef-182161375/",
+      avatarUrl: null, // No image available
     },
   ];
 
