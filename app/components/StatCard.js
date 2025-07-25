@@ -1,7 +1,14 @@
 import React from "react";
 import { cn } from "../../lib/utils";
 
-export default function StatCard({ icon, value, label, className, locale }) {
+export default function StatCard({
+  icon,
+  value,
+  label,
+  color = "#00C7D3",
+  className,
+  locale,
+}) {
   return (
     <div className="group relative w-full">
       {/* Subtle glow effect */}
@@ -10,21 +17,35 @@ export default function StatCard({ icon, value, label, className, locale }) {
       {/* Main card */}
       <div
         className={cn(
-          "relative bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-[#00C7D3]/30 transition-all duration-300 transform hover:scale-[1.02]",
+          "relative bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10 hover:border-[#00C7D3]/30 transition-all duration-300 transform hover:scale-[1.02]",
           className
         )}
+        style={{
+          "--stat-color": color,
+        }}
       >
-        <div className="flex flex-col items-center space-y-4">
-          <div className="w-12 h-12 rounded-full main-bg-gradient flex items-center justify-center group-hover:shadow-lg transition duration-300">
-            {icon}
+        <div className="flex flex-col items-center space-y-2">
+          <div
+            className="w-8 h-8 rounded-full flex items-center justify-center transition duration-300"
+            style={{
+              backgroundColor: `${color}15`,
+              border: `1px solid ${color}50`,
+            }}
+          >
+            <div className="[&>svg]:w-4 [&>svg]:h-4" style={{ color: color }}>
+              {icon}
+            </div>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-white group-hover:text-[#00C7D3] transition duration-300">
+            <div
+              className="text-2xl font-bold transition duration-300"
+              style={{ color: "white" }}
+            >
               {value}
             </div>
             <div
               className={cn(
-                "text-sm text-gray-300 mt-1",
+                "text-xs text-gray-300 mt-0.5",
                 locale === "ar" ? "font-medium" : ""
               )}
             >

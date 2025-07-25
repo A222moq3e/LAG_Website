@@ -31,15 +31,28 @@ export default function JoinTeamSection({
           </p>
 
           <div className="pt-4">
-            <Link
-              href={`/${locale}/contact-us`}
-              className={cn(
-                "inline-flex items-center px-8 py-4 main-bg-gradient hover:opacity-90 text-white font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg",
-                locale === "ar" ? "flex-row-reverse" : ""
-              )}
-            >
-              {buttonText}
-            </Link>
+            <div className="group/button relative inline-block">
+              {/* Button glow effect */}
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-[#9D00FF]/40 to-[#00C7D3]/40 rounded-xl blur opacity-0 group-hover/button:opacity-100 transition duration-300"></div>
+
+              <Link
+                href={`/${locale}/contact-us`}
+                className={cn(
+                  "relative inline-flex items-center px-8 py-4 border border-white/10 hover:border-white/30 text-white font-semibold rounded-xl transition-all duration-300 hover:scale-105 overflow-hidden group/button",
+                  locale === "ar" ? "flex-row-reverse" : ""
+                )}
+                style={{
+                  background:
+                    "linear-gradient(135deg, rgba(157, 0, 255, 0.9) 0%, rgba(0, 199, 211, 0.9) 100%)",
+                }}
+              >
+                {/* Glassmorphism overlay */}
+                <div className="absolute inset-0 bg-white/5 group-hover/button:bg-white/10 transition duration-300 rounded-xl"></div>
+
+                {/* Button text */}
+                <span className="relative z-10">{buttonText}</span>
+              </Link>
+            </div>
           </div>
         </div>
       </section>

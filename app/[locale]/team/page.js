@@ -9,30 +9,6 @@ export default async function Team({ params }) {
   const { locale } = await params;
   const currentLocale = locale || "en";
 
-  // Statistics data
-  const statsData = [
-    {
-      icon: <Heart className="w-6 h-6 text-white" />,
-      value: t(currentLocale, "pages.team.stats.support.value"),
-      label: t(currentLocale, "pages.team.stats.support.label"),
-    },
-    {
-      icon: <Target className="w-6 h-6 text-white" />,
-      value: t(currentLocale, "pages.team.stats.satisfaction.value"),
-      label: t(currentLocale, "pages.team.stats.satisfaction.label"),
-    },
-    {
-      icon: <Wrench className="w-6 h-6 text-white" />,
-      value: t(currentLocale, "pages.team.stats.workshops.value"),
-      label: t(currentLocale, "pages.team.stats.workshops.label"),
-    },
-    {
-      icon: <Users className="w-6 h-6 text-white" />,
-      value: t(currentLocale, "pages.team.stats.members.value"),
-      label: t(currentLocale, "pages.team.stats.members.label"),
-    },
-  ];
-
   // Real team members data - Ordered by position hierarchy
   const teamMembers = [
     // Founders
@@ -127,7 +103,7 @@ export default async function Team({ params }) {
       nameAr: "عزام الحربي",
       positionEn: "ECO - PR",
       positionAr: "مسؤول العلاقات العامة (ECO)",
-      linkedinUrl: "https://www.linkedin.com/in/azam-alharbi",
+      linkedinUrl: "https://www.linkedin.com/in/azam-alharbi-406862288",
       avatarUrl: "/team/azzam-alharbi.jpeg",
     },
     // General Members
@@ -136,8 +112,17 @@ export default async function Team({ params }) {
       nameAr: "ديمة العقلاوي",
       positionEn: "Member",
       positionAr: "عضو",
-      linkedinUrl: "https://www.linkedin.com/in/deemah-alaklaby",
+      linkedinUrl: "https://www.linkedin.com/in/deemah-alaklaby-a10b89308",
       avatarUrl: null, // No image available
+    },
+    // IT Leadership
+    {
+      nameEn: "Saif alotaibie",
+      nameAr: "سيف العتيبي",
+      positionEn: "IT Leader",
+      positionAr: "قائد تقنية المعلومات",
+      linkedinUrl: "https://www.linkedin.com/in/saif-alotaibie-2169a72bb",
+      avatarUrl: "/team/saif-alotaibie.jpg",
     },
     // Web Developers
     {
@@ -161,7 +146,7 @@ export default async function Team({ params }) {
       nameAr: "عبدالعزيز بن عسكر",
       positionEn: "Web Developer",
       positionAr: "مطور ويب",
-      linkedinUrl: "https://www.linkedin.com/in/af-askar/",
+      linkedinUrl: "https://www.linkedin.com/in/af-askar",
       avatarUrl: null, // No image available
     },
     {
@@ -177,7 +162,7 @@ export default async function Team({ params }) {
       nameAr: "ياسر الشريف",
       positionEn: "Web Developer",
       positionAr: "مطور ويب",
-      linkedinUrl: "https://www.linkedin.com/in/yaser-alshareef-182161375/",
+      linkedinUrl: "https://www.linkedin.com/in/yaser-alshareef-182161375",
       avatarUrl: null, // No image available
     },
   ];
@@ -197,15 +182,34 @@ export default async function Team({ params }) {
       {/* Statistics Section */}
       <section className="mb-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {statsData.map((stat, index) => (
-            <StatCard
-              key={index}
-              icon={stat.icon}
-              value={stat.value}
-              label={stat.label}
-              locale={currentLocale}
-            />
-          ))}
+          <StatCard
+            icon={<Heart className="w-6 h-6 text-white" />}
+            value={t(currentLocale, "pages.team.stats.support.value")}
+            label={t(currentLocale, "pages.team.stats.support.label")}
+            color="#EF4444"
+            locale={currentLocale}
+          />
+          <StatCard
+            icon={<Target className="w-6 h-6 text-white" />}
+            value={t(currentLocale, "pages.team.stats.satisfaction.value")}
+            label={t(currentLocale, "pages.team.stats.satisfaction.label")}
+            color="#10B981"
+            locale={currentLocale}
+          />
+          <StatCard
+            icon={<Wrench className="w-6 h-6 text-white" />}
+            value={t(currentLocale, "pages.team.stats.workshops.value")}
+            label={t(currentLocale, "pages.team.stats.workshops.label")}
+            color="#F59E0B"
+            locale={currentLocale}
+          />
+          <StatCard
+            icon={<Users className="w-6 h-6 text-white" />}
+            value={t(currentLocale, "pages.team.stats.members.value")}
+            label={t(currentLocale, "pages.team.stats.members.label")}
+            color="#3B82F6"
+            locale={currentLocale}
+          />
         </div>
       </section>
 
