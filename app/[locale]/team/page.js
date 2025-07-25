@@ -69,7 +69,7 @@ export default async function Team({ params }) {
       nameAr: "رغد الحافي",
       positionEn: "Booth Lead",
       positionAr: "قائدة الجناح",
-      linkedinUrl: "https://www.linkedin.com/in/raghad-alhafi",
+      linkedinUrl: "https://www.linkedin.com/in/raghad-alhafi-56681b311/",
       avatarUrl: null, // No image available
     },
     {
