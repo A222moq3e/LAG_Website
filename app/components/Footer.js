@@ -93,14 +93,14 @@ export default function Footer() {
           </div>
 
           {/* Privacy Policy */}
-          <div>
+          {/* <div>
             <Link 
               href={`/${locale}/privacy-policy`}
               className="text-gray-300 hover:text-white underline transition-colors"
             >
               {t(locale, 'footer.privacyPolicy')}
             </Link>
-          </div>
+          </div> */}
 
           {/* Copyright */}
           <div className="pt-4 border-t border-gray-700 w-full">
