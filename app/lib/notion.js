@@ -1,5 +1,9 @@
 import { Client } from "@notionhq/client";
 
+if(!process.env.NOTION_TOKEN) {
+  throw new Error("NOTION_TOKEN is not set");
+}
+
 const notion = new Client({ auth: process.env.NOTION_TOKEN });
 
 
@@ -11,12 +15,18 @@ export async function getAllNews() {
   // ├─ Title   → title property (required)
   // ├─ Date    → date property  (required)
   // └─ Excerpt → rich text (optional)
-
-  const resp = await notion.databases.query({
+  let resp;
+  try {
+    resp = await notion.databases.query({
     database_id: process.env.NOTION_NEWS_DB_ID,
     // Sort by the date property (case-sensitive field name in Notion)
     sorts: [{ property: "Date", direction: "descending" }],
   });
+  } catch (error) {
+    console.error('Failed to fetch news from Notion:',error);
+    return [];
+  }
+
 
   // Map the Notion API response into a flat structure.
   return resp.results.map((page) => {
@@ -51,8 +61,13 @@ export async function getAllNews() {
 // Fetch a single news item using its Notion page ID
 export async function getNewsById(id) {
   if (!id) throw new Error("getNewsById requires a Notion page ID");
-
-  const page = await notion.pages.retrieve({ page_id: id });
+  let page;
+  try {
+    page = await notion.pages.retrieve({ page_id: id });
+  } catch (error) {
+    console.error('Failed to fetch news from Notion:',error);
+    return null;
+  }
 
   const { properties } = page;
 

@@ -12,7 +12,13 @@ export default async function News({ params }) {
   const currentLocale = locale || 'en';
 
   // Fetch news items from Notion (server-side)
-  const news = await getAllNews();
+  let news = [];
+  try {
+    news = await getAllNews();
+  } catch (error) {
+    console.error(error);
+    news = [];
+  }
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -24,6 +30,11 @@ export default async function News({ params }) {
       </p>
 
       {/* News list */}
+      { news.length === 0 ? (
+        <p className="text-center text-gray-600">
+          {t(currentLocale, 'pages.news.no_news')}
+        </p>
+      ) : (
       <ul
         className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto"
       >
@@ -37,6 +48,7 @@ export default async function News({ params }) {
                 <img
                   src={item.image}
                   alt={item.title}
+                  loading="lazy"
                   className="w-full h-44 object-cover rounded-t-lg"
                 />
               )}
@@ -72,8 +84,9 @@ export default async function News({ params }) {
               </article>
             </Link>
           </li>
-        ))}
-      </ul>
+          ))}
+        </ul>
+      )}
     </div>
   );
 } 

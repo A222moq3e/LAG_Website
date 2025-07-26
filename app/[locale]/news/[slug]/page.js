@@ -7,11 +7,13 @@ import { getNewsById } from '../../../lib/notion';
 export const revalidate = 60;
 
 export default async function NewsDetail({ params }) {
-  const { locale, slug } = params;
+  const { locale, slug } = await params;
   const currentLocale = locale || 'en';
-
-  const newsItem = await getNewsById(slug);
-  if (!newsItem) {
+  let newsItem;
+  try {
+    newsItem = await getNewsById(slug);
+  } catch (error) {
+    console.error('Failed to fetch news from Notion:',error);
     return notFound();
   }
 
@@ -21,6 +23,7 @@ export default async function NewsDetail({ params }) {
         <img
           src={newsItem.image}
           alt={newsItem.title}
+          loading="lazy"
           className="w-full h-64 object-cover rounded-lg mb-6"
         />
       )}
