@@ -142,7 +142,10 @@
         "name": "Name",
         "email": "Email",
         "message": "Message",
-        "submit": "Send Message"
+        "submit": "Send Message",
+        "sending": "Sending...",
+        "success": "Email client opened successfully",
+        "error": "Error sending message"
       },
       "info": {
         "email": "Email",

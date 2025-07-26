@@ -43,13 +43,13 @@ ${formData.message}
       const mailtoLink = `mailto:lagpsy.sa@gmail.com?subject=${subject}&body=${body}`;
       window.location.href = mailtoLink;
       
-      setSubmitMessage(currentLocale === 'ar' ? 'تم فتح تطبيق البريد الإلكتروني' : 'Email client opened successfully');
+      setSubmitMessage(t(currentLocale, 'pages.contact.form.success'));
       
       // Reset form
       setFormData({ name: '', email: '', message: '' });
       
     } catch (error) {
-      setSubmitMessage(currentLocale === 'ar' ? 'حدث خطأ في الإرسال' : 'Error sending message');
+      setSubmitMessage(t(currentLocale, 'pages.contact.form.error'));
     } finally {
       setIsSubmitting(false);
     }
@@ -133,7 +133,7 @@ ${formData.message}
             {submitMessage && (
               <div className={cn(
                 "p-3 rounded-lg text-center",
-                submitMessage.includes('Error') || submitMessage.includes('خطأ') 
+                submitMessage === t(currentLocale, 'pages.contact.form.error') 
                   ? "bg-red-100 text-red-700 border border-red-200" 
                   : "bg-green-100 text-green-700 border border-green-200"
               )}>
@@ -152,7 +152,7 @@ ${formData.message}
               )}
             >
               {isSubmitting 
-                ? (currentLocale === 'ar' ? 'جاري الإرسال...' : 'Sending...') 
+                ? t(currentLocale, 'pages.contact.form.sending')
                 : t(currentLocale, 'pages.contact.form.submit')
               }
             </button>
