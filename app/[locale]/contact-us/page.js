@@ -103,7 +103,7 @@ export default async function ContactUs({ params }) {
               <h3 className="text-lg font-semibold text-foreground mb-1">
                 {t(currentLocale, 'pages.contact.info.email')}
               </h3>
-              <p className="text-[var(--primary-blue-light)]">info@lag.com</p>
+              <p className="text-[var(--primary-blue-light)]">lagpsy.sa@gmail.com</p>
             </div>
           </div>
           
