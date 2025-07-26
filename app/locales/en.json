@@ -129,8 +129,11 @@
       }
     },
     "news": {
-      "title": "Latest News",
-      "description": "Stay updated with the latest from LAG"
+      "title": "News & Gallery",
+      "description": "Stay updated with the latest from LAG",
+      "back_to_list": "← Back to news list",
+      "read_more": "Read more →",
+      "no_news": "No news found"
     },
     "contact": {
       "title": "Contact Us",

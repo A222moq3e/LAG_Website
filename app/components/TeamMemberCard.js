@@ -40,6 +40,7 @@ export default function TeamMemberCard({
                   height={64}
                   className="w-full h-full object-cover transform group-hover:scale-110 transition duration-500"
                   priority={false}
+                  loading="lazy"
                 />
               ) : (
                 <div className="w-full h-full bg-gradient-to-br from-[#9D00FF]/20 to-[#00C7D3]/20 flex items-center justify-center">
