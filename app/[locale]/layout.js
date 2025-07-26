@@ -29,7 +29,7 @@ export default async function LocaleLayout({ children, params }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Navbar />
-        <main className="min-h-screen">
+        <main className="min-h-screen pt-16 md:pt-20">
           {children}
         </main>
         <Footer />
