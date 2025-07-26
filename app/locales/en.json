@@ -1,0 +1,230 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "quiz": "Mashy quiz",
+    "aid": "Es3af LAG",
+    "team": "Team",
+    "news": "News",
+    "contact": "Contact",
+    "arabic": "عربي",
+    "english": "English"
+  },
+  "footer": {
+    "title": "LAG Initiative",
+    "description": "Connecting psychological traits with gaming culture",
+    "followUs": "Follow Us",
+    "privacyPolicy": "Privacy & Policy",
+    "copyright": "© 2025 LAG Initiative. All rights reserved."
+  },
+  "quiz": {
+    "title": "Mashy",
+    "subtitle": " - Gaming Health & Wellness Adventure",
+    "description": "Discover how gaming affects your mental and physical health through this comprehensive interactive adventure experience.",
+    "startButton": "Start Your Adventure",
+    "progressLabel": "Progress Level",
+    "questionCounter": "Question {current} of {total}"
+  },
+  "pages": {
+    "home": {
+      "title": "Where Healthy Gaming Begins",
+      "description": "LAG - Mental Wellness Meets E-Sports Culture",
+      "cta_button": "Start Your Journey",
+      "scroll_down": "Scroll Down",
+      "who_we_are": {
+        "title": "Who We Are",
+        "mission": {
+          "title": "Our Mission",
+          "description": "To bridge the gap between gaming and mental wellness, creating a supportive community for gamers."
+        },
+        "vision": {
+          "title": "Our Vision",
+          "description": "A world where every gamer has access to mental health resources in a language they understand."
+        }
+      }
+    },
+    "about": {
+      "title": "About Us",
+      "description": "Learn more about our team and mission"
+    },
+    "quiz": {
+      "title": "Gaming Health Quiz",
+      "description": "Test your knowledge with our interactive quiz",
+      "aboutTitle": "About This Quiz",
+      "progress": "Progress Level",
+      "question": "Question {current} of {total}",
+      "startAdventure": "Start Adventure",
+      "retakeTest": "Retake Test",
+      "learnMore": "Learn More",
+      "suggestedActivities": "Suggested Activities"
+    },
+    "aid": {
+      "title": "Es3af LAG",
+      "description": "Get help and support when you need it",
+      "doctorCards": {
+        "title": "Book Your Consultation",
+        "subtitle": "Choose from our available mental health professionals",
+        "doctor1": {
+          "name": "Dr. John Doe",
+          "specialty": "Lorem ipsum dolor sit amet",
+          "experience": "Lorem ipsum dolor sit amet",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "buttonText": "Book Consultation"
+        },
+        "doctor2": {
+          "name": "Dr. John Doe",
+          "specialty": "Lorem ipsum dolor sit amet",
+          "experience": "Lorem ipsum dolor sit amet",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
+          "buttonText": "Book Consultation"
+        },
+        "doctor3": {
+          "name": "Dr. John Doe",
+          "specialty": "Lorem ipsum dolor sit amet",
+          "experience": "Lorem ipsum dolor sit amet",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse.",
+          "buttonText": "Book Consultation"
+        }
+      }
+    },
+    "team": {
+      "title": "Our Team",
+      "description": "Meet the amazing people behind LAG",
+      "stats": {
+        "support": {
+          "value": "24/7",
+          "label": "Support"
+        },
+        "satisfaction": {
+          "value": "95%",
+          "label": "Satisfaction Rate"
+        },
+        "workshops": {
+          "value": "+50",
+          "label": "Workshops"
+        },
+        "members": {
+          "value": "+1000",
+          "label": "Community Members"
+        }
+      },
+      "members": {
+        "raghad": {
+          "name": "Rahaf Almutairi",
+          "position": "Community Development Manager",
+          "specialization": "Community Development",
+          "description": "Specialized in building and managing communities and enhancing user experience within digital platforms."
+        },
+        "ahmad": {
+          "name": "Ahmad Almutairi",
+          "position": "CEO & Founder",
+          "specialization": "Academic Psychology",
+          "description": "Specialized in academic psychology with expertise in mental health and comprehensive psychological assessment."
+        }
+      },
+      "joinTeam": {
+        "title": "Join Our Team",
+        "description": "Are you ready to be part of an amazing journey? We're looking for passionate individuals who want to make a difference in the gaming and mental health community.",
+        "buttonText": "Contact Us"
+      }
+    },
+    "news": {
+      "title": "News & Gallery",
+      "description": "Stay updated with the latest from LAG",
+      "back_to_list": "← Back to news list",
+      "read_more": "Read more →",
+      "no_news": "No news found"
+    },
+    "contact": {
+      "title": "Contact Us",
+      "description": "Get in touch with our team",
+      "form": {
+        "name": "Name",
+        "email": "Email",
+        "message": "Message",
+        "submit": "Send Message",
+        "sending": "Sending...",
+        "success": "Email client opened successfully",
+        "error": "Error sending message"
+      },
+      "info": {
+        "email": "Email",
+        "phone": "Phone Number",
+        "location": "Location",
+        "address": "Imam University, Riyadh"
+      }
+    }
+  },
+  "q1": {
+    "question": "How do you typically feel after an extended gaming session?",
+    "option1": "I feel energetic and happy after gaming",
+    "option2": "I feel slightly tired but okay",
+    "option3": "I feel very exhausted and drained",
+    "option4": "I feel sick and extremely tired"
+  },
+  "q2": {
+    "question": "How many hours do you typically spend gaming each day?",
+    "option1": "I play for 1-2 hours per day",
+    "option2": "I play for 2-4 hours per day",
+    "option3": "I play for 4-6 hours per day",
+    "option4": "I play for more than 6 hours per day"
+  },
+  "q3": {
+    "question": "What beverages do you consume while gaming?",
+    "option1": "I drink water only while gaming",
+    "option2": "I drink natural juices and water",
+    "option3": "I drink energy drinks and coffee",
+    "option4": "I don't drink anything while gaming"
+  },
+  "q4": {
+    "question": "Do you take regular breaks during your gaming sessions?",
+    "option1": "Yes, I move around and walk every hour",
+    "option2": "Yes, I take short breaks occasionally",
+    "option3": "I rarely take breaks during gaming",
+    "option4": "No, I play continuously until finished"
+  },
+  "q5": {
+    "question": "What type of food do you typically eat while gaming?",
+    "option1": "I eat healthy and balanced meals",
+    "option2": "I eat fruits and vegetables as snacks",
+    "option3": "I eat fast food and quick meals",
+    "option4": "I eat sweets and unhealthy snacks"
+  },
+  "q6": {
+    "question": "How do you typically handle losing in video games?",
+    "option1": "I learn from my mistakes calmly and patiently",
+    "option2": "I try again and practice to improve",
+    "option3": "I feel frustrated and disappointed",
+    "option4": "I get angry and sometimes shout"
+  },
+  "q7": {
+    "question": "Do you prefer playing games with friends or alone?",
+    "option1": "I always play with my friends and teammates",
+    "option2": "I sometimes play with friends, sometimes alone",
+    "option3": "I rarely play with other people",
+    "option4": "I always play games by myself"
+  },
+  "q8": {
+    "question": "What activities do you engage in after finishing gaming?",
+    "option1": "I read books or learn something new",
+    "option2": "I listen to music or podcasts",
+    "option3": "I watch television or videos",
+    "option4": "I immediately return to gaming"
+  },
+
+  "results": {
+    "title": "Gaming Health Master!",
+    "description": "You've taken excellent steps in maintaining your health while gaming. Keep up these good habits!",
+    "percentage": "Percentage",
+    "performance": "Performance",
+    "suggestedActivities": "Suggested Activities",
+    "suggestedText": "Continue to exercise regularly, maintain a healthy diet, and ensure you get adequate sleep. These habits will help you maintain your physical and mental well-being while enjoying your gaming experience.",
+    "excellent": "Excellent! You are a role model for healthy gaming practices and lifestyle choices.",
+    "good": "Good! You can improve some habits to achieve even better results and health outcomes.",
+    "fair": "Fair, but there's significant room for improvement in your health habits and gaming routine.",
+    "needsImprovement": "You need to make substantial improvements to your health habits while gaming."
+  },
+  "common": {
+    "loading": "Loading..."
+  }
+}
