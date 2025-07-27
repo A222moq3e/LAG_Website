@@ -1,11 +1,11 @@
 'use client';
 
-import React from 'react';
+import React, { use } from 'react';
 import { t } from '../../lib/i18n';
 import Link from 'next/link';
 
-export default async function Quiz({ params }) {
-  const { locale } = await params || {};
+export default function Quiz({ params }) {
+  const { locale } = use(params) || {};
   const currentLocale = locale || 'ar';
 
   return (
@@ -16,14 +16,17 @@ export default async function Quiz({ params }) {
             
             <div className="text-center space-y-8">
               <div className="flex justify-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="currentColor"
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
                   className="w-24 h-24 text-cyan-400 drop-shadow-lg animate-pulse"
-              >
-                <path d="M13 10V3L4 14h7v7l9-11h-7z" />
-              </svg>
+                  aria-hidden="true"
+                  role="img"
+                  aria-label="Lightning bolt quiz icon"
+                >
+                  <path d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
               </div>
 
               <h1 className="text-4xl md:text-5xl font-bold">
@@ -40,11 +43,11 @@ export default async function Quiz({ params }) {
               </p>
 
               <div className="flex justify-center items-center gap-6">
-                <span className="text-3xl hover:scale-110 transition-transform">🎮</span>
-                <span className="text-3xl hover:scale-110 transition-transform">⚡</span>
-                <span className="text-3xl hover:scale-110 transition-transform">❤️</span>
-                <span className="text-3xl hover:scale-110 transition-transform">🧠</span>
-                <span className="text-3xl hover:scale-110 transition-transform">🏆</span>
+                  <span className="text-3xl hover:scale-110 transition-transform" role="img" aria-label="Gaming">🎮</span>
+                  <span className="text-3xl hover:scale-110 transition-transform" role="img" aria-label="Energy">⚡</span>
+                  <span className="text-3xl hover:scale-110 transition-transform" role="img" aria-label="Health">❤️</span>
+                  <span className="text-3xl hover:scale-110 transition-transform" role="img" aria-label="Brain">🧠</span>
+                  <span className="text-3xl hover:scale-110 transition-transform" role="img" aria-label="Achievement">🏆</span>
               </div>
 
               <Link
@@ -56,7 +59,7 @@ export default async function Quiz({ params }) {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
               </Link>
-                </div>
+            </div>
 
           </div>
         </div>

@@ -19,9 +19,9 @@
   },
   "quiz": {
     "title": "Mashy",
-    "subtitle": " - Gaming Personality Quiz",
-    "description": "Discover your gaming personality and get personalized game recommendations based on your preferences and play style.",
-    "startButton": "Start Quiz",
+    "subtitle": " - Gaming Health & Wellness Adventure",
+    "description": "Discover how gaming affects your mental and physical health through this comprehensive interactive adventure experience.",
+    "startButton": "Start Your Adventure",
     "progressLabel": "Progress Level",
     "questionCounter": "Question {current} of {total}"
   },
@@ -48,15 +48,15 @@
       "description": "Learn more about our team and mission"
     },
     "quiz": {
-      "title": "Gaming Personality Quiz",
-      "description": "Discover your gaming style and get personalized recommendations",
+      "title": "Gaming Health Quiz",
+      "description": "Test your knowledge with our interactive quiz",
       "aboutTitle": "About This Quiz",
       "progress": "Progress Level",
       "question": "Question {current} of {total}",
-      "startAdventure": "Start Quiz",
-      "retakeTest": "Retake Quiz",
+      "startAdventure": "Start Adventure",
+      "retakeTest": "Retake Test",
       "learnMore": "Learn More",
-      "suggestedActivities": "Recommended Games"
+      "suggestedActivities": "Suggested Activities"
     },
     "aid": {
       "title": "Es3af LAG",
@@ -155,126 +155,76 @@
       }
     }
   },
-   "q1": {
-    "question": "What type of game gets you excited?",
-    "option1": "Fast-paced and full of action",
-    "option2": "Tactical and strategic",
-    "option3": "Sports and simulation",
-    "option4": "One-on-one fighting"
+  "q1": {
+    "question": "How do you typically feel after an extended gaming session?",
+    "option1": "I feel energetic and happy after gaming",
+    "option2": "I feel slightly tired but okay",
+    "option3": "I feel very exhausted and drained",
+    "option4": "I feel sick and extremely tired"
   },
   "q2": {
-    "question": "Who do you prefer to play with?",
-    "option1": "With a full team",
-    "option2": "Solo is best",
-    "option3": "Duo or trio",
-    "option4": "Large group"
+    "question": "How many hours do you typically spend gaming each day?",
+    "option1": "I play for 1-2 hours per day",
+    "option2": "I play for 2-4 hours per day",
+    "option3": "I play for 4-6 hours per day",
+    "option4": "I play for more than 6 hours per day"
   },
   "q3": {
-    "question": "What kind of opponent do you like to challenge?",
-    "option1": "Tactical genius",
-    "option2": "Quick reflexes",
-    "option3": "Competitive athlete",
-    "option4": "Mental and psychological challenge"
+    "question": "What beverages do you consume while gaming?",
+    "option1": "I drink water only while gaming",
+    "option2": "I drink natural juices and water",
+    "option3": "I drink energy drinks and coffee",
+    "option4": "I don't drink anything while gaming"
   },
   "q4": {
-    "question": "How much time do you spend gaming each week?",
-    "option1": "More than 40 hours",
-    "option2": "Between 20 and 40 hours",
-    "option3": "Less than 10 hours"
+    "question": "Do you take regular breaks during your gaming sessions?",
+    "option1": "Yes, I move around and walk every hour",
+    "option2": "Yes, I take short breaks occasionally",
+    "option3": "I rarely take breaks during gaming",
+    "option4": "No, I play continuously until finished"
   },
   "q5": {
-    "question": "Do you like games that update often?",
-    "option1": "Yes, I love constant updates",
-    "option2": "No, I prefer stability"
+    "question": "What type of food do you typically eat while gaming?",
+    "option1": "I eat healthy and balanced meals",
+    "option2": "I eat fruits and vegetables as snacks",
+    "option3": "I eat fast food and quick meals",
+    "option4": "I eat sweets and unhealthy snacks"
   },
   "q6": {
-    "question": "Do you get stressed when you lose?",
-    "option1": "A little, but I can handle it",
-    "option2": "Not at all"
+    "question": "How do you typically handle losing in video games?",
+    "option1": "I learn from my mistakes calmly and patiently",
+    "option2": "I try again and practice to improve",
+    "option3": "I feel frustrated and disappointed",
+    "option4": "I get angry and sometimes shout"
   },
   "q7": {
-    "question": "Do you play on mobile a lot?",
-    "option1": "Anytime, quick sessions",
-    "option2": "No, I play on PC or PlayStation"
+    "question": "Do you prefer playing games with friends or alone?",
+    "option1": "I always play with my friends and teammates",
+    "option2": "I sometimes play with friends, sometimes alone",
+    "option3": "I rarely play with other people",
+    "option4": "I always play games by myself"
   },
   "q8": {
-    "question": "What type of graphics do you like?",
-    "option1": "Realistic and action",
-    "option2": "Cartoonish and light",
-    "option3": "Classic and vintage"
+    "question": "What activities do you engage in after finishing gaming?",
+    "option1": "I read books or learn something new",
+    "option2": "I listen to music or podcasts",
+    "option3": "I watch television or videos",
+    "option4": "I immediately return to gaming"
   },
-  "q9": {
-    "question": "Your team in gaming?",
-    "option1": "Always play with my friends",
-    "option2": "Every day with new people",
-    "option3": "Comfortable solo"
-  },
-  "q10": {
-    "question": "What's your strength in gaming?",
-    "option1": "Quick decisions",
-    "option2": "Strategic planning",
-    "option3": "Precision and skill",
-    "option4": "Team play"
-  },
-  "gameRecommendations": {
-    "title": "Game Recommendation",
-    "Apex Legends": "You are a legend in battle royale games. Apex Legends is your match!",
-    "Valorant": "Sharp aim and tactical play? Valorant is for you!",
-    "COD/Warzone": "You Lead in action-packed battles. COD/Warzone is your field!",
-    "Dota 2": "A master strategist. Dota 2 will challenge your mind!",
-    "League of Legends": "You love team fights and smart plays. League of Legends is your arena!",
-    "CS2": "Precise and tactical. CS2 is your test!",
-    "R6 Siege": "Teamwork and tactics? R6 Siege is your game!",
-    "Overwatch 2": "You shine in team action. Overwatch 2 is your playground!",
-    "Rocket League": "Creative and skillful. Rocket League is your goal!",
-    "EA FC 25": "Football excitement. EA FC 25 is your pitch!",
-    "Rennsport": "Love speed? Rennsport is your track!",
-    "Chess": "Thinker and planner. Chess is your classic challenge!",
-    "TFT": "Strategy and clever moves. TFT is your board!",
-    "StarCraft II": "Strategy and quick decisions. StarCraft II is your galaxy!",
-    "Tekken 8": "One-on-one battles. Tekken 8 is your ring!",
-    "Street Fighter 6": "Epic showdowns. Street Fighter 6 is your stage!",
-    "Free Fire": "Fast action anywhere. Free Fire is your game!",
-    "Mobile Legends": "Gaming on the go. Mobile Legends is your arena!",
-    "PUBG Mobile": "Ready for mobile battle. PUBG Mobile is your ground!",
-    "PUBG Battlegrounds": "Survivor and fighter. PUBG Battlegrounds is your challenge!",
-    "noMatch": "No match found. Try different answers!"
-  },
+
   "results": {
-    "title": "Gaming Master!",
-    "description": "Based on your gaming preferences, here are your personalized game recommendations!",
-    "percentage": "Gaming Style",
-    "performance": "Skill Level",
-    "suggestedActivities": "Recommended Games",
-    "suggestedText": "Your gaming profile shows excellent potential! Keep exploring different genres and challenge yourself with new games to improve your skills.",
-    "excellent": "Outstanding! You have a perfect gaming profile with diverse interests and strong strategic thinking.",
-    "good": "Great! You can explore more game genres to expand your gaming experience and discover new favorites.",
-    "fair": "Good foundation! Try different gaming styles to find what truly excites you and matches your skills.",
-    "needsImprovement": "Keep exploring! There are many amazing games out there that could become your new favorites."
+    "title": "Gaming Health Master!",
+    "description": "You've taken excellent steps in maintaining your health while gaming. Keep up these good habits!",
+    "percentage": "Percentage",
+    "performance": "Performance",
+    "suggestedActivities": "Suggested Activities",
+    "suggestedText": "Continue to exercise regularly, maintain a healthy diet, and ensure you get adequate sleep. These habits will help you maintain your physical and mental well-being while enjoying your gaming experience.",
+    "excellent": "Excellent! You are a role model for healthy gaming practices and lifestyle choices.",
+    "good": "Good! You can improve some habits to achieve even better results and health outcomes.",
+    "fair": "Fair, but there's significant room for improvement in your health habits and gaming routine.",
+    "needsImprovement": "You need to make substantial improvements to your health habits while gaming."
   },
   "common": {
     "loading": "Loading..."
-  },
-  "gameNames": {
-    "Apex Legends": "Apex Legends",
-    "Valorant": "Valorant",
-    "COD/Warzone": "COD/Warzone",
-    "Dota 2": "Dota 2",
-    "League of Legends": "League of Legends",
-    "CS2": "CS2",
-    "R6 Siege": "R6 Siege",
-    "Overwatch 2": "Overwatch 2",
-    "Rocket League": "Rocket League",
-    "EA FC 25": "EA FC 25",
-    "Rennsport": "Rennsport",
-    "Chess": "Chess",
-    "TFT": "TFT",
-    "StarCraft II": "StarCraft II",
-    "Tekken 8": "Tekken 8",
-    "Street Fighter 6": "Street Fighter 6",
-    "Free Fire": "Free Fire",
-    "Mobile Legends": "Mobile Legends",
-    "PUBG Mobile": "PUBG Mobile",
-    "PUBG Battlegrounds": "PUBG Battlegrounds"
   }
 }

@@ -12,12 +12,12 @@ export default function StatCard({
   return (
     <div className="group relative w-full">
       {/* Subtle glow effect */}
-      <div className="absolute -inset-0.5 bg-gradient-to-r rounded-xl blur opacity-0 group-hover:opacity-100 transition duration-300"></div>
+      <div className="absolute -inset-0.5 bg-gradient-to-r from-[#9D00FF]/20 to-[#00C7D3]/20 rounded-xl blur opacity-0 group-hover:opacity-100 transition duration-300"></div>
 
       {/* Main card */}
       <div
         className={cn(
-          "relative bg-white/1 backdrop-blur-sm rounded-xl p-4 border-2 border-white/20 hover:border-[var(--stat-color)] transition-all duration-300 transform hover:scale-[1.02]",
+          "relative bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10 hover:border-[#00C7D3]/30 transition-all duration-300 transform hover:scale-[1.02]",
           className
         )}
         style={{
