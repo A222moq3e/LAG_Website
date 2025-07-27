@@ -80,7 +80,7 @@
     font-family: var(--font-orbitron), Arial, Helvetica, sans-serif;
     font-weight: bold;
     line-height: 1.3;
-    animation: gradientShift 10s linear;
+    animation: gradientShift 3s forwards;
   }
 
   @keyframes gradientShift {
@@ -88,10 +88,10 @@
       background-position: 0% 0%;
     }
     50% {
-      background-position: 200% 0%;
+      background-position: 20% 0%;
     }
     100% {
-      background-position: 300% 0%;
+      background-position: 220% 0%;
     }
   }
   .font-orbitron {
