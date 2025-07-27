@@ -75,11 +75,11 @@ export default function Home() {
         {/* Dark blur overlay for better text readability */}
         <div className="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
         
-        <div className="flex flex-col justify-center items-center gap-6 md:gap-8 relative z-10 max-w-4xl mx-auto text-center">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center main-gradient-text font-orbitron drop-shadow-lg leading-relaxed py-2 w-full">
+        <div className="flex flex-col justify-center items-center gap-2 md:gap-6 relative z-10 max-w-4xl mx-auto text-center">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center main-gradient-text-animated font-orbitron drop-shadow-lg leading-relaxed p-2 w-full">
             {t(currentLocale, 'pages.home.title')}
           </h1>
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-center text-gray-100 max-w-3xl drop-shadow-md px-4">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-center text-gray-100 max-w-3xl drop-shadow-md p-4">
             {t(currentLocale, 'pages.home.description')}
           </p>
           <button 
