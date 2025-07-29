@@ -15,10 +15,11 @@
     "description": "Connecting psychological traits with gaming culture",
     "followUs": "Follow Us",
     "privacyPolicy": "Privacy & Policy",
+    "poweredBy": "Powered by IMSIU",
     "copyright": "© 2025 LAG Initiative. All rights reserved."
   },
   "quiz": {
-    "title": "Mashy",
+    "title": "Matchy",
     "subtitle": " - Gaming Personality Quiz",
     "description": "Discover your gaming personality and get personalized game recommendations based on your preferences and play style.",
     "startButton": "Start Quiz",
