@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 import { t } from '../../lib/i18n';
 import { getAllNews } from "../../lib/notion";
@@ -14,7 +15,8 @@ export default async function News({ params }) {
   // Fetch news items from Notion (server-side)
   let news = [];
   try {
-    news = await getAllNews();
+        const notionLang = currentLocale === 'ar' ? 'Ar' : 'En';
+    news = await getAllNews(notionLang);
   } catch (error) {
     console.error(error);
     news = [];
@@ -45,11 +47,15 @@ export default async function News({ params }) {
           >
             <Link href={`/${currentLocale}/news/${item.id}`} className="block h-full bg-white dark:bg-gray-900 rounded-lg overflow-hidden">
               {item.image && (
-                <img
+                <Image
                   src={item.image}
                   alt={item.title}
+                  width={600}
+                  height={176}
                   loading="lazy"
                   className="w-full h-44 object-cover rounded-t-lg"
+                  sizes="(max-width: 768px) 100vw, 600px"
+                  unoptimized
                 />
               )}
               <article className="p-6 flex flex-col gap-4">
@@ -70,7 +76,7 @@ export default async function News({ params }) {
                 </header>
 
                 {item.excerpt && (
-                  <p className="text-gray-700 dark:text-gray-300 line-clamp-3">
+                  <p className="text-gray-700 dark:text-gray-300 line-clamp-3 whitespace-pre-line">
                     {item.excerpt}
                   </p>
                 )}

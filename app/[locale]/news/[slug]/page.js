@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { t } from '../../../lib/i18n';
 import { getNewsById } from '../../../lib/notion';
@@ -20,11 +21,15 @@ export default async function NewsDetail({ params }) {
   return (
     <div className="container mx-auto px-4 py-8 max-w-3xl mt-10">
       {newsItem.image && (
-        <img
+        <Image
           src={newsItem.image}
           alt={newsItem.title}
+          width={800}
+          height={256}
           loading="lazy"
           className="w-full h-64 object-cover rounded-lg mb-6"
+          sizes="(max-width: 768px) 100vw, 800px"
+          unoptimized
         />
       )}
       <h1 className="text-3xl font-bold mb-4">{newsItem.title}</h1>
@@ -33,7 +38,7 @@ export default async function NewsDetail({ params }) {
           {new Date(newsItem.date).toLocaleDateString(currentLocale)}
         </p>
       )}
-      {newsItem.excerpt && <p className="mb-4">{newsItem.excerpt}</p>}
+      {newsItem.excerpt && <div className="mb-4 whitespace-pre-line">{newsItem.excerpt}</div>}
       {/* Add more detailed rendering or blocks here as needed */}
       <div className="mt-12 flex justify-center">
         <Link
