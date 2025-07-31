@@ -80,7 +80,9 @@
     font-family: var(--font-orbitron), Arial, Helvetica, sans-serif;
     font-weight: bold;
     line-height: 1.3;
-    animation: gradientShift 3s forwards;
+    animation: gradientShift 3s ease-in-out forwards;
+    will-change: background-position;
+    transform: translateZ(0); /* Force hardware acceleration */
   }
 
   @keyframes gradientShift {
@@ -199,7 +201,14 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    box-sizing: border-box;
   }
+  
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
   body {
     @apply bg-background text-foreground;
   }
@@ -207,6 +216,12 @@
   /* Smooth scrolling for better UX */
   html {
     scroll-behavior: smooth;
+  }
+  
+  /* Prevent layout shifts during animations */
+  .main-gradient-text,
+  .main-gradient-text-animated {
+    contain: layout style paint;
   }
   
   /* Responsive text sizing for better mobile experience */
