@@ -64,27 +64,13 @@
       "description": "Get help and support when you need it",
       "doctorCards": {
         "title": "Book Your Consultation",
-        "subtitle": "Choose from our available mental health professionals",
+        "subtitle": "Choose from available mental health specialists",
         "doctor1": {
-          "name": "Dr. John Doe",
-          "specialty": "Lorem ipsum dolor sit amet",
-          "experience": "Lorem ipsum dolor sit amet",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "buttonText": "Book Consultation"
-        },
-        "doctor2": {
-          "name": "Dr. John Doe",
-          "specialty": "Lorem ipsum dolor sit amet",
-          "experience": "Lorem ipsum dolor sit amet",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
-          "buttonText": "Book Consultation"
-        },
-        "doctor3": {
-          "name": "Dr. John Doe",
-          "specialty": "Lorem ipsum dolor sit amet",
-          "experience": "Lorem ipsum dolor sit amet",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse.",
-          "buttonText": "Book Consultation"
+          "name": "Raghad Almoein",
+          "specialty": "Sports Psychologist",
+          "experience": "Clinical and professional experience handling psychological disorders",
+          "description": "Sports psychologist at LAG company, specialized in analyzing psychological and behavioral data of players, providing periodic reports reflecting their mental readiness. Offers individual sessions to enhance performance and cope with stress, organizes workshops on anxiety, anger, and self-motivation. Has clinical expertise enabling effective individual interventions.",
+          "buttonText": "Book Your Session Now"
         }
       }
     },
