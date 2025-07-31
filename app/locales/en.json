@@ -2,7 +2,7 @@
   "navbar": {
     "home": "Home",
     "about": "About",
-    "quiz": "Mashy quiz",
+    "quiz": "Matchy quiz",
     "aid": "Es3af LAG",
     "team": "Team",
     "news": "News",
@@ -15,10 +15,11 @@
     "description": "Connecting psychological traits with gaming culture",
     "followUs": "Follow Us",
     "privacyPolicy": "Privacy & Policy",
+    "poweredBy": "Powered by IMSIU",
     "copyright": "© 2025 LAG Initiative. All rights reserved."
   },
   "quiz": {
-    "title": "Mashy",
+    "title": "Matchy",
     "subtitle": " - Gaming Personality Quiz",
     "description": "Discover your gaming personality and get personalized game recommendations based on your preferences and play style.",
     "startButton": "Start Quiz",
@@ -27,7 +28,7 @@
   },
   "pages": {
     "home": {
-      "title": "Where Healthy Gaming Begins",
+      "title": "Where Gaming and Growth Meet",
       "description": "LAG - Mental Wellness Meets E-Sports Culture",
       "cta_button": "Start Your Journey",
       "scroll_down": "Scroll Down",
@@ -35,11 +36,11 @@
         "title": "Who We Are",
         "mission": {
           "title": "Our Mission",
-          "description": "To bridge the gap between gaming and mental wellness, creating a supportive community for gamers."
+          "description": "We are LAG, a psychological initiative from Imam Muhammad ibn Saud Islamic University, striving to integrate mental health concepts with gaming culture in an interactive, enjoyable, and science-based way. We believe that behind every successful gamer is a mind that needs care, balance, and a voice to be heard amidst the noise of competition."
         },
         "vision": {
-          "title": "Our Vision",
-          "description": "A world where every gamer has access to mental health resources in a language they understand."
+          "title": "Our Vision", 
+          "description": "To be pioneers in psychological awareness in the world of esports, where mental health becomes an integral part of the gaming experience, and we build a supportive digital environment that encourages personal and professional growth."
         }
       }
     },
@@ -63,27 +64,13 @@
       "description": "Get help and support when you need it",
       "doctorCards": {
         "title": "Book Your Consultation",
-        "subtitle": "Choose from our available mental health professionals",
+        "subtitle": "Choose from available mental health specialists",
         "doctor1": {
-          "name": "Dr. John Doe",
-          "specialty": "Lorem ipsum dolor sit amet",
-          "experience": "Lorem ipsum dolor sit amet",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "buttonText": "Book Consultation"
-        },
-        "doctor2": {
-          "name": "Dr. John Doe",
-          "specialty": "Lorem ipsum dolor sit amet",
-          "experience": "Lorem ipsum dolor sit amet",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
-          "buttonText": "Book Consultation"
-        },
-        "doctor3": {
-          "name": "Dr. John Doe",
-          "specialty": "Lorem ipsum dolor sit amet",
-          "experience": "Lorem ipsum dolor sit amet",
-          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse.",
-          "buttonText": "Book Consultation"
+          "name": "Raghad Almoein",
+          "specialty": "Sports Psychologist",
+          "experience": "Clinical and professional experience handling psychological disorders",
+          "description": "Sports psychologist at LAG company, specialized in analyzing psychological and behavioral data of players, providing periodic reports reflecting their mental readiness. Offers individual sessions to enhance performance and cope with stress, organizes workshops on anxiety, anger, and self-motivation. Has clinical expertise enabling effective individual interventions.",
+          "buttonText": "Book Your Session Now"
         }
       }
     },
@@ -245,7 +232,7 @@
     "description": "Based on your gaming preferences, here are your personalized game recommendations!",
     "percentage": "Gaming Style",
     "performance": "Skill Level",
-    "suggestedActivities": "Recommended Games",
+    "suggestedActivities": "Best Games That Suit You",
     "suggestedText": "Your gaming profile shows excellent potential! Keep exploring different genres and challenge yourself with new games to improve your skills.",
     "excellent": "Outstanding! You have a perfect gaming profile with diverse interests and strong strategic thinking.",
     "good": "Great! You can explore more game genres to expand your gaming experience and discover new favorites.",

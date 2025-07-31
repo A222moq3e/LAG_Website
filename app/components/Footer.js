@@ -29,6 +29,12 @@ export default function Footer() {
               {t(locale, 'footer.description')}
             </p>
           </div>
+          {/* powered by */}
+          <div>
+            <p className="text-gray-300 max-w-md">
+              {t(locale, 'footer.poweredBy')}
+            </p>
+          </div>
 
           {/* Follow Us Section */}
           <div className="flex flex-col items-center space-y-3">
