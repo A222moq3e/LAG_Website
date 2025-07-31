@@ -35,6 +35,6 @@ export function middleware(request) {
 export const config = {
   matcher: [
     // Skip all internal paths (_next) and files with extensions
-    '/((?!_next|api|.*\\.).*)',
+    '/((?!_next|ingest|api|.*\\.).*)',
   ],
 }; 
