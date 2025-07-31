@@ -1,16 +1,13 @@
 import React from "react";
-import { Heart, Target, Users, Wrench } from "lucide-react";
 import { t } from "../../lib/i18n";
-import StatCard from "../../components/StatCard";
 import TeamMemberCard from "../../components/TeamMemberCard";
-import JoinTeamSection from "../../components/JoinTeamSection";
 
 export default async function Team({ params }) {
   const { locale } = await params;
   const currentLocale = locale || "en";
 
-  // Real team members data - Ordered by position hierarchy
-  const teamMembers = [
+  // Real team members data - Organized by categories
+  const leadershipTeam = [
     // Founders
     {
       nameEn: "Rahaf Al-Mutairi",
@@ -55,6 +52,18 @@ export default async function Team({ params }) {
       linkedinUrl: "https://www.linkedin.com/in/reema-alshehri-6b3331290",
       avatarUrl: "/team/reema-al-shahri.jpeg",
     },
+    // Consultant
+    {
+      nameEn: "Khalid Almunazzil",
+      nameAr: "خالد صالح المنزل",
+      positionEn: "Consultant",
+      positionAr: "مستشار",
+      linkedinUrl: "https://www.linkedin.com/in/khalid-almunazzil-764114193",
+      avatarUrl: "/team/khalid-almunazzil.png",
+    },
+  ];
+
+  const departmentLeads = [
     // Leads
     {
       nameEn: "Dalal Almutairi",
@@ -97,24 +106,26 @@ export default async function Team({ params }) {
       linkedinUrl: "https://www.linkedin.com/in/faten-alanazi-10a74b28b",
       avatarUrl: null, // No image available
     },
-    // Specialists
     {
-      nameEn: "Azzam Alharbi",
-      nameAr: "عزام الحربي",
-      positionEn: "ECO - PR",
-      positionAr: "مسؤول العلاقات العامة (ECO)",
-      linkedinUrl: "https://www.linkedin.com/in/azam-alharbi-406862288",
-      avatarUrl: "/team/azzam-alharbi.jpeg",
+      nameEn: "Yaroub Albahli",
+      nameAr: "يعرب الباهلي",
+      positionEn: "Photography Leader",
+      positionAr: "قائد التصوير",
+      linkedinUrl:
+        "https://www.linkedin.com/in/%D9%8A%D9%80%D8%B9%D9%80%D8%B1%D8%A8-%D8%A7%D9%84%D8%A8%D8%A7%D9%87%D9%84%D9%8A-24b357287",
+      avatarUrl: "/team/yaroub-albahli.png",
     },
-    // General Members
     {
-      nameEn: "Deemah Alaklaby",
-      nameAr: "ديمة العقلاوي",
-      positionEn: "Member",
-      positionAr: "عضو",
-      linkedinUrl: "https://www.linkedin.com/in/deemah-alaklaby-a10b89308",
-      avatarUrl: null, // No image available
+      nameEn: "Saud Alluhaym",
+      nameAr: "سعود اللحيم",
+      positionEn: "Design Leader",
+      positionAr: "قائد التصميم",
+      linkedinUrl: "https://www.linkedin.com/in/saud-alluhaym-308928206",
+      avatarUrl: "/team/saud-alluhaym.jpeg",
     },
+  ];
+
+  const technicalTeam = [
     // IT Leadership
     {
       nameEn: "Saif alotaibie",
@@ -167,6 +178,146 @@ export default async function Team({ params }) {
     },
   ];
 
+  const mediaContentTeam = [
+    // Media Members
+    {
+      nameEn: "Alanoud Alhamad",
+      nameAr: "العنود الحمد",
+      positionEn: "Media Member",
+      positionAr: "عضو إعلام",
+      linkedinUrl: "https://www.linkedin.com/in/alanoud-alhamad-8733a329b",
+      avatarUrl: null, // No image available
+    },
+    {
+      nameEn: "Mutlaq Alosaimi",
+      nameAr: "مطلق بن يوسف العصيمي",
+      positionEn: "Media Member",
+      positionAr: "عضو إعلام",
+      linkedinUrl: "https://www.linkedin.com/in/mutlaq-alosaimi-5ab671224",
+      avatarUrl: null, // No image available
+    },
+    {
+      nameEn: "Maha Alarifi",
+      nameAr: "مها العريفي",
+      positionEn: "Media Member",
+      positionAr: "عضو إعلام",
+      linkedinUrl: "https://www.linkedin.com/in/maha-a-a45786312",
+      avatarUrl: null, // No image available
+    },
+    // Photography & Editing Members
+    {
+      nameEn: "Ali Balhareth",
+      nameAr: "علي بالحارث",
+      positionEn: "Photography & Editing Member",
+      positionAr: "عضو تصوير ومونتاج",
+      linkedinUrl: null, // No LinkedIn available
+      avatarUrl: null, // No image available
+    },
+    {
+      nameEn: "Raghad Aloubili",
+      nameAr: "رغد سعود العبيلي",
+      positionEn: "Photography & Editing Member",
+      positionAr: "عضو تصوير ومونتاج",
+      linkedinUrl: "https://www.linkedin.com/in/raghad-aloubili-105761306",
+      avatarUrl: "/team/raghad-aloubili.jpeg",
+    },
+    {
+      nameEn: "Jawaher Alhaqbani",
+      nameAr: "جواهر الحقباني",
+      positionEn: "Photography & Editing Member",
+      positionAr: "عضو تصوير ومونتاج",
+      linkedinUrl: "https://www.linkedin.com/in/jawaher-alhaqbani-915560323/",
+      avatarUrl: "/team/jawaher-alhaqbani.jpeg",
+    },
+    {
+      nameEn: "Nasseba Abdulmohsen",
+      nameAr: "نصيبة عبدالمحسن",
+      positionEn: "Photography & Editing Member",
+      positionAr: "عضو تصوير ومونتاج",
+      linkedinUrl: "https://www.linkedin.com/in/nasseba-almunis-0094962b6",
+      avatarUrl: null, // No image available
+    },
+  ];
+
+  const publicRelationsTeam = [
+    // PR Specialist
+    {
+      nameEn: "Azzam Alharbi",
+      nameAr: "عزام الحربي",
+      positionEn: "ECO - PR",
+      positionAr: "مسؤول العلاقات العامة (ECO)",
+      linkedinUrl: "https://www.linkedin.com/in/azam-alharbi-406862288",
+      avatarUrl: "/team/azzam-alharbi.jpeg",
+    },
+    // PR Members
+    {
+      nameEn: "Deemah Alaklaby",
+      nameAr: "ديمة العقلاوي",
+      positionEn: "PR Member",
+      positionAr: "عضو علاقات عامة",
+      linkedinUrl: "https://www.linkedin.com/in/deemah-alaklaby-a10b89308",
+      avatarUrl: null, // No image available
+    },
+    {
+      nameEn: "Anas Shahrani",
+      nameAr: "أنس الشهراني",
+      positionEn: "PR Member",
+      positionAr: "عضو علاقات عامة",
+      linkedinUrl: null, // No LinkedIn available
+      avatarUrl: null, // No image available
+    },
+  ];
+
+  const operationsSupport = [
+    // Operations Members
+    {
+      nameEn: "Mohammad Alharbey",
+      nameAr: "محمد الحربي",
+      positionEn: "Operations Member",
+      positionAr: "عضو عمليات",
+      linkedinUrl: null, // No LinkedIn available
+      avatarUrl: null, // No image available
+    },
+    {
+      nameEn: "Assaf Alotaibi",
+      nameAr: "عساف العتيبي",
+      positionEn: "Operations Member",
+      positionAr: "عضو عمليات",
+      linkedinUrl: "https://www.linkedin.com/in/assaf-alotaibi-20255b377/",
+      avatarUrl: "/team/assaf-alotaibi.jpg",
+    },
+    {
+      nameEn: "Razan Alfawzan",
+      nameAr: "رزان الفوزان",
+      positionEn: "Operations Member",
+      positionAr: "عضو عمليات",
+      linkedinUrl: null, // No LinkedIn available (X:RazanAlfawzan)
+      avatarUrl: null, // No image available
+    },
+  ];
+
+  const renderTeamSection = (title, titleAr, teamArray) => (
+    <div className="mb-16">
+      <h2 className="text-3xl font-bold text-center mb-8 main-gradient-text">
+        {currentLocale === "ar" ? titleAr : title}
+      </h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 justify-items-center">
+        {teamArray.map((member, index) => (
+          <TeamMemberCard
+            key={`${title}-${index}`}
+            name={currentLocale === "ar" ? member.nameAr : member.nameEn}
+            position={
+              currentLocale === "ar" ? member.positionAr : member.positionEn
+            }
+            avatarUrl={member.avatarUrl}
+            linkedinUrl={member.linkedinUrl}
+            locale={currentLocale}
+          />
+        ))}
+      </div>
+    </div>
+  );
+
   return (
     <div className="container mx-auto px-4 py-20">
       {/* Header Section */}
@@ -179,65 +330,36 @@ export default async function Team({ params }) {
         </p>
       </div>
 
-      {/* Statistics Section */}
-      <section className="mb-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <StatCard
-            icon={<Heart className="w-6 h-6 text-white" />}
-            value={t(currentLocale, "pages.team.stats.support.value")}
-            label={t(currentLocale, "pages.team.stats.support.label")}
-            color="#EF4444"
-            locale={currentLocale}
-          />
-          <StatCard
-            icon={<Target className="w-6 h-6 text-white" />}
-            value={t(currentLocale, "pages.team.stats.satisfaction.value")}
-            label={t(currentLocale, "pages.team.stats.satisfaction.label")}
-            color="#10B981"
-            locale={currentLocale}
-          />
-          <StatCard
-            icon={<Wrench className="w-6 h-6 text-white" />}
-            value={t(currentLocale, "pages.team.stats.workshops.value")}
-            label={t(currentLocale, "pages.team.stats.workshops.label")}
-            color="#F59E0B"
-            locale={currentLocale}
-          />
-          <StatCard
-            icon={<Users className="w-6 h-6 text-white" />}
-            value={t(currentLocale, "pages.team.stats.members.value")}
-            label={t(currentLocale, "pages.team.stats.members.label")}
-            color="#3B82F6"
-            locale={currentLocale}
-          />
-        </div>
-      </section>
-
       {/* Team Members Section */}
       <section className="mb-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 justify-items-center">
-          {teamMembers.map((member, index) => (
-            <TeamMemberCard
-              key={index}
-              name={currentLocale === "ar" ? member.nameAr : member.nameEn}
-              position={
-                currentLocale === "ar" ? member.positionAr : member.positionEn
-              }
-              avatarUrl={member.avatarUrl}
-              linkedinUrl={member.linkedinUrl}
-              locale={currentLocale}
-            />
-          ))}
-        </div>
-      </section>
+        {renderTeamSection(
+          "Leadership & Management",
+          "القيادة والإدارة",
+          leadershipTeam
+        )}
 
-      {/* Join Team Section */}
-      <JoinTeamSection
-        title={t(currentLocale, "pages.team.joinTeam.title")}
-        description={t(currentLocale, "pages.team.joinTeam.description")}
-        buttonText={t(currentLocale, "pages.team.joinTeam.buttonText")}
-        locale={currentLocale}
-      />
+        {renderTeamSection("Department Leads", "قادة الأقسام", departmentLeads)}
+
+        {renderTeamSection(
+          "Public Relations",
+          "العلاقات العامة",
+          publicRelationsTeam
+        )}
+
+        {renderTeamSection(
+          "Media & Creative",
+          "الإعلام والإبداع",
+          mediaContentTeam
+        )}
+
+        {renderTeamSection(
+          "Operations & Support",
+          "العمليات والدعم",
+          operationsSupport
+        )}
+
+        {renderTeamSection("Technical Team", "الفريق التقني", technicalTeam)}
+      </section>
     </div>
   );
 }
