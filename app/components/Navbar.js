@@ -58,7 +58,16 @@ export default function Navbar() {
           <div className="flex justify-between items-center h-16 md:h-20">
             {/* Logo */}
             <Link href={`/${locale}`} className="flex items-center gap-2 flex-shrink-0 cursor-pointer hover:opacity-80 transition-opacity duration-200">
-              <span className="text-xl md:text-2xl font-bold main-gradient-text">LAG</span>
+              <Image
+                src="/logoPurple.svg"
+                alt="LAG Logo"
+                width={32}
+                height={32}
+                style={{
+                  color: '#9D00FF'
+                }}
+                className="w-8 h-8 md:w-10 md:h-10"
+              />
             </Link>
 
             {/* Desktop Navigation */}

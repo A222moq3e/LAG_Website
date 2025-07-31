@@ -1,10 +1,59 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import { t } from '../../lib/i18n';
 import { cn } from '../../../lib/utils';
+import { useParams } from 'next/navigation';
 
-export default async function ContactUs({ params }) {
-  const { locale } = await params;
-  const currentLocale = locale || 'en';
+export default function ContactUs() {
+  const params = useParams();
+  const currentLocale = params?.locale || 'en';
+  
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState('');
+
+  const handleInputChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitMessage('');
+
+    try {
+      // Simple email sending using mailto (opens user's email client)
+      const subject = encodeURIComponent(`Contact Form - ${formData.name}`);
+      const body = encodeURIComponent(`
+Name: ${formData.name}
+Email: ${formData.email}
+
+Message:
+${formData.message}
+      `);
+      
+      const mailtoLink = `mailto:lagpsy.sa@gmail.com?subject=${subject}&body=${body}`;
+      window.location.href = mailtoLink;
+      
+      setSubmitMessage(t(currentLocale, 'pages.contact.form.success'));
+      
+      // Reset form
+      setFormData({ name: '', email: '', message: '' });
+      
+    } catch (error) {
+      setSubmitMessage(t(currentLocale, 'pages.contact.form.error'));
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <div className="container mx-auto px-4 py-8 bg-background text-foreground mt-12">
@@ -20,7 +69,7 @@ export default async function ContactUs({ params }) {
         <div className="bg-card text-card-foreground p-8 rounded-lg border shadow-lg">
           <h2 className="text-2xl font-bold mb-6 main-gradient-text">{t(currentLocale, 'pages.contact.title')}</h2>
           
-          <form className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
                 {t(currentLocale, 'pages.contact.form.name')}
@@ -29,6 +78,8 @@ export default async function ContactUs({ params }) {
                 type="text"
                 id="name"
                 name="name"
+                value={formData.name}
+                onChange={handleInputChange}
                 className={cn(
                   "w-full px-4 py-3 rounded-lg border border-input bg-input text-foreground",
                   "focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent",
@@ -47,6 +98,8 @@ export default async function ContactUs({ params }) {
                 type="email"
                 id="email"
                 name="email"
+                value={formData.email}
+                onChange={handleInputChange}
                 className={cn(
                   "w-full px-4 py-3 rounded-lg border border-input bg-input text-foreground",
                   "focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent",
@@ -65,6 +118,8 @@ export default async function ContactUs({ params }) {
                 id="message"
                 name="message"
                 rows="6"
+                value={formData.message}
+                onChange={handleInputChange}
                 className={cn(
                   "w-full px-4 py-3 rounded-lg border border-input bg-input text-foreground resize-none",
                   "focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent",
@@ -75,15 +130,31 @@ export default async function ContactUs({ params }) {
               ></textarea>
             </div>
             
+            {submitMessage && (
+              <div className={cn(
+                "p-3 rounded-lg text-center",
+                submitMessage === t(currentLocale, 'pages.contact.form.error') 
+                  ? "bg-red-100 text-red-700 border border-red-200" 
+                  : "bg-green-100 text-green-700 border border-green-200"
+              )}>
+                {submitMessage}
+              </div>
+            )}
+            
             <button
               type="submit"
+              disabled={isSubmitting}
               className={cn(
                 "w-full py-3 px-6 rounded-lg font-medium transition-all duration-200",
                 "main-bg-gradient text-white",
-                "hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background"
+                "hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background",
+                isSubmitting && "opacity-50 cursor-not-allowed"
               )}
             >
-              {t(currentLocale, 'pages.contact.form.submit')}
+              {isSubmitting 
+                ? t(currentLocale, 'pages.contact.form.sending')
+                : t(currentLocale, 'pages.contact.form.submit')
+              }
             </button>
           </form>
         </div>
@@ -103,7 +174,7 @@ export default async function ContactUs({ params }) {
               <h3 className="text-lg font-semibold text-foreground mb-1">
                 {t(currentLocale, 'pages.contact.info.email')}
               </h3>
-              <p className="text-[var(--primary-blue-light)]">info@lag.com</p>
+              <p className="text-[var(--primary-blue-light)]">lagpsy.sa@gmail.com</p>
             </div>
           </div>
           

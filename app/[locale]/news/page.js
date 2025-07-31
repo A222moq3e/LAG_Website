@@ -23,7 +23,7 @@ export default async function News({ params }) {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container mx-auto px-4 py-20">
       <h1 className="text-4xl font-bold text-center mb-8 main-gradient-text">
         {t(currentLocale, 'pages.news.title')}
       </h1>
