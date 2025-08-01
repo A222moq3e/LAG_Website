@@ -10,12 +10,12 @@ export default async function Team({ params }) {
   const leadershipTeam = [
     // Founders
     {
-      nameEn: "Rahaf Al-Mutairi",
+      nameEn: "Rahaf Almutairi",
       nameAr: "رهف المطيري",
       positionEn: "Founder of Laaq",
       positionAr: "مؤسسة لاق",
       linkedinUrl: "https://www.linkedin.com/in/rahaf-almutairi-28b8a1221",
-      avatarUrl: null, // No image available
+      avatarUrl: "/team/rahaf-almutairi.jpg",
     },
     {
       nameEn: "Faisal Alfallaj",
@@ -45,12 +45,12 @@ export default async function Team({ params }) {
       avatarUrl: "/team/raseel-hashim.jpg",
     },
     {
-      nameEn: "Reema Al-Shahri",
+      nameEn: "Reema Alshehri",
       nameAr: "ريما الشهري",
       positionEn: "PR Manager",
       positionAr: "مديرة العلاقات العامة",
       linkedinUrl: "https://www.linkedin.com/in/reema-alshehri-6b3331290",
-      avatarUrl: "/team/reema-al-shahri.jpeg",
+      avatarUrl: "/team/reema-alshehri.jpeg",
     },
     // Consultant
     {
@@ -91,7 +91,7 @@ export default async function Team({ params }) {
     },
     // Leaders
     {
-      nameEn: "Waad Al-Dosari",
+      nameEn: "Waad Aldosari",
       nameAr: "وعد الدوسري",
       positionEn: "Social Media Leader",
       positionAr: "قائدة وسائل التواصل الاجتماعي",
@@ -99,12 +99,20 @@ export default async function Team({ params }) {
       avatarUrl: null, // No image available
     },
     {
-      nameEn: "Faten Al-Anazi",
+      nameEn: "Faten Alanazi",
       nameAr: "فاتن العنزي",
       positionEn: "Activities Leader",
       positionAr: "قائدة الأنشطة",
       linkedinUrl: "https://www.linkedin.com/in/faten-alanazi-10a74b28b",
       avatarUrl: null, // No image available
+    },
+    {
+      nameEn: "Haya Alanzi",
+      nameAr: "هيا العنزي",
+      positionEn: "Activities Leader",
+      positionAr: "قائدة الأنشطة",
+      linkedinUrl: "https://www.linkedin.com/in/haya-alsakran-3b8789374",
+      avatarUrl: "/team/haya-alanzi.jpg",
     },
     {
       nameEn: "Yaroub Albahli",
@@ -190,7 +198,7 @@ export default async function Team({ params }) {
     },
     {
       nameEn: "Mutlaq Alosaimi",
-      nameAr: "مطلق بن يوسف العصيمي",
+      nameAr: "مطلق العصيمي",
       positionEn: "Media Member",
       positionAr: "عضو إعلام",
       linkedinUrl: "https://www.linkedin.com/in/mutlaq-alosaimi-5ab671224",
@@ -215,7 +223,7 @@ export default async function Team({ params }) {
     },
     {
       nameEn: "Raghad Aloubili",
-      nameAr: "رغد سعود العبيلي",
+      nameAr: "رغد العبيلي",
       positionEn: "Photography & Editing Member",
       positionAr: "عضو تصوير ومونتاج",
       linkedinUrl: "https://www.linkedin.com/in/raghad-aloubili-105761306",
@@ -252,7 +260,7 @@ export default async function Team({ params }) {
     // PR Members
     {
       nameEn: "Deemah Alaklaby",
-      nameAr: "ديمة العقلاوي",
+      nameAr: "ديمة الأكلبي",
       positionEn: "PR Member",
       positionAr: "عضو علاقات عامة",
       linkedinUrl: "https://www.linkedin.com/in/deemah-alaklaby-a10b89308",
