@@ -7,7 +7,7 @@ if(!process.env.NOTION_TOKEN) {
 const notion = new Client({ auth: process.env.NOTION_TOKEN });
 
 
-export async function getAllNews() {
+export async function getAllNews(lang = null) {
   // Query the News database in Notion and return a simplified
   // array that the front-end can consume directly.
   //
@@ -17,11 +17,14 @@ export async function getAllNews() {
   // └─ Excerpt → rich text (optional)
   let resp;
   try {
-    resp = await notion.databases.query({
-    database_id: process.env.NOTION_NEWS_DB_ID,
-    // Sort by the date property (case-sensitive field name in Notion)
-    sorts: [{ property: "Date", direction: "descending" }],
-  });
+    const queryParams = {
+      database_id: process.env.NOTION_NEWS_DB_ID,
+      sorts: [{ property: "Date", direction: "descending" }],
+    };
+    if (lang) {
+      queryParams.filter = { property: "Lang", select: { equals: lang } };
+    }
+    resp = await notion.databases.query(queryParams);
   } catch (error) {
     console.error('Failed to fetch news from Notion:',error);
     return [];
@@ -38,7 +41,7 @@ export async function getAllNews() {
       properties.Name?.title?.[0]?.plain_text ??
       "Untitled";
     const date = properties.Date?.date?.start ?? null;
-    const excerpt = properties.Excerpt?.rich_text?.[0]?.plain_text ?? "";
+    const excerpt = properties.Excerpt?.rich_text?.map(rt => rt.plain_text).join("\n") || "";
 
     // Prefer page cover, fallback to a property named "Image" of type files
     let image =
@@ -71,7 +74,7 @@ export async function getNewsById(id) {
 
   const { properties } = page;
 
-  const excerpt = properties.Excerpt?.rich_text?.[0]?.plain_text ?? "";
+  const excerpt = properties.Excerpt?.rich_text?.map(rt => rt.plain_text).join("\n") || "";
 
   // Prefer page cover, fallback to a property named "Image" of type files
   let image =
