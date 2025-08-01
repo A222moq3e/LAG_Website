@@ -29,7 +29,6 @@ export default async function NewsDetail({ params }) {
           loading="lazy"
           className="w-full h-64 object-cover rounded-lg mb-6"
           sizes="(max-width: 768px) 100vw, 800px"
-          unoptimized
         />
       )}
       <h1 className="text-3xl font-bold mb-4">{newsItem.title}</h1>

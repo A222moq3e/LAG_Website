@@ -55,7 +55,6 @@ export default async function News({ params }) {
                   loading="lazy"
                   className="w-full h-44 object-cover rounded-t-lg"
                   sizes="(max-width: 768px) 100vw, 600px"
-                  unoptimized
                 />
               )}
               <article className="p-6 flex flex-col gap-4">
