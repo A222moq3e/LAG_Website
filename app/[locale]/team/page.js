@@ -67,7 +67,7 @@ export default async function Team({ params }) {
       positionEn: "Consultant",
       positionAr: "مستشار",
       linkedinUrl: "https://www.linkedin.com/in/khalid-almunazzil-764114193",
-      avatarUrl: "/team/khalid-almunazzil.png",
+      avatarUrl: "/team/khalid.JPG",
     },
   ];
 
@@ -91,7 +91,7 @@ export default async function Team({ params }) {
     },
     {
       nameEn: "Amjad Al-Dosari",
-      nameAr: "أمجد الدوسري",
+      nameAr: "أمجاد الدوسري",
       positionEn: "Booth Lead",
       positionAr: "قائد الجناح",
       linkedinUrl: "https://www.linkedin.com/in/amjad-aldosari-1978a8320",
