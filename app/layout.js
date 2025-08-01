@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import { Orbitron } from "next/font/google";
 import "./globals.css";
+import PostHogProvider from "./components/PostHogProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -40,6 +41,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${orbitron.variable} antialiased`}
       >
+        <PostHogProvider />
         {children}
       </body>
     </html>

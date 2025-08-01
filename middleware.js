@@ -6,10 +6,11 @@ const defaultLocale = 'en';
 export function middleware(request) {
   const pathname = request.nextUrl.pathname;
 
-  // Skip static files and images
+  // Skip static files, images, and PostHog ingest paths
   if (
     pathname.startsWith('/_next') ||
     pathname.startsWith('/api') ||
+    pathname.startsWith('/ingest') || // Add this line to exclude PostHog paths
     pathname.includes('.') // This catches files with extensions like .png, .jpg, .ico, etc.
   ) {
     return NextResponse.next();

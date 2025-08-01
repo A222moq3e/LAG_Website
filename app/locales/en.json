@@ -2,7 +2,7 @@
   "navbar": {
     "home": "Home",
     "about": "About",
-    "quiz": "Matchy quiz",
+    "quiz": "Matche quiz",
     "aid": "Es3af LAG",
     "team": "Team",
     "news": "News",
@@ -19,7 +19,7 @@
     "copyright": "© 2025 LAG Initiative. All rights reserved."
   },
   "quiz": {
-    "title": "Matchy",
+    "title": "Matche",
     "subtitle": " - Gaming Personality Quiz",
     "description": "Discover your gaming personality and get personalized game recommendations based on your preferences and play style.",
     "startButton": "Start Quiz",
@@ -28,7 +28,7 @@
   },
   "pages": {
     "home": {
-      "title": "Where Gaming and Growth Meet",
+      "title": "Where games meet growth",
       "description": "LAG - Mental Wellness Meets E-Sports Culture",
       "cta_button": "Start Your Journey",
       "scroll_down": "Scroll Down",
