@@ -12,7 +12,7 @@ export default async function Team({ params }) {
     {
       nameEn: "Rahaf Almutairi",
       nameAr: "رهف المطيري",
-      positionEn: "Founder of Laaq",
+      positionEn: "Founder of Laq",
       positionAr: "مؤسسة لاق",
       linkedinUrl: "https://www.linkedin.com/in/rahaf-almutairi-28b8a1221",
       avatarUrl: "/team/rahaf-almutairi.jpg",
@@ -39,16 +39,24 @@ export default async function Team({ params }) {
       nameEn: "Raseel Hashim",
       nameAr: "رسيل هاشم",
       positionEn: "Manager of HR",
-      positionAr: "مديرة الموارد البشرية",
+      positionAr: "رئيسة الموارد البشرية",
       linkedinUrl:
         "https://www.linkedin.com/in/%D8%B1%D8%B3%D9%8A%D9%84-%D9%87%D8%A7%D8%B4%D9%85%F0%9F%87%B8%F0%9F%87%A6-88300a197",
       avatarUrl: "/team/raseel-hashim.jpg",
     },
     {
+      nameEn: "Waad Aldosari",
+      nameAr: "وعد الدوسري",
+      positionEn: "Media manager",
+      positionAr: "رئيسة قسم الإعلام ",
+      linkedinUrl: "https://www.linkedin.com/in/waad-al-dosary-107621213",
+      avatarUrl: null, // No image available
+    },
+    {
       nameEn: "Reema Alshehri",
       nameAr: "ريما الشهري",
       positionEn: "PR Manager",
-      positionAr: "مديرة العلاقات العامة",
+      positionAr: "رئيسة العلاقات العامة",
       linkedinUrl: "https://www.linkedin.com/in/reema-alshehri-6b3331290",
       avatarUrl: "/team/reema-alshehri.jpeg",
     },
@@ -90,14 +98,6 @@ export default async function Team({ params }) {
       avatarUrl: null, // No image available
     },
     // Leaders
-    {
-      nameEn: "Waad Aldosari",
-      nameAr: "وعد الدوسري",
-      positionEn: "Social Media Leader",
-      positionAr: "قائدة وسائل التواصل الاجتماعي",
-      linkedinUrl: "https://www.linkedin.com/in/waad-al-dosary-107621213",
-      avatarUrl: null, // No image available
-    },
     {
       nameEn: "Faten Alanazi",
       nameAr: "فاتن العنزي",
@@ -239,7 +239,7 @@ export default async function Team({ params }) {
     },
     {
       nameEn: "Nasseba Abdulmohsen",
-      nameAr: "نصيبة عبدالمحسن",
+      nameAr: "نسيبة عبدالمحسن",
       positionEn: "Photography & Editing Member",
       positionAr: "عضو تصوير ومونتاج",
       linkedinUrl: "https://www.linkedin.com/in/nasseba-almunis-0094962b6",
