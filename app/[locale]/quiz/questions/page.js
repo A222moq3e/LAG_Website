@@ -273,7 +273,7 @@ export default function QuizQuestions({ params }) {
                     {t(currentLocale, 'pages.quiz.retakeTest')}
                   </button>
                   <Link
-                    href={`/${currentLocale}/about-us`}
+                    href={`/${locale}#who-we-are-section`}
                     className="bg-gray-700 text-white font-bold py-4 px-8 rounded-xl shadow-lg hover:bg-gray-600 hover:shadow-xl hover:scale-105 transition-all text-center no-underline inline-block text-lg"
                   >
                     {t(currentLocale, 'pages.quiz.learnMore')}
