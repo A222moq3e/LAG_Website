@@ -61,6 +61,40 @@
     color: transparent;
     font-family:  var(--font-orbitron), Arial, Helvetica, sans-serif;
     font-weight: bold;
+    line-height: 1.3;
+  }
+
+  .main-gradient-text-animated {
+    background: linear-gradient(45deg, 
+      var(--primary-purple-light), 
+      var(--primary-blue-light), 
+      var(--primary-purple), 
+      var(--primary-blue-light),
+      var(--primary-purple-light)
+    );
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    font-family: var(--font-orbitron), Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    line-height: 1.3;
+    animation: gradientShift 3s ease-in-out forwards;
+    will-change: background-position;
+    transform: translateZ(0); /* Force hardware acceleration */
+  }
+
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 20% 0%;
+    }
+    100% {
+      background-position: 220% 0%;
+    }
   }
   .font-orbitron {
     font-family: var(--font-orbitron), 'Orbitron', Arial, Helvetica, sans-serif;
@@ -69,8 +103,8 @@
   .bg-gradient-card {
     background-image: linear-gradient(
       135deg,
-      color-mix(in srgb, var(--primary-purple) 15%, transparent),
-      color-mix(in srgb, var(--primary-blue) 15%, transparent)
+      color-mix(in srgb, var(--primary-purple) 40%, transparent),
+      color-mix(in srgb, var(--primary-blue) 40%, transparent)
     );
   }
 }
@@ -167,7 +201,14 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    box-sizing: border-box;
   }
+  
+  html, body {
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
   body {
     @apply bg-background text-foreground;
   }
@@ -177,9 +218,18 @@
     scroll-behavior: smooth;
   }
   
+  /* Prevent layout shifts during animations */
+  .main-gradient-text,
+  .main-gradient-text-animated {
+    contain: layout style paint;
+  }
+  
   /* Responsive text sizing for better mobile experience */
   @media (max-width: 640px) {
     .main-gradient-text {
+      line-height: 1.2;
+    }
+    .main-gradient-text-animated {
       line-height: 1.2;
     }
   }

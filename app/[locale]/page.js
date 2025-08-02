@@ -61,10 +61,10 @@ export default function Home() {
   }, [mounted]);
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col min-h-screen w-full overflow-x-hidden">
       {/* Hero Section */}
       <section 
-        className="flex flex-col justify-center items-center gap-6 md:gap-8 min-h-screen px-4 sm:px-6 lg:px-8 relative bg-cover bg-center bg-no-repeat"
+        className="flex flex-col justify-center items-center gap-6 md:gap-8 min-h-screen px-4 sm:px-6 lg:px-8 relative bg-cover bg-center bg-no-repeat w-full"
         style={{
           backgroundImage: 'url(/controllerImage.png)',
           backgroundSize: 'cover',
@@ -75,11 +75,13 @@ export default function Home() {
         {/* Dark blur overlay for better text readability */}
         <div className="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
         
-        <div className="flex flex-col justify-center items-center gap-6 md:gap-8 relative z-10 max-w-4xl mx-auto text-center">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center main-gradient-text font-orbitron drop-shadow-lg leading-relaxed py-2 w-full">
+        <div className="flex flex-col justify-center items-center gap-2 md:gap-6 relative z-10 max-w-4xl mx-auto text-center w-full">
+          <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center font-orbitron drop-shadow-lg leading-relaxed p-2 w-full ${
+            mounted ? 'main-gradient-text-animated' : 'main-gradient-text'
+          }`}>
             {t(currentLocale, 'pages.home.title')}
           </h1>
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-center text-gray-100 max-w-3xl drop-shadow-md px-4">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-center text-gray-100 max-w-3xl drop-shadow-md p-4 w-full">
             {t(currentLocale, 'pages.home.description')}
           </p>
           <button 
@@ -120,7 +122,7 @@ export default function Home() {
       <section 
         ref={sectionRef}
         id="who-we-are-section" 
-        className="py-24 md:py-32 lg:py-40 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900 to-black min-h-screen flex items-center"
+        className="py-24 md:py-32 lg:py-40 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900 to-black min-h-screen flex items-center w-full"
       >
         <div className="max-w-7xl mx-auto w-full">
           <div className="flex flex-col justify-center items-center gap-16 md:gap-20 lg:gap-24">   
@@ -129,7 +131,7 @@ export default function Home() {
                className={`transition-all duration-1000 ease-out transform ${
                  mounted && titleVisible 
                    ? 'opacity-100 translate-y-0' 
-                   : mounted ? 'opacity-0 translate-y-12' : ''
+                   : mounted ? 'opacity-0 translate-y-12' : 'opacity-100 translate-y-0'
                }`}
              >
                              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-center main-gradient-text drop-shadow-lg leading-relaxed py-2">
@@ -145,7 +147,7 @@ export default function Home() {
                  className={`flex flex-col gap-6 md:gap-8 flex-1 p-8 md:p-10 lg:p-12 bg-gray-800/80 backdrop-blur-sm rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500 border border-gray-700/50 hover:border-purple-500/50 hover:scale-105 transform ${
                    mounted && missionVisible 
                      ? 'opacity-100 translate-x-0' 
-                     : mounted ? 'opacity-0 -translate-x-12' : ''
+                     : mounted ? 'opacity-0 -translate-x-12' : 'opacity-100 translate-x-0'
                  }`}
                >
                                  <div className="flex flex-row items-center gap-6">
@@ -167,7 +169,7 @@ export default function Home() {
                  className={`flex flex-col gap-6 md:gap-8 flex-1 p-8 md:p-10 lg:p-12 bg-gray-800/80 backdrop-blur-sm rounded-3xl shadow-2xl hover:shadow-3xl transition-all duration-500 border border-gray-700/50 hover:border-teal-500/50 hover:scale-105 transform ${
                    mounted && visionVisible 
                      ? 'opacity-100 translate-x-0' 
-                     : mounted ? 'opacity-0 translate-x-12' : ''
+                     : mounted ? 'opacity-0 translate-x-12' : 'opacity-100 translate-x-0'
                  }`}
                >
                                  <div className="flex flex-row items-center gap-6">
