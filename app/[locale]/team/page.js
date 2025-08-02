@@ -10,8 +10,8 @@ export default async function Team({ params }) {
 
   const academicSupervisors = [
     {
-      nameEn: "Dr. Dhafer Bin Mohammed Alqahtani",
-      nameAr: "د. ظافر بن محمد القحطاني",
+      nameEn: "Prof. Dhafer Bin Mohammed Alqahtani",
+      nameAr: "أ.د. ظافر بن محمد القحطاني",
       positionEn: "General Supervisor of the Initiative",
       positionAr: "المشرف العام للمبادرة",
       linkedinUrl: null,
