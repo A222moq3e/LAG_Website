@@ -43,6 +43,31 @@ export default function QuizQuestions({ params }) {
     setAnswers({});
   };
 
+
+    // Game group mapping for recommendation text
+    const gameGroupMap = {
+      'Apex Legends': 'battle_royale',
+      'COD/Warzone': 'battle_royale',
+      'Free Fire': 'battle_royale',
+      'PUBG Mobile': 'battle_royale',
+      'PUBG Battlegrounds': 'battle_royale',
+      'Tekken 8': 'fighting',
+      'Street Fighter 6': 'fighting',
+      'Mobile Legends': 'mobile',
+      'Dota 2': 'moba',
+      'League of Legends': 'moba',
+      'TFT': 'moba',
+      'Rocket League': 'sports',
+      'EA FC 25': 'football',
+      'Rennsport': 'racing',
+      'Chess': 'strategy',
+      'StarCraft II': 'strategy',
+      'R6 Siege': 'tactical_shooter',
+      'CS2': 'tactical_shooter',
+      'Overwatch 2': 'tactical_shooter',
+    };
+  
+
   // Mapping: each game to a unique set of 5 answers
   const exclusiveAnswerMappings = [
     { answers: ['Q1A', 'Q3B', 'Q6A', 'Q8A', 'Q10A'], games: ['Apex Legends', 'Valorant'] },
@@ -107,36 +132,47 @@ export default function QuizQuestions({ params }) {
   }
 
   // Use strict match if found, otherwise close match, otherwise fallback
-  const topGames = strictMatchGames.length > 0
-    ? strictMatchGames.map(game => ({ game }))
-    : closeMatchGames.length > 0
-      ? closeMatchGames.map(game => ({ game }))
-      : [];
+  let topGames = [];
 
-  // Game group mapping for recommendation text
-  const gameGroupMap = {
-    'Apex Legends': 'battle_royale',
-    'COD/Warzone': 'battle_royale',
-    'Free Fire': 'battle_royale',
-    'PUBG Mobile': 'battle_royale',
-    'PUBG Battlegrounds': 'battle_royale',
-    'Tekken 8': 'fighting',
-    'Street Fighter 6': 'fighting',
-    'Mobile Legends': 'mobile',
-    'Dota 2': 'moba',
-    'League of Legends': 'moba',
-    'TFT': 'moba',
-    'Rocket League': 'sports',
-    'EA FC 25': 'football',
-    'Rennsport': 'racing',
-    'Chess': 'strategy',
-    'StarCraft II': 'strategy',
-    'R6 Siege': 'tactical_shooter',
-    'CS2': 'tactical_shooter',
-    'Overwatch 2': 'tactical_shooter',
-  };
+  if (strictMatchGames.length > 0) {
+    //  Perfect match — return it
+    topGames = strictMatchGames.map(game => ({ game }));
+  } else if (closeMatchGames.length > 0) {
+    //  Close match — return it
+    topGames = closeMatchGames.map(game => ({ game }));
+  } else {
+    //  No match — fallback to score-based recommendation
+  
+    const gameScores = {};
+  
+    quizQuestions.forEach(q => {
+      const selectedOptionId = answers[q.id];
+      if (!selectedOptionId) return;
+  
+      const selectedOption = q.options.find(opt => opt.id === selectedOptionId);
+      if (!selectedOption || !selectedOption.games) return;
+  
+      selectedOption.games.forEach(game => {
+        gameScores[game] = (gameScores[game] || 0) + selectedOption.score;
+      });
+    });
+  
+    const sortedGames = Object.entries(gameScores)
+      .sort((a, b) => b[1] - a[1]) // highest score first
+      .map(([game]) => ({ game }));
+  
+    if (sortedGames.length > 0) {
+      topGames = sortedGames.slice(0, 2); //top 2 by score
+    } else {
+      // Use random global fallback - if no mathc
+      const allGameNames = Object.keys(gameGroupMap);
+      const shuffled = allGameNames.sort(() => 0.5 - Math.random());
+      topGames = shuffled.slice(0, 2).map(game => ({ game }));
+    }
+  }
+  
 
-  // Friendly, modern group recommendation paragraphs
+  //recommendation paragraphs
   const groupRecommendations = {
     battle_royale: 'You love the thrill of fast-paced action and outsmarting everyone to be the last one standing. Battle royale games are totally your vibe!',
     fighting: 'You’re all about epic showdowns and pulling off awesome combos. Fighting games are where you shine!',
@@ -161,16 +197,6 @@ export default function QuizQuestions({ params }) {
     return result;
   };
 
-  // Build a friendly recommendation string for the top game group
-  const getGroupRecommendation = () => {
-    if (!topGames.length) return '';
-    const topGame = topGames[0].game;
-    const group = gameGroupMap[topGame] || topGame;
-    const baseText = groupRecommendations[group] || `You’ve got your own style, and ${topGame} totally matches your energy!`;
-    const gamesList = topGames.map(g => g.game).join(', ');
-    return `${baseText} Your top recommended games: ${gamesList}.`;
-  };
-
   // Get the recommendation text for each top game from the translation file
   const getGameRecommendationText = () => {
     if (!topGames.length) return '';
@@ -178,14 +204,13 @@ export default function QuizQuestions({ params }) {
     return topGames.map(g => t(currentLocale, `gameRecommendations.${g.game}`)).join(' ');
   };
 
-  const improvedRecommendation = getGroupRecommendation();
-
+ 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-purple-900">
       <div className="flex justify-center items-center min-h-screen p-4">
         <div className="w-full max-w-2xl">
           <div className="bg-gray-800/70 backdrop-blur-sm rounded-2xl shadow-2xl p-8 border border-gray-600/50">
-            {/* Quiz step: showing current question and options */}
+            {/* Quiz step: show current question and options */}
             {currentStep === 'quiz' && (
               <div className="space-y-6">
                 <div className={isRTL ? "text-right" : "text-left"}>
@@ -242,7 +267,7 @@ export default function QuizQuestions({ params }) {
               </div>
             )}
 
-            {/* Results step: showing recommendations and top games */}
+            {/* Results step: show recommendations and top games */}
             {currentStep === 'results' && (
               <div className="text-center space-y-8">
                 <div className="flex justify-center mb-8">
@@ -253,7 +278,7 @@ export default function QuizQuestions({ params }) {
                   {t(currentLocale, 'results.title')}
                 </h1>
 
-                {/* Showing top games */}
+                {/* Show top games */}
                 <div className="bg-gray-700/50 rounded-xl p-6 border border-gray-600/50 mb-4">
                   <h3 className="text-xl font-semibold text-white mb-3 flex items-center justify-center gap-2">
                     <span>🥇</span>
@@ -272,7 +297,7 @@ export default function QuizQuestions({ params }) {
                   </div>
                 </div>
 
-                {/* Showing game recommendation */}
+                {/* Show game recommendation */}
                 <div className="bg-gray-700/50 rounded-xl p-6 border border-gray-600/50">
                   <h3 className="text-xl font-semibold text-white mb-3 flex items-center justify-center gap-2">
                     <span>🎮</span>
