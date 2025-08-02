@@ -22,7 +22,7 @@ export default function Team() {
   const academicSupervision = [
     {
       nameEn: "Prof. Dr. Dhafer Mohammed Al-Qahtani",
-      nameAr: "أ.د. ظافر بن محمد القحطاني",
+      nameAr: "د. ظافر بن محمد القحطاني",
       positionEn: "General Supervisor of the Initiative",
       positionAr: "المشرف العام للمبادرة",
       linkedinUrl: null, // No LinkedIn available
