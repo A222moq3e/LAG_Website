@@ -38,6 +38,7 @@ export default function QuizQuestions({ params }) {
     setAnswers({});
   };
 
+
   const exclusiveAnswerMappings = [
     { answers: ['Q1A', 'Q3B', 'Q6A', 'Q8A', 'Q10A'], games: ['Apex Legends', 'Valorant'] },
     { answers: ['Q1A', 'Q3B', 'Q4A', 'Q6A', 'Q8A'], games: ['COD/Warzone'] },
@@ -96,6 +97,7 @@ export default function QuizQuestions({ params }) {
     closeMatchGames = [...new Set(closeMatchGames)];
   }
 
+
   // Fallback recommendations if no strict or close match
   const fallbackGames = ['Valorant', 'League of Legends', 'CS2', 'Overwatch 2', 'Rocket League'];
 
@@ -127,7 +129,7 @@ export default function QuizQuestions({ params }) {
     'Overwatch 2': 'tactical_shooter',
     'Valorant': 'tactical_shooter',
   };
-
+  
   const groupRecommendations = {
     battle_royale: 'You love the thrill of fast-paced action and outsmarting everyone to be the last one standing. Battle royale games are totally your vibe!',
     fighting: 'You’re all about epic showdowns and pulling off awesome combos. Fighting games are where you shine!',
@@ -165,13 +167,15 @@ export default function QuizQuestions({ params }) {
     return topGames.map(g => t(currentLocale, `gameRecommendations.${g.game}`)).join(' ');
   };
 
-  const improvedRecommendation = getGroupRecommendation();
-
+ 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-purple-900">
       <div className="flex justify-center items-center min-h-screen p-4">
         <div className="w-full max-w-2xl">
           <div className="bg-gray-800/70 backdrop-blur-sm rounded-2xl shadow-2xl p-8 border border-gray-600/50">
+
+            {/* Quiz step: show current question and options */}
+
             {currentStep === 'quiz' && (
               <div className="space-y-6">
                 <div className={isRTL ? "text-right" : "text-left"}>
@@ -238,6 +242,7 @@ export default function QuizQuestions({ params }) {
                   {t(currentLocale, 'results.title')}
                 </h1>
 
+
                 <div className="bg-gray-700/50 rounded-xl p-6 border border-gray-600/50 mb-4">
                   <h3 className="text-xl font-semibold text-white mb-3 flex items-center justify-center gap-2">
                     <span>🥇</span>
@@ -268,7 +273,7 @@ export default function QuizQuestions({ params }) {
                     {t(currentLocale, 'pages.quiz.retakeTest')}
                   </button>
                   <Link
-                    href={`/${currentLocale}/about-us`}
+                    href={`/${locale}#who-we-are-section`}
                     className="bg-gray-700 text-white font-bold py-4 px-8 rounded-xl shadow-lg hover:bg-gray-600 hover:shadow-xl hover:scale-105 transition-all text-center no-underline inline-block text-lg"
                   >
                     {t(currentLocale, 'pages.quiz.learnMore')}
