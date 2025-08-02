@@ -7,6 +7,50 @@ export default async function Team({ params }) {
   const currentLocale = locale || "en";
 
   // Real team members data - Organized by categories
+
+  const academicSupervisors = [
+    {
+      nameEn: "Dr. Dhafer Bin Mohammed Alqahtani",
+      nameAr: "د. ظافر بن محمد القحطاني",
+      positionEn: "General Supervisor of the Initiative",
+      positionAr: "المشرف العام للمبادرة",
+      linkedinUrl: null,
+      avatarUrl: null,
+    },
+    {
+      nameEn: "Dr. Moataz Bin Dhayeb Alotaibi",
+      nameAr: "د. معتز بن ذايب العتيبي",
+      positionEn: "Academic Supervisor of the Initiative",
+      positionAr: "المشرف الأكاديمي للمبادرة",
+      linkedinUrl: null,
+      avatarUrl: null,
+    },
+    {
+      nameEn: "Dr. Saad Rabhān",
+      nameAr: "د. سعد ربحان",
+      positionEn: "Administrative Coordinator",
+      positionAr: "منسق إداري",
+      linkedinUrl: null,
+      avatarUrl: null,
+    },
+    {
+      nameEn: "Abdullah Almakhlafi",
+      nameAr: "أ. عبدالله المخلفي",
+      positionEn: "Administrative Coordinator",
+      positionAr: "منسق إداري",
+      linkedinUrl: null,
+      avatarUrl: null,
+    },
+    {
+      nameEn: "Fouad Alzahrani",
+      nameAr: "أ. فؤاد الزهراني",
+      positionEn: "Events Coordinator",
+      positionAr: "منسق الفعاليات",
+      linkedinUrl: null,
+      avatarUrl: null,
+    },
+  ];
+  
   const leadershipTeam = [
     // Founders
     {
@@ -38,7 +82,7 @@ export default async function Team({ params }) {
     {
       nameEn: "Raseel Hashim",
       nameAr: "رسيل هاشم",
-      positionEn: "Manager of HR",
+      positionEn: "HR Manager",
       positionAr: "رئيسة الموارد البشرية",
       linkedinUrl:
         "https://www.linkedin.com/in/%D8%B1%D8%B3%D9%8A%D9%84-%D9%87%D8%A7%D8%B4%D9%85%F0%9F%87%B8%F0%9F%87%A6-88300a197",
@@ -52,6 +96,15 @@ export default async function Team({ params }) {
       linkedinUrl: "https://www.linkedin.com/in/waad-al-dosary-107621213",
       avatarUrl: null, // No image available
     },
+
+    {
+        nameEn: "Saif alotaibie",
+        nameAr: "سيف العتيبي",
+        positionEn: "IT Manager",
+        positionAr: "رئيس تقنية المعلومات",
+        linkedinUrl: "https://www.linkedin.com/in/saif-alotaibie-2169a72bb",
+        avatarUrl: "/team/saif-alotaibie.jpg",
+      },
     {
       nameEn: "Reema Alshehri",
       nameAr: "ريما الشهري",
@@ -134,15 +187,7 @@ export default async function Team({ params }) {
   ];
 
   const technicalTeam = [
-    // IT Leadership
-    {
-      nameEn: "Saif alotaibie",
-      nameAr: "سيف العتيبي",
-      positionEn: "IT Leader",
-      positionAr: "قائد تقنية المعلومات",
-      linkedinUrl: "https://www.linkedin.com/in/saif-alotaibie-2169a72bb",
-      avatarUrl: "/team/saif-alotaibie.jpg",
-    },
+
     // Web Developers
     {
       nameEn: "Abdullah Bin Ammar",
@@ -340,34 +385,50 @@ export default async function Team({ params }) {
 
       {/* Team Members Section */}
       <section className="mb-20">
-        {renderTeamSection(
-          "Leadership & Management",
-          "القيادة والإدارة",
-          leadershipTeam
-        )}
 
-        {renderTeamSection("Department Leads", "قادة الأقسام", departmentLeads)}
+      {renderTeamSection(
+    "Academic Supervisors",
+    "المشرفين الأكاديميين",
+    academicSupervisors
+  )}
 
-        {renderTeamSection(
-          "Public Relations",
-          "العلاقات العامة",
-          publicRelationsTeam
-        )}
+  {renderTeamSection(
+    "Leadership & Management",
+    "القيادة والإدارة",
+    leadershipTeam
+  )}
 
-        {renderTeamSection(
-          "Media & Creative",
-          "الإعلام والإبداع",
-          mediaContentTeam
-        )}
+  {renderTeamSection(
+    "Department Leads",
+    "قادة الأقسام",
+    departmentLeads
+  )}
 
-        {renderTeamSection(
-          "Operations & Support",
-          "العمليات والدعم",
-          operationsSupport
-        )}
+  {renderTeamSection(
+    "Public Relations",
+    "العلاقات العامة",
+    publicRelationsTeam
+  )}
 
-        {renderTeamSection("Technical Team", "الفريق التقني", technicalTeam)}
-      </section>
-    </div>
+  {renderTeamSection(
+    "Media & Creative",
+    "الإعلام والإبداع",
+    mediaContentTeam
+  )}
+
+  {renderTeamSection(
+    "Operations & Support",
+    "العمليات والدعم",
+    operationsSupport
+  )}
+
+  {renderTeamSection(
+    "Technical Team",
+    "الفريق التقني",
+    technicalTeam
+  )}
+
+</section>
+</div>
   );
 }
