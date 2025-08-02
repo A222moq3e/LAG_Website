@@ -11,20 +11,16 @@ function interpolate(str, variables = {}) {
 }
 
 export default function QuizQuestions({ params }) {
-  // Get the current locale from params 
   const { locale } = React.use(params) || {};
   const currentLocale = locale || 'ar';
   const isRTL = currentLocale === 'ar';
 
-  // State for quiz progress and answers
   const [currentStep, setCurrentStep] = useState('quiz');
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState({});
 
-  // Get the current question object
   const currentQuestion = quizQuestions[currentQuestionIndex];
 
-  // Handle answer selection and move to next question or results
   const selectAnswer = (questionId, optionId) => {
     setAnswers(prev => ({ ...prev, [questionId]: optionId }));
     setTimeout(() => {
@@ -36,14 +32,12 @@ export default function QuizQuestions({ params }) {
     }, 300);
   };
 
-  // Reset the quiz to the beginning
   const retakeQuiz = () => {
     setCurrentStep('quiz');
     setCurrentQuestionIndex(0);
     setAnswers({});
   };
 
-  // Mapping: each game to a unique set of 5 answers
   const exclusiveAnswerMappings = [
     { answers: ['Q1A', 'Q3B', 'Q6A', 'Q8A', 'Q10A'], games: ['Apex Legends', 'Valorant'] },
     { answers: ['Q1A', 'Q3B', 'Q4A', 'Q6A', 'Q8A'], games: ['COD/Warzone'] },
@@ -66,18 +60,16 @@ export default function QuizQuestions({ params }) {
     { answers: ['Q1A', 'Q7A', 'Q4B', 'Q6A', 'Q10A'], games: ['PUBG Battlegrounds'] },
   ];
 
-  // Convert user's answers to IDs like Q1A, Q2B, and so on.
   const userAnswerIds = quizQuestions.map(q => {
     const selected = answers[q.id];
     if (!selected) return null;
     const [qStr, optIdxStr] = selected.split('_');
     const qNum = q.id;
     const optIdx = parseInt(optIdxStr, 10);
-    const optLetter = String.fromCharCode(64 + optIdx); // 1->A, 2->B, and so on.
+    const optLetter = String.fromCharCode(64 + optIdx);
     return `Q${qNum}${optLetter}`;
   }).filter(Boolean);
 
-  // Helper to compare two arrays regardless of order
   function arraysEqual(a, b) {
     if (a.length !== b.length) return false;
     const sortedA = [...a].sort();
@@ -85,7 +77,6 @@ export default function QuizQuestions({ params }) {
     return sortedA.every((val, idx) => val === sortedB[idx]);
   }
 
-  // Find exact matches (all 5 answers match)
   let strictMatchGames = [];
   for (const mapping of exclusiveAnswerMappings) {
     if (arraysEqual(userAnswerIds, mapping.answers)) {
@@ -94,7 +85,6 @@ export default function QuizQuestions({ params }) {
   }
   strictMatchGames = [...new Set(strictMatchGames)];
 
-  // If no exact match, find close matches (4/5 answers match)
   let closeMatchGames = [];
   if (strictMatchGames.length === 0) {
     for (const mapping of exclusiveAnswerMappings) {
@@ -106,14 +96,15 @@ export default function QuizQuestions({ params }) {
     closeMatchGames = [...new Set(closeMatchGames)];
   }
 
-  // Use strict match if found, otherwise close match, otherwise fallback
+  // Fallback recommendations if no strict or close match
+  const fallbackGames = ['Valorant', 'League of Legends', 'CS2', 'Overwatch 2', 'Rocket League'];
+
   const topGames = strictMatchGames.length > 0
     ? strictMatchGames.map(game => ({ game }))
     : closeMatchGames.length > 0
       ? closeMatchGames.map(game => ({ game }))
-      : [];
+      : fallbackGames.map(game => ({ game }));
 
-  // Game group mapping for recommendation text
   const gameGroupMap = {
     'Apex Legends': 'battle_royale',
     'COD/Warzone': 'battle_royale',
@@ -134,9 +125,9 @@ export default function QuizQuestions({ params }) {
     'R6 Siege': 'tactical_shooter',
     'CS2': 'tactical_shooter',
     'Overwatch 2': 'tactical_shooter',
+    'Valorant': 'tactical_shooter',
   };
 
-  // Friendly, modern group recommendation paragraphs
   const groupRecommendations = {
     battle_royale: 'You love the thrill of fast-paced action and outsmarting everyone to be the last one standing. Battle royale games are totally your vibe!',
     fighting: 'You’re all about epic showdowns and pulling off awesome combos. Fighting games are where you shine!',
@@ -149,7 +140,6 @@ export default function QuizQuestions({ params }) {
     tactical_shooter: 'You’re quick, precise, and love working with a team. Tactical shooters are right up your alley!',
   };
 
-  // Helper to bold top games in the recommendation text
   const boldGamesInText = (text, games) => {
     if (!text) return text;
     let result = text;
@@ -161,7 +151,6 @@ export default function QuizQuestions({ params }) {
     return result;
   };
 
-  // Build a friendly recommendation string for the top game group
   const getGroupRecommendation = () => {
     if (!topGames.length) return '';
     const topGame = topGames[0].game;
@@ -171,10 +160,8 @@ export default function QuizQuestions({ params }) {
     return `${baseText} Your top recommended games: ${gamesList}.`;
   };
 
-  // Get the recommendation text for each top game from the translation file
   const getGameRecommendationText = () => {
     if (!topGames.length) return '';
-    // If multiple games, join their recommendations
     return topGames.map(g => t(currentLocale, `gameRecommendations.${g.game}`)).join(' ');
   };
 
@@ -185,7 +172,6 @@ export default function QuizQuestions({ params }) {
       <div className="flex justify-center items-center min-h-screen p-4">
         <div className="w-full max-w-2xl">
           <div className="bg-gray-800/70 backdrop-blur-sm rounded-2xl shadow-2xl p-8 border border-gray-600/50">
-            {/* Quiz step: showing current question and options */}
             {currentStep === 'quiz' && (
               <div className="space-y-6">
                 <div className={isRTL ? "text-right" : "text-left"}>
@@ -242,7 +228,6 @@ export default function QuizQuestions({ params }) {
               </div>
             )}
 
-            {/* Results step: showing recommendations and top games */}
             {currentStep === 'results' && (
               <div className="text-center space-y-8">
                 <div className="flex justify-center mb-8">
@@ -253,36 +238,26 @@ export default function QuizQuestions({ params }) {
                   {t(currentLocale, 'results.title')}
                 </h1>
 
-                {/* Showing top games */}
                 <div className="bg-gray-700/50 rounded-xl p-6 border border-gray-600/50 mb-4">
                   <h3 className="text-xl font-semibold text-white mb-3 flex items-center justify-center gap-2">
                     <span>🥇</span>
                     {t(currentLocale, 'results.suggestedActivities')}
                   </h3>
                   <div className="space-y-2">
-                    {topGames.length === 0 ? (
-                      <div className="text-gray-400 text-lg font-normal flex items-center justify-center">{t(currentLocale, 'gameRecommendations.noMatch')}</div>
-                    ) : (
-                      topGames.map(({ game }) => (
-                        <div key={game} className="text-cyan-400 text-lg font-bold flex gap-2 items-center justify-center">
-                          <span>{t(currentLocale, `gameNames.${game}`)}</span>
-                        </div>
-                      ))
-                    )}
+                    {topGames.map(({ game }) => (
+                      <div key={game} className="text-cyan-400 text-lg font-bold flex gap-2 items-center justify-center">
+                        <span>{t(currentLocale, `gameNames.${game}`)}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
 
-                {/* Showing game recommendation */}
                 <div className="bg-gray-700/50 rounded-xl p-6 border border-gray-600/50">
                   <h3 className="text-xl font-semibold text-white mb-3 flex items-center justify-center gap-2">
                     <span>🎮</span>
                     {t(currentLocale, 'gameRecommendations.title')}
                   </h3>
-                  {topGames.length === 0 ? (
-                    <p className={`text-gray-400 ${isRTL ? 'text-right' : 'text-left'}`}>{t(currentLocale, 'gameRecommendations.noMatch')}</p>
-                  ) : (
-                    <p className={`text-gray-300 ${isRTL ? 'text-right' : 'text-left'}`} dangerouslySetInnerHTML={{ __html: boldGamesInText(getGameRecommendationText(), topGames.map(g => ({ game: t(currentLocale, `gameNames.${g.game}`) }))) }} />
-                  )}
+                  <p className={`text-gray-300 ${isRTL ? 'text-right' : 'text-left'}`} dangerouslySetInnerHTML={{ __html: boldGamesInText(getGameRecommendationText(), topGames.map(g => ({ game: t(currentLocale, `gameNames.${g.game}`) }))) }} />
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -301,10 +276,9 @@ export default function QuizQuestions({ params }) {
                 </div>
               </div>
             )}
-
           </div>
         </div>
       </div>
     </div>
   );
-} 
+}

@@ -312,7 +312,7 @@ export default async function Team({ params }) {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 justify-items-center">
         {teamArray.map((member, index) => (
           <TeamMemberCard
-            key={`${title}-${index}`}
+          key={`${title}-${index}`}
             name={currentLocale === "ar" ? member.nameAr : member.nameEn}
             position={
               currentLocale === "ar" ? member.positionAr : member.positionEn
