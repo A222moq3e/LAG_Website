@@ -7,6 +7,57 @@ export default async function Team({ params }) {
   const currentLocale = locale || "en";
 
   // Real team members data - Organized by categories
+
+  const academicSupervision = [
+    {
+      nameEn: "Prof. Dhafer bin Mohammed Alqahtani",
+      nameAr: "أ.د. ظافر بن محمد القحطاني",
+      positionEn: "General Supervisor of the Initiative",
+      positionAr: "المشرف العام للمبادرة",
+      linkedinUrl: null,
+      avatarUrl: null,
+    },
+    {
+      nameEn: "Dr. Moataz bin Dhaib Alotaibi",
+      nameAr: "د. معتز بن ذايب العتيبي",
+      positionEn: "Academic Supervisor of the Initiative",
+      positionAr: "المشرف الأكاديمي للمبادرة",
+      linkedinUrl: null,
+      avatarUrl: null,
+    },
+    {
+      nameEn: "Dr. Saad Rabhan",
+      nameAr: "د. سعد ربحان",
+      positionEn: "Administrative Coordinator",
+      positionAr: "منسق إداري",
+      linkedinUrl: null,
+      avatarUrl: null,
+    },
+    {
+      nameEn: "Abdullah Almakhlafi",
+      nameAr: "أ. عبدالله المخلفي",
+      positionEn: "Administrative Coordinator",
+      positionAr: "منسق إداري",
+      linkedinUrl: null,
+      avatarUrl: null,
+    },
+    {
+      nameEn: "Fouad Alzahrani",
+      nameAr: "أ. فؤاد الزهراني",
+      positionEn: "Events Coordinator",
+      positionAr: "منسق الفعاليات",
+      linkedinUrl: null,
+      avatarUrl: null,
+    },
+  ];
+  
+  // Inside your JSX (make sure this is the first section to render)
+  {renderTeamSection(
+    "Academic Supervision",
+    "الإشراف الأكاديمي",
+    academicSupervision
+  )}
+  
   const leadershipTeam = [
     // Founders
     {
