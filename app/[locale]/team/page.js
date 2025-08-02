@@ -1,66 +1,10 @@
-import TeamMemberCard from "../components/TeamMemberCard"
+import React from "react";
+import { t } from "../../lib/i18n";
+import TeamMemberCard from "../../components/TeamMemberCard";
 
-// Mock translation function since lib/i18n is not available
-const t = (locale, key) => {
-  const translations = {
-    en: {
-      "pages.team.title": "Our Team",
-      "pages.team.description": "Meet the amazing people behind our initiative",
-    },
-    ar: {
-      "pages.team.title": "فريقنا",
-      "pages.team.description": "تعرف على الأشخاص الرائعين وراء مبادرتنا",
-    },
-  }
-  return translations[locale]?.[key] || key
-}
-
-export default function Team() {
-  const currentLocale = "en" // Default to English for preview
-
-  // Academic Supervision Team - Added as requested
-  const academicSupervision = [
-    {
-      nameEn: "Prof. Dr. Dhafer Mohammed Al-Qahtani",
-      nameAr: "د. ظافر بن محمد القحطاني",
-      positionEn: "General Supervisor of the Initiative",
-      positionAr: "المشرف العام للمبادرة",
-      linkedinUrl: null, // No LinkedIn available
-      avatarUrl: null, // No image available
-    },
-    {
-      nameEn: "Dr. Moataz Thayeb Al-Otaibi",
-      nameAr: "د. معتز بن ذايب العتيبي",
-      positionEn: "Academic Supervisor of the Initiative",
-      positionAr: "المشرف الأكاديمي للمبادرة",
-      linkedinUrl: null, // No LinkedIn available
-      avatarUrl: null, // No image available
-    },
-    {
-      nameEn: "Dr. Saad Rabhan",
-      nameAr: "د. سعد ربحان",
-      positionEn: "Administrative Coordinator",
-      positionAr: "منسق إداري",
-      linkedinUrl: null, // No LinkedIn available
-      avatarUrl: null, // No image available
-    },
-    {
-      nameEn: "Abdullah Al-Mukhalafi",
-      nameAr: "أ. عبدالله المخلفي",
-      positionEn: "Administrative Coordinator",
-      positionAr: "منسق إداري",
-      linkedinUrl: null, // No LinkedIn available
-      avatarUrl: null, // No image available
-    },
-    {
-      nameEn: "Fouad Al-Zahrani",
-      nameAr: "أ. فؤاد الزهراني",
-      positionEn: "Events Coordinator",
-      positionAr: "منسق الفعاليات",
-      linkedinUrl: null, // No LinkedIn available
-      avatarUrl: null, // No image available
-    },
-  ]
+export default async function Team({ params }) {
+  const { locale } = await params;
+  const currentLocale = locale || "en";
 
   // Real team members data - Organized by categories
   const leadershipTeam = [
@@ -71,7 +15,7 @@ export default function Team() {
       positionEn: "Founder of Laq",
       positionAr: "مؤسسة لاق",
       linkedinUrl: "https://www.linkedin.com/in/rahaf-almutairi-28b8a1221",
-      avatarUrl: "/placeholder.svg?height=200&width=200",
+      avatarUrl: "/team/rahaf-almutairi.jpg",
     },
     {
       nameEn: "Faisal Alfallaj",
@@ -79,7 +23,7 @@ export default function Team() {
       positionEn: "Co-Founder",
       positionAr: "الشريك المؤسس",
       linkedinUrl: "https://www.linkedin.com/in/faisal-alfallaj-17a9ba306",
-      avatarUrl: "/placeholder.svg?height=200&width=200",
+      avatarUrl: "/team/faisal-alfallaj.jpeg",
     },
     // Head of Operations
     {
@@ -88,7 +32,7 @@ export default function Team() {
       positionEn: "Head of Operations",
       positionAr: "رئيس العمليات",
       linkedinUrl: "https://www.linkedin.com/in/abdullah-alqhtani-0a964433b",
-      avatarUrl: "/placeholder.svg?height=200&width=200",
+      avatarUrl: "/team/abdullah-alqahtani.jpeg",
     },
     // Managers
     {
@@ -96,16 +40,17 @@ export default function Team() {
       nameAr: "رسيل هاشم",
       positionEn: "Manager of HR",
       positionAr: "رئيسة الموارد البشرية",
-      linkedinUrl: "https://www.linkedin.com/in/raseel-hashim",
-      avatarUrl: "/placeholder.svg?height=200&width=200",
+      linkedinUrl:
+        "https://www.linkedin.com/in/%D8%B1%D8%B3%D9%8A%D9%84-%D9%87%D8%A7%D8%B4%D9%85%F0%9F%87%B8%F0%9F%87%A6-88300a197",
+      avatarUrl: "/team/raseel-hashim.jpg",
     },
     {
       nameEn: "Waad Aldosari",
       nameAr: "وعد الدوسري",
       positionEn: "Media manager",
-      positionAr: "رئيسة قسم الإعلام",
+      positionAr: "رئيسة قسم الإعلام ",
       linkedinUrl: "https://www.linkedin.com/in/waad-al-dosary-107621213",
-      avatarUrl: "/placeholder.svg?height=200&width=200",
+      avatarUrl: null, // No image available
     },
     {
       nameEn: "Reema Alshehri",
@@ -113,7 +58,7 @@ export default function Team() {
       positionEn: "PR Manager",
       positionAr: "رئيسة العلاقات العامة",
       linkedinUrl: "https://www.linkedin.com/in/reema-alshehri-6b3331290",
-      avatarUrl: "/placeholder.svg?height=200&width=200",
+      avatarUrl: "/team/reema-alshehri.jpeg",
     },
     // Consultant
     {
@@ -122,9 +67,9 @@ export default function Team() {
       positionEn: "Consultant",
       positionAr: "مستشار",
       linkedinUrl: "https://www.linkedin.com/in/khalid-almunazzil-764114193",
-      avatarUrl: "/placeholder.svg?height=200&width=200",
+      avatarUrl: "/team/khalid.JPG",
     },
-  ]
+  ];
 
   const departmentLeads = [
     // Leads
@@ -134,7 +79,7 @@ export default function Team() {
       positionEn: "Design Lead",
       positionAr: "قائدة التصميم",
       linkedinUrl: "https://www.linkedin.com/in/dalal-a-b59599209",
-      avatarUrl: "/placeholder.svg?height=200&width=200",
+      avatarUrl: null, // No image available
     },
     {
       nameEn: "Raghad Alhafi",
@@ -142,7 +87,7 @@ export default function Team() {
       positionEn: "Booth Lead",
       positionAr: "قائدة الجناح",
       linkedinUrl: "https://www.linkedin.com/in/raghad-alhafi-56681b311/",
-      avatarUrl: "/placeholder.svg?height=200&width=200",
+      avatarUrl: null, // No image available
     },
     {
       nameEn: "Amjad Al-Dosari",
@@ -150,7 +95,7 @@ export default function Team() {
       positionEn: "Booth Lead",
       positionAr: "قائد الجناح",
       linkedinUrl: "https://www.linkedin.com/in/amjad-aldosari-1978a8320",
-      avatarUrl: "/placeholder.svg?height=200&width=200",
+      avatarUrl: null, // No image available
     },
     // Leaders
     {
@@ -159,7 +104,7 @@ export default function Team() {
       positionEn: "Activities Leader",
       positionAr: "قائدة الأنشطة",
       linkedinUrl: "https://www.linkedin.com/in/faten-alanazi-10a74b28b",
-      avatarUrl: "/placeholder.svg?height=200&width=200",
+      avatarUrl: null, // No image available
     },
     {
       nameEn: "Haya Alanzi",
@@ -167,15 +112,16 @@ export default function Team() {
       positionEn: "Activities Leader",
       positionAr: "قائدة الأنشطة",
       linkedinUrl: "https://www.linkedin.com/in/haya-alsakran-3b8789374",
-      avatarUrl: "/placeholder.svg?height=200&width=200",
+      avatarUrl: "/team/haya-alanzi.jpg",
     },
     {
       nameEn: "Yaroub Albahli",
       nameAr: "يعرب الباهلي",
       positionEn: "Photography Leader",
       positionAr: "قائد التصوير",
-      linkedinUrl: "https://www.linkedin.com/in/yaroub-albahli",
-      avatarUrl: "/placeholder.svg?height=200&width=200",
+      linkedinUrl:
+        "https://www.linkedin.com/in/%D9%8A%D9%80%D8%B9%D9%80%D8%B1%D8%A8-%D8%A7%D9%84%D8%A8%D8%A7%D9%87%D9%84%D9%8A-24b357287",
+      avatarUrl: "/team/yaroub-albahli.png",
     },
     {
       nameEn: "Saud Alluhaym",
@@ -183,9 +129,9 @@ export default function Team() {
       positionEn: "Design Leader",
       positionAr: "قائد التصميم",
       linkedinUrl: "https://www.linkedin.com/in/saud-alluhaym-308928206",
-      avatarUrl: "/placeholder.svg?height=200&width=200",
+      avatarUrl: "/team/saud-alluhaym.jpeg",
     },
-  ]
+  ];
 
   const technicalTeam = [
     // IT Leadership
@@ -195,7 +141,7 @@ export default function Team() {
       positionEn: "IT Leader",
       positionAr: "قائد تقنية المعلومات",
       linkedinUrl: "https://www.linkedin.com/in/saif-alotaibie-2169a72bb",
-      avatarUrl: "/placeholder.svg?height=200&width=200",
+      avatarUrl: "/team/saif-alotaibie.jpg",
     },
     // Web Developers
     {
@@ -204,7 +150,7 @@ export default function Team() {
       positionEn: "Web Developer",
       positionAr: "مطور ويب",
       linkedinUrl: "https://www.linkedin.com/in/a222web",
-      avatarUrl: "/placeholder.svg?height=200&width=200",
+      avatarUrl: null, // No image available
     },
     {
       nameEn: "Faisal Alkhrayef",
@@ -212,7 +158,7 @@ export default function Team() {
       positionEn: "Web Developer",
       positionAr: "مطور ويب",
       linkedinUrl: "https://www.linkedin.com/in/fkhrayef",
-      avatarUrl: "/placeholder.svg?height=200&width=200",
+      avatarUrl: "/team/faisal-alkhrayef.jpg",
     },
     {
       nameEn: "Abdulaziz Bin Askar",
@@ -220,7 +166,7 @@ export default function Team() {
       positionEn: "Web Developer",
       positionAr: "مطور ويب",
       linkedinUrl: "https://www.linkedin.com/in/af-askar",
-      avatarUrl: "/placeholder.svg?height=200&width=200",
+      avatarUrl: null, // No image available
     },
     {
       nameEn: "Saleh Alobailan",
@@ -228,7 +174,7 @@ export default function Team() {
       positionEn: "Web Developer",
       positionAr: "مطور ويب",
       linkedinUrl: "https://www.linkedin.com/in/salehalobaylan",
-      avatarUrl: "/placeholder.svg?height=200&width=200",
+      avatarUrl: "/team/saleh-alobailan.jpg",
     },
     {
       nameEn: "Yaser Alshareef",
@@ -236,9 +182,9 @@ export default function Team() {
       positionEn: "Web Developer",
       positionAr: "مطور ويب",
       linkedinUrl: "https://www.linkedin.com/in/yaser-alshareef-182161375",
-      avatarUrl: "/placeholder.svg?height=200&width=200",
+      avatarUrl: null, // No image available
     },
-  ]
+  ];
 
   const mediaContentTeam = [
     // Media Members
@@ -248,7 +194,7 @@ export default function Team() {
       positionEn: "Media Member",
       positionAr: "عضو إعلام",
       linkedinUrl: "https://www.linkedin.com/in/alanoud-alhamad-8733a329b",
-      avatarUrl: "/placeholder.svg?height=200&width=200",
+      avatarUrl: null, // No image available
     },
     {
       nameEn: "Mutlaq Alosaimi",
@@ -256,7 +202,7 @@ export default function Team() {
       positionEn: "Media Member",
       positionAr: "عضو إعلام",
       linkedinUrl: "https://www.linkedin.com/in/mutlaq-alosaimi-5ab671224",
-      avatarUrl: "/placeholder.svg?height=200&width=200",
+      avatarUrl: null, // No image available
     },
     {
       nameEn: "Maha Alarifi",
@@ -264,7 +210,7 @@ export default function Team() {
       positionEn: "Media Member",
       positionAr: "عضو إعلام",
       linkedinUrl: "https://www.linkedin.com/in/maha-a-a45786312",
-      avatarUrl: "/placeholder.svg?height=200&width=200",
+      avatarUrl: null, // No image available
     },
     // Photography & Editing Members
     {
@@ -273,7 +219,7 @@ export default function Team() {
       positionEn: "Photography & Editing Member",
       positionAr: "عضو تصوير ومونتاج",
       linkedinUrl: null, // No LinkedIn available
-      avatarUrl: "/placeholder.svg?height=200&width=200",
+      avatarUrl: null, // No image available
     },
     {
       nameEn: "Raghad Aloubili",
@@ -281,7 +227,7 @@ export default function Team() {
       positionEn: "Photography & Editing Member",
       positionAr: "عضو تصوير ومونتاج",
       linkedinUrl: "https://www.linkedin.com/in/raghad-aloubili-105761306",
-      avatarUrl: "/placeholder.svg?height=200&width=200",
+      avatarUrl: "/team/raghad-aloubili.jpeg",
     },
     {
       nameEn: "Jawaher Alhaqbani",
@@ -289,7 +235,7 @@ export default function Team() {
       positionEn: "Photography & Editing Member",
       positionAr: "عضو تصوير ومونتاج",
       linkedinUrl: "https://www.linkedin.com/in/jawaher-alhaqbani-915560323/",
-      avatarUrl: "/placeholder.svg?height=200&width=200",
+      avatarUrl: "/team/jawaher-alhaqbani.jpeg",
     },
     {
       nameEn: "Nasseba Abdulmohsen",
@@ -297,9 +243,9 @@ export default function Team() {
       positionEn: "Photography & Editing Member",
       positionAr: "عضو تصوير ومونتاج",
       linkedinUrl: "https://www.linkedin.com/in/nasseba-almunis-0094962b6",
-      avatarUrl: "/placeholder.svg?height=200&width=200",
+      avatarUrl: null, // No image available
     },
-  ]
+  ];
 
   const publicRelationsTeam = [
     // PR Specialist
@@ -309,7 +255,7 @@ export default function Team() {
       positionEn: "ECO - PR",
       positionAr: "مسؤول العلاقات العامة (ECO)",
       linkedinUrl: "https://www.linkedin.com/in/azam-alharbi-406862288",
-      avatarUrl: "/placeholder.svg?height=200&width=200",
+      avatarUrl: "/team/azzam-alharbi.jpeg",
     },
     // PR Members
     {
@@ -318,7 +264,7 @@ export default function Team() {
       positionEn: "PR Member",
       positionAr: "عضو علاقات عامة",
       linkedinUrl: "https://www.linkedin.com/in/deemah-alaklaby-a10b89308",
-      avatarUrl: "/placeholder.svg?height=200&width=200",
+      avatarUrl: null, // No image available
     },
     {
       nameEn: "Anas Shahrani",
@@ -326,9 +272,9 @@ export default function Team() {
       positionEn: "PR Member",
       positionAr: "عضو علاقات عامة",
       linkedinUrl: null, // No LinkedIn available
-      avatarUrl: "/placeholder.svg?height=200&width=200",
+      avatarUrl: null, // No image available
     },
-  ]
+  ];
 
   const operationsSupport = [
     // Operations Members
@@ -338,7 +284,7 @@ export default function Team() {
       positionEn: "Operations Member",
       positionAr: "عضو عمليات",
       linkedinUrl: null, // No LinkedIn available
-      avatarUrl: "/placeholder.svg?height=200&width=200",
+      avatarUrl: null, // No image available
     },
     {
       nameEn: "Assaf Alotaibi",
@@ -346,7 +292,7 @@ export default function Team() {
       positionEn: "Operations Member",
       positionAr: "عضو عمليات",
       linkedinUrl: "https://www.linkedin.com/in/assaf-alotaibi-20255b377/",
-      avatarUrl: "/placeholder.svg?height=200&width=200",
+      avatarUrl: "/team/assaf-alotaibi.jpg",
     },
     {
       nameEn: "Razan Alfawzan",
@@ -354,21 +300,23 @@ export default function Team() {
       positionEn: "Operations Member",
       positionAr: "عضو عمليات",
       linkedinUrl: null, // No LinkedIn available (X:RazanAlfawzan)
-      avatarUrl: "/placeholder.svg?height=200&width=200",
+      avatarUrl: null, // No image available
     },
-  ]
+  ];
 
   const renderTeamSection = (title, titleAr, teamArray) => (
     <div className="mb-16">
-      <h2 className="text-3xl font-bold text-center mb-8 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+      <h2 className="text-3xl font-bold text-center mb-8 main-gradient-text">
         {currentLocale === "ar" ? titleAr : title}
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 justify-items-center">
         {teamArray.map((member, index) => (
           <TeamMemberCard
-            key={`${title}-${index}`}
+          key={`${title}-${index}`}
             name={currentLocale === "ar" ? member.nameAr : member.nameEn}
-            position={currentLocale === "ar" ? member.positionAr : member.positionEn}
+            position={
+              currentLocale === "ar" ? member.positionAr : member.positionEn
+            }
             avatarUrl={member.avatarUrl}
             linkedinUrl={member.linkedinUrl}
             locale={currentLocale}
@@ -376,35 +324,50 @@ export default function Team() {
         ))}
       </div>
     </div>
-  )
+  );
 
   return (
     <div className="container mx-auto px-4 py-20">
       {/* Header Section */}
       <div className="text-center mb-16">
-        <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent leading-relaxed py-2">
+        <h1 className="text-5xl font-bold mb-6 main-gradient-text leading-relaxed py-2">
           {t(currentLocale, "pages.team.title")}
         </h1>
-        <p className="text-xl text-gray-600 max-w-2xl mx-auto">{t(currentLocale, "pages.team.description")}</p>
+        <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          {t(currentLocale, "pages.team.description")}
+        </p>
       </div>
 
       {/* Team Members Section */}
       <section className="mb-20">
-        {/* Academic Supervision - Added as first section */}
-        {renderTeamSection("Academic Supervision", "الإشراف الأكاديمي", academicSupervision)}
-
-        {renderTeamSection("Leadership & Management", "القيادة والإدارة", leadershipTeam)}
+        {renderTeamSection(
+          "Leadership & Management",
+          "القيادة والإدارة",
+          leadershipTeam
+        )}
 
         {renderTeamSection("Department Leads", "قادة الأقسام", departmentLeads)}
 
-        {renderTeamSection("Public Relations", "العلاقات العامة", publicRelationsTeam)}
+        {renderTeamSection(
+          "Public Relations",
+          "العلاقات العامة",
+          publicRelationsTeam
+        )}
 
-        {renderTeamSection("Media & Creative", "الإعلام والإبداع", mediaContentTeam)}
+        {renderTeamSection(
+          "Media & Creative",
+          "الإعلام والإبداع",
+          mediaContentTeam
+        )}
 
-        {renderTeamSection("Operations & Support", "العمليات والدعم", operationsSupport)}
+        {renderTeamSection(
+          "Operations & Support",
+          "العمليات والدعم",
+          operationsSupport
+        )}
 
         {renderTeamSection("Technical Team", "الفريق التقني", technicalTeam)}
       </section>
     </div>
-  )
+  );
 }
