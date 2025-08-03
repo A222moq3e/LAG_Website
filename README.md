@@ -15,13 +15,12 @@ A modern, multilingual gaming psychology platform built with Next.js and cutting
 ![Lucide React](https://img.shields.io/badge/Lucide-Icons-F56565?style=for-the-badge&logo=lucide&logoColor=white)
 
 
-### HTTP Client & APIs
-![Axios](https://img.shields.io/badge/Axios-HTTP_Client-5A29E4?style=for-the-badge&logo=axios&logoColor=white)
+APIs & Scheduling
+![Calendly](https://img.shields.io/badge/Calendly-Scheduling-006BFF?style=for-the-badge&logo=calendly&logoColor=white)
 ![Notion API](https://img.shields.io/badge/Notion-API-000000?style=for-the-badge&logo=notion&logoColor=white)
 
-### Analytics & Scheduling
+### Analytics
 ![PostHog](https://img.shields.io/badge/PostHog-Analytics-1d4aff?style=for-the-badge)
-![Calendly](https://img.shields.io/badge/Calendly-Scheduling-006BFF?style=for-the-badge&logo=calendly&logoColor=white)
 
 ### Development Tools
 ![ESLint](https://img.shields.io/badge/ESLint-Linting-4B32C3?style=for-the-badge&logo=eslint&logoColor=white)
