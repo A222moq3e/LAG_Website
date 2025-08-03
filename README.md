@@ -48,7 +48,6 @@ A modern, multilingual gaming psychology platform built with Next.js and cutting
 - 📊 **Analytics** - PostHog integration for user insights
 - 🎯 **Accessibility** - Radix UI components for WCAG compliance
 - ⚡ **Performance** - Next.js 15 with Turbopack for fast development
-- 🔒 **Type Safety** - Zod validation and React Hook Form
 
 
 ## 🚀 Getting Started
