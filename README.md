@@ -5,9 +5,9 @@ A modern, multilingual gaming psychology platform built with Next.js and cutting
 ## 🛠️ Technologies
 
 ### Frontend Framework
-![Next.js](https://img.shields.io/badge/Next.js-15.3.4-black?style=for-the-badge&logo=next.js&logoColor=white)
-![React](https://img.shields.io/badge/React-19.0.0-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![JavaScript](https://img.shields.io/badge/JavaScript-ES2023-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Next.js](https://img.shields.io/badge/Next.js-black?style=for-the-badge&logo=next.js&logoColor=white)
+![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
 ### Styling & UI Components
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.0-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
@@ -16,16 +16,16 @@ A modern, multilingual gaming psychology platform built with Next.js and cutting
 
 
 ### APIs & Scheduling
-![Calendly](https://img.shields.io/badge/Calendly-Scheduling-006BFF?style=for-the-badge&logo=calendly&logoColor=white)
-![Notion API](https://img.shields.io/badge/Notion-API-000000?style=for-the-badge&logo=notion&logoColor=white)
+![Calendly](https://img.shields.io/badge/Calendly-006BFF?style=for-the-badge&logo=calendly&logoColor=white)
+![Notion API](https://img.shields.io/badge/Notion-000000?style=for-the-badge&logo=notion&logoColor=white)
 
 ### Analytics
-![PostHog](https://img.shields.io/badge/PostHog-Analytics-1d4aff?style=for-the-badge)
+![PostHog](https://img.shields.io/badge/PostHog-1d4aff?style=for-the-badge&logo=PostHog)
 
 ### Development Tools
-![ESLint](https://img.shields.io/badge/ESLint-Linting-4B32C3?style=for-the-badge&logo=eslint&logoColor=white)
-![PostCSS](https://img.shields.io/badge/PostCSS-Processing-DD3A0A?style=for-the-badge&logo=postcss&logoColor=white)
-![PNPM](https://img.shields.io/badge/PNPM-Package_Manager-F69220?style=for-the-badge&logo=pnpm&logoColor=white)
+![ESLint](https://img.shields.io/badge/ESLint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white)
+![PostCSS](https://img.shields.io/badge/PostCSS-DD3A0A?style=for-the-badge&logo=postcss&logoColor=white)
+![PNPM](https://img.shields.io/badge/PNPM-F69220?style=for-the-badge&logo=pnpm&logoColor=white)
 
 ### Font
 ![Orbitron](https://img.shields.io/badge/Orbitron-Display_Font-FF6B6B?style=for-the-badge)
