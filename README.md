@@ -14,9 +14,6 @@ A modern, multilingual gaming psychology platform built with Next.js and cutting
 ![Radix UI](https://img.shields.io/badge/shadcnui-Components-161618?style=for-the-badge&logo=shadcnui&logoColor=white)
 ![Lucide React](https://img.shields.io/badge/Lucide-Icons-F56565?style=for-the-badge&logo=lucide&logoColor=white)
 
-### Form Handling & Validation
-![React Hook Form](https://img.shields.io/badge/React_Hook_Form-7.60.0-EC5990?style=for-the-badge&logo=reacthookform&logoColor=white)
-![Zod](https://img.shields.io/badge/Zod-Schema_Validation-3E67B1?style=for-the-badge&logo=zod&logoColor=white)
 
 ### HTTP Client & APIs
 ![Axios](https://img.shields.io/badge/Axios-HTTP_Client-5A29E4?style=for-the-badge&logo=axios&logoColor=white)
@@ -31,8 +28,7 @@ A modern, multilingual gaming psychology platform built with Next.js and cutting
 ![PostCSS](https://img.shields.io/badge/PostCSS-Processing-DD3A0A?style=for-the-badge&logo=postcss&logoColor=white)
 ![PNPM](https://img.shields.io/badge/PNPM-Package_Manager-F69220?style=for-the-badge&logo=pnpm&logoColor=white)
 
-### Fonts & Typography
-![Google Fonts](https://img.shields.io/badge/Google_Fonts-Typography-4285F4?style=for-the-badge&logo=google-fonts&logoColor=white)
+### Font
 ![Orbitron](https://img.shields.io/badge/Orbitron-Display_Font-FF6B6B?style=for-the-badge)
 
 ## 📱 Pages And Features
