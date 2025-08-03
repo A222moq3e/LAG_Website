@@ -280,7 +280,7 @@ export default async function Team({ params }) {
       positionEn: "Photography & Editing Member",
       positionAr: "عضو تصوير ومونتاج",
       linkedinUrl: "https://www.linkedin.com/in/jawaher-alhaqbani-915560323/",
-      avatarUrl: "/team/jawaher-alhaqbani.jpeg",
+      avatarUrl:null ,
     },
     {
       nameEn: "Nasseba Abdulmohsen",
