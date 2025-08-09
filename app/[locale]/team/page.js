@@ -241,6 +241,28 @@ export default async function Team({ params }) {
       linkedinUrl: "https://www.linkedin.com/in/alanoud-alhamad-8733a329b",
       avatarUrl: null, // No image available
     },
+
+    {
+      nameEn: "Maha alarifi",
+      nameAr: "مها العريفي",
+      positionEn: "Media Member",
+      positionAr: "عضو إعلام",
+      linkedinUrl: "http://linkedin.com/in/maha-a-a45786312",
+      avatarUrl: null, // No image available
+    },
+
+
+    {
+      nameEn: "Shahad Salem",
+      nameAr: "شهد الصيعري",
+      positionEn: "Media Member",
+      positionAr: "عضو إعلام",
+      linkedinUrl: "linkedin.com/in/shahad-salem-233b28323",
+      avatarUrl: null, // No image available
+    },
+
+    
+
     {
       nameEn: "Mutlaq Alosaimi",
       nameAr: "مطلق العصيمي",
