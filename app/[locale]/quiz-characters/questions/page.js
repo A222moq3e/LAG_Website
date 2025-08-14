@@ -3,199 +3,236 @@
 import React, { useState } from 'react';
 import { t } from '../../../lib/i18n';
 import Link from 'next/link';
+
+
 const characterQuestions = [
   {
     id: 1,
     questionKey: "quizCharacters.q1.question",
     options: [
-      { id: "1_1", emoji: "🏆", textKey: "quizCharacters.q1.options.a", players: ["s1mple", "faker", "shroud"] },
-      { id: "1_2", emoji: "🎭", textKey: "quizCharacters.q1.options.b", players: ["device", "rekkles", "coldzera"] },
-      { id: "1_3", emoji: "💥", textKey: "quizCharacters.q1.options.c", players: ["ninja", "tfue", "uzi"] },
-      { id: "1_4", emoji: "👥", textKey: "quizCharacters.q1.options.d", players: ["caps", "scream", "tenz"] },
+      {
+        id: "1_1",
+        emoji: "🏆",
+        textKey: "quizCharacters.q1.option1",
+        players: ["msdossary", "vejrgang", "manubachoore"],
+      },
+      { id: "1_2", emoji: "🎭", textKey: "quizCharacters.q1.option2", players: ["magnus", "hikaru", "chovy"] },
+      { id: "1_3", emoji: "💥", textKey: "quizCharacters.q1.option3", players: ["aydan", "zsmit", "exnid"] },
+      { id: "1_4", emoji: "👥", textKey: "quizCharacters.q1.option4", players: ["trk511", "rw9", "kiileerrz"] },
     ],
   },
   {
     id: 2,
     questionKey: "quizCharacters.q2.question",
     options: [
-      { id: "2_1", emoji: "⚽", textKey: "quizCharacters.q2.options.a", players: ["s1mple", "faker", "device"] },
-      { id: "2_2", emoji: "🔫", textKey: "quizCharacters.q2.options.b", players: ["shroud", "coldzera", "rekkles"] },
-      { id: "2_3", emoji: "🧠", textKey: "quizCharacters.q2.options.c", players: ["ninja", "caps", "scream"] },
-      { id: "2_4", emoji: "🚗", textKey: "quizCharacters.q2.options.d", players: ["tfue", "tenz", "uzi"] },
+      {
+        id: "2_1",
+        emoji: "⚽",
+        textKey: "quizCharacters.q2.option1",
+        players: ["msdossary", "vejrgang", "manubachoore"],
+      },
+      { id: "2_2", emoji: "🔫", textKey: "quizCharacters.q2.option2", players: ["aydan", "zsmit", "exnid"] },
+      { id: "2_3", emoji: "🧠", textKey: "quizCharacters.q2.option3", players: ["magnus", "hikaru", "chovy"] },
+      { id: "2_4", emoji: "🚗", textKey: "quizCharacters.q2.option4", players: ["trk511", "rw9", "kiileerrz"] },
     ],
   },
   {
     id: 3,
     questionKey: "quizCharacters.q3.question",
     options: [
-      { id: "3_1", emoji: "🤔", textKey: "quizCharacters.q3.options.a", players: ["faker", "caps", "perkz"] },
-      { id: "3_2", emoji: "🔥", textKey: "quizCharacters.q3.options.b", players: ["rekkles", "device", "coldzera"] },
-      { id: "3_3", emoji: "😅", textKey: "quizCharacters.q3.options.c", players: ["s1mple", "ninja", "uzi"] },
-      { id: "3_4", emoji: "😤", textKey: "quizCharacters.q3.options.d", players: ["shroud", "scream", "tenz"] },
+      { id: "3_1", emoji: "🤔", textKey: "quizCharacters.q3.option1", players: ["magnus", "hikaru", "chovy"] },
+      { id: "3_2", emoji: "🔥", textKey: "quizCharacters.q3.option2", players: ["aydan", "zsmit", "exnid"] },
+      { id: "3_3", emoji: "😅", textKey: "quizCharacters.q3.option3", players: ["almond", "ruler", "kiin"] },
+      { id: "3_4", emoji: "😤", textKey: "quizCharacters.q3.option4", players: ["trk511", "rw9", "kiileerrz"] },
     ],
   },
   {
     id: 4,
     questionKey: "quizCharacters.q4.question",
     options: [
-      { id: "4_1", emoji: "⏱", textKey: "quizCharacters.q4.options.a", players: ["s1mple", "ninja", "tfue"] },
-      { id: "4_2", emoji: "⏱", textKey: "quizCharacters.q4.options.b", players: ["faker", "device", "rekkles"] },
-      { id: "4_3", emoji: "⏱", textKey: "quizCharacters.q4.options.c", players: ["shroud", "caps", "anomaly"] },
-      { id: "4_4", emoji: "⏱", textKey: "quizCharacters.q4.options.d", players: ["coldzera", "scream", "tenz"] },
+      { id: "4_1", emoji: "⏱", textKey: "quizCharacters.q4.option1", players: ["almond", "ruler", "kiin"] },
+      {
+        id: "4_2",
+        emoji: "⏱",
+        textKey: "quizCharacters.q4.option2",
+        players: ["msdossary", "vejrgang", "manubachoore"],
+      },
+      { id: "4_3", emoji: "⏱", textKey: "quizCharacters.q4.option3", players: ["magnus", "hikaru", "chovy"] },
+      { id: "4_4", emoji: "⏱", textKey: "quizCharacters.q4.option4", players: ["trk511", "rw9", "kiileerrz"] },
     ],
   },
   {
     id: 5,
     questionKey: "quizCharacters.q5.question",
     options: [
-      { id: "5_1", emoji: "🧠", textKey: "quizCharacters.q5.options.a", players: ["tenz", "scream", "s1mple"] },
-      { id: "5_2", emoji: "⚡", textKey: "quizCharacters.q5.options.b", players: ["faker", "caps", "theshy"] },
-      { id: "5_3", emoji: "🎯", textKey: "quizCharacters.q5.options.c", players: ["device", "rekkles", "coldzera"] },
-      { id: "5_4", emoji: "😎", textKey: "quizCharacters.q5.options.d", players: ["ninja", "tfue", "anomaly"] },
+      { id: "5_1", emoji: "🧠", textKey: "quizCharacters.q5.option1", players: ["magnus", "hikaru", "chovy"] },
+      { id: "5_2", emoji: "⚡", textKey: "quizCharacters.q5.option2", players: ["aydan", "zsmit", "exnid"] },
+      {
+        id: "5_3",
+        emoji: "🎯",
+        textKey: "quizCharacters.q5.option3",
+        players: ["msdossary", "vejrgang", "manubachoore"],
+      },
+      { id: "5_4", emoji: "😎", textKey: "quizCharacters.q5.option4", players: ["trk511", "rw9", "almond"] },
     ],
   },
   {
     id: 6,
     questionKey: "quizCharacters.q6.question",
     options: [
-      { id: "6_1", emoji: "🌅", textKey: "quizCharacters.q6.options.a", players: ["s1mple", "faker", "shroud"] },
-      { id: "6_2", emoji: "🌇", textKey: "quizCharacters.q6.options.b", players: ["ninja", "caps", "perkz"] },
-      { id: "6_3", emoji: "🌙", textKey: "quizCharacters.q6.options.c", players: ["device", "rekkles", "coldzera"] },
-      { id: "6_4", emoji: "⏰", textKey: "quizCharacters.q6.options.d", players: ["tfue", "tenz", "anomaly"] },
+      { id: "6_1", emoji: "🌅", textKey: "quizCharacters.q6.option1", players: ["msdossary", "magnus", "hikaru"] },
+      { id: "6_2", emoji: "🌇", textKey: "quizCharacters.q6.option2", players: ["chovy", "ruler", "kiin"] },
+      { id: "6_3", emoji: "🌙", textKey: "quizCharacters.q6.option3", players: ["aydan", "zsmit", "exnid"] },
+      { id: "6_4", emoji: "⏰", textKey: "quizCharacters.q6.option4", players: ["trk511", "rw9", "kiileerrz"] },
     ],
   },
   {
     id: 7,
     questionKey: "quizCharacters.q7.question",
     options: [
-      { id: "7_1", emoji: "📋", textKey: "quizCharacters.q7.options.a", players: ["s1mple", "ninja", "uzi"] },
-      { id: "7_2", emoji: "🎯", textKey: "quizCharacters.q7.options.b", players: ["faker", "device", "rekkles"] },
-      { id: "7_3", emoji: "😎", textKey: "quizCharacters.q7.options.c", players: ["caps", "scream", "tenz"] },
-      { id: "7_4", emoji: "🔥", textKey: "quizCharacters.q7.options.d", players: ["shroud", "tfue", "theshy"] },
+      { id: "7_1", emoji: "📋", textKey: "quizCharacters.q7.option1", players: ["magnus", "hikaru", "chovy"] },
+      {
+        id: "7_2",
+        emoji: "🎯",
+        textKey: "quizCharacters.q7.option2",
+        players: ["msdossary", "vejrgang", "manubachoore"],
+      },
+      { id: "7_3", emoji: "😎", textKey: "quizCharacters.q7.option3", players: ["almond", "ruler", "kiin"] },
+      { id: "7_4", emoji: "🔥", textKey: "quizCharacters.q7.option4", players: ["trk511", "rw9", "kiileerrz"] },
     ],
   },
   {
     id: 8,
     questionKey: "quizCharacters.q8.question",
     options: [
-      { id: "8_1", emoji: "🤝", textKey: "quizCharacters.q8.options.a", players: ["s1mple", "ninja", "tfue"] },
-      { id: "8_2", emoji: "⚡", textKey: "quizCharacters.q8.options.b", players: ["faker", "caps", "theshy"] },
-      { id: "8_3", emoji: "🧠", textKey: "quizCharacters.q8.options.c", players: ["shroud", "scream", "tenz"] },
-      { id: "8_4", emoji: "🏆", textKey: "quizCharacters.q8.options.d", players: ["device", "rekkles", "coldzera"] },
+      { id: "8_1", emoji: "🤝", textKey: "quizCharacters.q8.option1", players: ["chovy", "ruler", "kiin"] },
+      { id: "8_2", emoji: "⚡", textKey: "quizCharacters.q8.option2", players: ["aydan", "zsmit", "exnid"] },
+      { id: "8_3", emoji: "🧠", textKey: "quizCharacters.q8.option3", players: ["magnus", "hikaru", "msdossary"] },
+      { id: "8_4", emoji: "🏆", textKey: "quizCharacters.q8.option4", players: ["trk511", "rw9", "vejrgang"] },
     ],
   },
   {
     id: 9,
     questionKey: "quizCharacters.q9.question",
     options: [
-      { id: "9_1", emoji: "💪", textKey: "quizCharacters.q9.options.a", players: ["s1mple", "ninja", "uzi"] },
-      { id: "9_2", emoji: "🧩", textKey: "quizCharacters.q9.options.b", players: ["device", "rekkles", "anomaly"] },
-      { id: "9_3", emoji: "😂", textKey: "quizCharacters.q9.options.c", players: ["caps", "scream", "tenz"] },
-      { id: "9_4", emoji: "🔄", textKey: "quizCharacters.q9.options.d", players: ["faker", "tfue", "theshy"] },
+      { id: "9_1", emoji: "💪", textKey: "quizCharacters.q9.option1", players: ["aydan", "zsmit", "exnid"] },
+      { id: "9_2", emoji: "🧩", textKey: "quizCharacters.q9.option2", players: ["magnus", "hikaru", "chovy"] },
+      { id: "9_3", emoji: "😂", textKey: "quizCharacters.q9.option3", players: ["trk511", "rw9", "almond"] },
+      {
+        id: "9_4",
+        emoji: "🔄",
+        textKey: "quizCharacters.q9.option4",
+        players: ["msdossary", "vejrgang", "manubachoore"],
+      },
     ],
   },
   {
     id: 10,
     questionKey: "quizCharacters.q10.question",
     options: [
-      { id: "10_1", emoji: "🏆", textKey: "quizCharacters.q10.options.a", players: ["s1mple", "ninja", "uzi"] },
-      { id: "10_2", emoji: "🧠", textKey: "quizCharacters.q10.options.b", players: ["faker", "caps", "perkz"] },
-      { id: "10_3", emoji: "💥", textKey: "quizCharacters.q10.options.c", players: ["shroud", "tfue", "theshy"] },
-      { id: "10_4", emoji: "😎", textKey: "quizCharacters.q10.options.d", players: ["device", "scream", "tenz"] },
+      {
+        id: "10_1",
+        emoji: "🏆",
+        textKey: "quizCharacters.q10.option1",
+        players: ["msdossary", "vejrgang", "manubachoore"],
+      },
+      { id: "10_2", emoji: "🧠", textKey: "quizCharacters.q10.option2", players: ["magnus", "hikaru", "chovy"] },
+      { id: "10_3", emoji: "💥", textKey: "quizCharacters.q10.option3", players: ["aydan", "zsmit", "exnid"] },
+      { id: "10_4", emoji: "😎", textKey: "quizCharacters.q10.option4", players: ["trk511", "rw9", "almond"] },
     ],
   },
 ]
 
 const playersData = {
-  s1mple: {
-    nameKey: "quizCharacters.players.s1mple.name",
-    teamKey: "quizCharacters.players.s1mple.team",
-    gameKey: "quizCharacters.players.s1mple.game",
-    descKey: "quizCharacters.players.s1mple.description",
+  trk511: {
+    nameKey: "quizCharacters.players.trk511.name",
+    teamKey: "quizCharacters.players.trk511.team",
+    gameKey: "quizCharacters.players.trk511.game",
+    descKey: "quizCharacters.players.trk511.description",
   },
-  faker: {
-    nameKey: "quizCharacters.players.faker.name",
-    teamKey: "quizCharacters.players.faker.team",
-    gameKey: "quizCharacters.players.faker.game",
-    descKey: "quizCharacters.players.faker.description",
+  rw9: {
+    nameKey: "quizCharacters.players.rw9.name",
+    teamKey: "quizCharacters.players.rw9.team",
+    gameKey: "quizCharacters.players.rw9.game",
+    descKey: "quizCharacters.players.rw9.description",
   },
-  shroud: {
-    nameKey: "quizCharacters.players.shroud.name",
-    teamKey: "quizCharacters.players.shroud.team",
-    gameKey: "quizCharacters.players.shroud.game",
-    descKey: "quizCharacters.players.shroud.description",
+  kiileerrz: {
+    nameKey: "quizCharacters.players.kiileerrz.name",
+    teamKey: "quizCharacters.players.kiileerrz.team",
+    gameKey: "quizCharacters.players.kiileerrz.game",
+    descKey: "quizCharacters.players.kiileerrz.description",
   },
-  ninja: {
-    nameKey: "quizCharacters.players.ninja.name",
-    teamKey: "quizCharacters.players.ninja.team",
-    gameKey: "quizCharacters.players.ninja.game",
-    descKey: "quizCharacters.players.ninja.description",
+  msdossary: {
+    nameKey: "quizCharacters.players.msdossary.name",
+    teamKey: "quizCharacters.players.msdossary.team",
+    gameKey: "quizCharacters.players.msdossary.game",
+    descKey: "quizCharacters.players.msdossary.description",
   },
-  uzi: {
-    nameKey: "quizCharacters.players.uzi.name",
-    teamKey: "quizCharacters.players.uzi.team",
-    gameKey: "quizCharacters.players.uzi.game",
-    descKey: "quizCharacters.players.uzi.description",
+  aydan: {
+    nameKey: "quizCharacters.players.aydan.name",
+    teamKey: "quizCharacters.players.aydan.team",
+    gameKey: "quizCharacters.players.aydan.game",
+    descKey: "quizCharacters.players.aydan.description",
   },
-  coldzera: {
-    nameKey: "quizCharacters.players.coldzera.name",
-    teamKey: "quizCharacters.players.coldzera.team",
-    gameKey: "quizCharacters.players.coldzera.game",
-    descKey: "quizCharacters.players.coldzera.description",
+  zsmit: {
+    nameKey: "quizCharacters.players.zsmit.name",
+    teamKey: "quizCharacters.players.zsmit.team",
+    gameKey: "quizCharacters.players.zsmit.game",
+    descKey: "quizCharacters.players.zsmit.description",
   },
-  caps: {
-    nameKey: "quizCharacters.players.caps.name",
-    teamKey: "quizCharacters.players.caps.team",
-    gameKey: "quizCharacters.players.caps.game",
-    descKey: "quizCharacters.players.caps.description",
+  almond: {
+    nameKey: "quizCharacters.players.almond.name",
+    teamKey: "quizCharacters.players.almond.team",
+    gameKey: "quizCharacters.players.almond.game",
+    descKey: "quizCharacters.players.almond.description",
   },
-  tfue: {
-    nameKey: "quizCharacters.players.tfue.name",
-    teamKey: "quizCharacters.players.tfue.team",
-    gameKey: "quizCharacters.players.tfue.game",
-    descKey: "quizCharacters.players.tfue.description",
+  magnus: {
+    nameKey: "quizCharacters.players.magnus.name",
+    teamKey: "quizCharacters.players.magnus.team",
+    gameKey: "quizCharacters.players.magnus.game",
+    descKey: "quizCharacters.players.magnus.description",
   },
-  device: {
-    nameKey: "quizCharacters.players.device.name",
-    teamKey: "quizCharacters.players.device.team",
-    gameKey: "quizCharacters.players.device.game",
-    descKey: "quizCharacters.players.device.description",
+  hikaru: {
+    nameKey: "quizCharacters.players.hikaru.name",
+    teamKey: "quizCharacters.players.hikaru.team",
+    gameKey: "quizCharacters.players.hikaru.game",
+    descKey: "quizCharacters.players.hikaru.description",
   },
-  rekkles: {
-    nameKey: "quizCharacters.players.rekkles.name",
-    teamKey: "quizCharacters.players.rekkles.team",
-    gameKey: "quizCharacters.players.rekkles.game",
-    descKey: "quizCharacters.players.rekkles.description",
+  chovy: {
+    nameKey: "quizCharacters.players.chovy.name",
+    teamKey: "quizCharacters.players.chovy.team",
+    gameKey: "quizCharacters.players.chovy.game",
+    descKey: "quizCharacters.players.chovy.description",
   },
-  scream: {
-    nameKey: "quizCharacters.players.scream.name",
-    teamKey: "quizCharacters.players.scream.team",
-    gameKey: "quizCharacters.players.scream.game",
-    descKey: "quizCharacters.players.scream.description",
+  ruler: {
+    nameKey: "quizCharacters.players.ruler.name",
+    teamKey: "quizCharacters.players.ruler.team",
+    gameKey: "quizCharacters.players.ruler.game",
+    descKey: "quizCharacters.players.ruler.description",
   },
-  tenz: {
-    nameKey: "quizCharacters.players.tenz.name",
-    teamKey: "quizCharacters.players.tenz.team",
-    gameKey: "quizCharacters.players.tenz.game",
-    descKey: "quizCharacters.players.tenz.description",
+  manubachoore: {
+    nameKey: "quizCharacters.players.manubachoore.name",
+    teamKey: "quizCharacters.players.manubachoore.team",
+    gameKey: "quizCharacters.players.manubachoore.game",
+    descKey: "quizCharacters.players.manubachoore.description",
   },
-  anomaly: {
-    nameKey: "quizCharacters.players.anomaly.name",
-    teamKey: "quizCharacters.players.anomaly.team",
-    gameKey: "quizCharacters.players.anomaly.game",
-    descKey: "quizCharacters.players.anomaly.description",
+  vejrgang: {
+    nameKey: "quizCharacters.players.vejrgang.name",
+    teamKey: "quizCharacters.players.vejrgang.team",
+    gameKey: "quizCharacters.players.vejrgang.game",
+    descKey: "quizCharacters.players.vejrgang.description",
   },
-  theshy: {
-    nameKey: "quizCharacters.players.theshy.name",
-    teamKey: "quizCharacters.players.theshy.team",
-    gameKey: "quizCharacters.players.theshy.game",
-    descKey: "quizCharacters.players.theshy.description",
+  exnid: {
+    nameKey: "quizCharacters.players.exnid.name",
+    teamKey: "quizCharacters.players.exnid.team",
+    gameKey: "quizCharacters.players.exnid.game",
+    descKey: "quizCharacters.players.exnid.description",
   },
-  perkz: {
-    nameKey: "quizCharacters.players.perkz.name",
-    teamKey: "quizCharacters.players.perkz.team",
-    gameKey: "quizCharacters.players.perkz.game",
-    descKey: "quizCharacters.players.perkz.description",
+  kiin: {
+    nameKey: "quizCharacters.players.kiin.name",
+    teamKey: "quizCharacters.players.kiin.team",
+    gameKey: "quizCharacters.players.kiin.game",
+    descKey: "quizCharacters.players.kiin.description",
   },
 }
 
@@ -291,7 +328,7 @@ export default function QuizCharactersQuestions({ params }) {
               <div className="space-y-6">
                 <div className={isRTL ? "text-right" : "text-left"}>
                   <div className="flex justify-between items-center mb-2">
-                    <p className="text-sm text-gray-400">{t(currentLocale, "quiz.progressLabel") || "التقدم"}</p>
+                    <p className="text-sm text-gray-400">{t(currentLocale, "quiz.progressLabel")}</p>
                     <p className="text-sm text-gray-400 font-semibold">
                       {Math.round(((currentQuestionIndex + 1) / characterQuestions.length) * 100)}%
                     </p>
@@ -309,7 +346,7 @@ export default function QuizCharactersQuestions({ params }) {
                     {t(currentLocale, currentQuestion.questionKey)}
                   </h2>
                   <p className="text-sm text-gray-400">
-                    {interpolate(t(currentLocale, "quiz.questionCounter") || "السؤال {current} من {total}", {
+                    {interpolate(t(currentLocale, "quiz.questionCounter"), {
                       current: currentQuestionIndex + 1,
                       total: characterQuestions.length,
                     })}

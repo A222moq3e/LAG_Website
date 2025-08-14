@@ -9,7 +9,7 @@
     "contact": "Contact",
     "arabic": "عربي",
     "english": "English",
-    "quizCharacters": "Characters Quiz"
+    "quizCharacters": "Persona quiz"
   },
   "footer": {
     "title": "LAG Initiative",
@@ -267,7 +267,7 @@
   },
 
   "quizCharacters": {
-    "title": "Professional Characters Quiz",
+    "title": "Persona Quiz",
     "description": "Discover which professional player matches your gaming personality",
     "startButton": "Start Quiz",
     "nextButton": "Next",
@@ -275,188 +275,165 @@
     "finishButton": "Finish Quiz",
     "restartButton": "Restart",
     "result": "Your Professional Character",
+    "progressLabel": "Progress Level",
+    "questionCounter": "Question {current} of {total}",
     "q1": {
-      "question": "What is your preferred playstyle?",
-      "options": {
-        "a": "Aggressive and offensive",
-        "b": "Defensive and calculated",
-        "c": "Balanced and adaptive",
-        "d": "Creative and unpredictable"
-      }
+      "question": "What motivates you most to play?",
+      "option1": "Winning championships",
+      "option2": "Mental challenges",
+      "option3": "Excitement and action",
+      "option4": "Playing with the team"
     },
     "q2": {
-      "question": "How do you handle pressure in crucial moments?",
-      "options": {
-        "a": "Stay calm and focused",
-        "b": "Rely on experience and training",
-        "c": "Adapt quickly to the situation",
-        "d": "Take risks and try something new"
-      }
+      "question": "Which type of games do you choose most?",
+      "option1": "Sports games",
+      "option2": "Shooter (FPS)",
+      "option3": "Strategy games",
+      "option4": "Racing or skill games"
     },
     "q3": {
-      "question": "What is your preferred role in the team?",
-      "options": {
-        "a": "Leader and director",
-        "b": "Support and helper",
-        "c": "Main attacker",
-        "d": "Strategist and planner"
-      }
+      "question": "If you lose, what's your first reaction?",
+      "option1": "Analyze the mistakes",
+      "option2": "Play again to prove myself",
+      "option3": "Laugh and continue",
+      "option4": "Get more excited"
     },
     "q4": {
-      "question": "How do you prepare for important matches?",
-      "options": {
-        "a": "Intensive training for long hours",
-        "b": "Study opponent and analyze their style",
-        "c": "Focus on mental fitness",
-        "d": "Experiment and innovate strategies"
-      }
+      "question": "How much time do you spend gaming daily?",
+      "option1": "Less than 2 hours",
+      "option2": "2-4 hours",
+      "option3": "4-6 hours",
+      "option4": "More than 6 hours"
     },
     "q5": {
-      "question": "What is your main strength?",
-      "options": {
-        "a": "Quick reflexes",
-        "b": "Strategic thinking",
-        "c": "Teamwork",
-        "d": "Creativity and innovation"
-      }
+      "question": "Your style with the team?",
+      "option1": "Strategy planner",
+      "option2": "Quick executor",
+      "option3": "Leader who guides the team",
+      "option4": "Fun and laughter"
     },
     "q6": {
-      "question": "How do you deal with defeat?",
-      "options": {
-        "a": "Analyze it and learn from it",
-        "b": "Focus on the next match",
-        "c": "Discuss it with the team",
-        "d": "Try new approaches"
-      }
+      "question": "When do you choose to play during the day?",
+      "option1": "Morning",
+      "option2": "Evening",
+      "option3": "Night",
+      "option4": "Anytime I'm free"
     },
     "q7": {
-      "question": "What is the most important thing in winning?",
-      "options": {
-        "a": "Outstanding individual performance",
-        "b": "Executing the plan precisely",
-        "c": "Coordination with the team",
-        "d": "Surprise and creativity"
-      }
+      "question": "If you have an important match, how do you prepare?",
+      "option1": "Clear plan",
+      "option2": "Intensive training",
+      "option3": "Relax and eat well",
+      "option4": "Warm-up games"
     },
     "q8": {
-      "question": "How do you develop your skills?",
-      "options": {
-        "a": "Continuous training and practice",
-        "b": "Watching and studying professionals",
-        "c": "Playing with stronger players",
-        "d": "Experimentation and self-discovery"
-      }
+      "question": "Most important point for you in playing?",
+      "option1": "Cooperation",
+      "option2": "Speed and reaction",
+      "option3": "Intelligence and analysis",
+      "option4": "Achieving titles"
     },
     "q9": {
-      "question": "What is your communication style with the team?",
-      "options": {
-        "a": "Direct and clear",
-        "b": "Calm and encouraging",
-        "c": "Interactive and enthusiastic",
-        "d": "Creative and motivating"
-      }
+      "question": "Who do you like to play against?",
+      "option1": "Strong professionals",
+      "option2": "Smart opponents",
+      "option3": "People you know",
+      "option4": "Random opponents"
     },
     "q10": {
-      "question": "What is your main goal in playing?",
-      "options": {
-        "a": "Achieve best personal performance",
-        "b": "Win championships",
-        "c": "Build a strong team",
-        "d": "Leave a unique mark in the game"
-      }
+      "question": "What feeling makes you continue playing the most?",
+      "option1": "Sense of achievement",
+      "option2": "Mental challenge",
+      "option3": "Adrenaline and excitement",
+      "option4": "Fun with friends"
     },
     "players": {
-      "s1mple": {
-        "name": "Oleksandr Kostyliev (s1mple)",
-        "team": "NAVI",
-        "game": "CS:GO",
-        "description": "An exceptional player with incredible individual skills and the ability to change the course of a match in a single moment. Distinguished by high accuracy and creativity in play."
+      "trk511": {
+        "name": "Trk511",
+        "team": "Team Falcons",
+        "game": "Rocket League",
+        "description": "A talented Saudi player in Rocket League distinguished by high technical skills and ability to execute complex moves. Known for his aggressive and creative playstyle."
       },
-      "faker": {
-        "name": "Lee Sang-hyeok (Faker)",
-        "team": "T1",
+      "rw9": {
+        "name": "Rw9",
+        "team": "Team Falcons",
+        "game": "Rocket League",
+        "description": "A professional Saudi player distinguished by speed and accuracy in Rocket League. Known for his ability to play under pressure and score decisive goals in crucial moments."
+      },
+      "kiileerrz": {
+        "name": "Kiileerrz",
+        "team": "Team Falcons",
+        "game": "Rocket League",
+        "description": "A talented young Saudi player in Rocket League distinguished by high energy and enthusiasm. Known for his team spirit and ability to boost his teammates' morale."
+      },
+      "msdossary": {
+        "name": "Msdossary",
+        "team": "Team Liquid",
+        "game": "FIFA / EA Sports FC",
+        "description": "FIFA World Champion and one of the greatest electronic football players. Distinguished by tactical intelligence and exceptional ability to read the game."
+      },
+      "aydan": {
+        "name": "Aydan",
+        "team": "Twisted Minds",
+        "game": "Call of Duty",
+        "description": "An American professional Call of Duty player distinguished by high combat skills. Known for his aggressive style and ability to achieve amazing individual performances."
+      },
+      "zsmit": {
+        "name": "zSmit",
+        "team": "Twisted Minds",
+        "game": "Call of Duty",
+        "description": "A professional Call of Duty player distinguished by accuracy and stability. Known for his ability to work effectively with the team and execute strategies precisely."
+      },
+      "almond": {
+        "name": "Almond",
+        "team": "Twisted Minds",
+        "game": "Call of Duty",
+        "description": "A professional Call of Duty player distinguished by flexibility and adaptability. Known for his cheerful personality and ability to make the atmosphere enjoyable for the team."
+      },
+      "magnus": {
+        "name": "Magnus Carlsen",
+        "team": "Team Liquid",
+        "game": "Chess",
+        "description": "World Chess Champion and one of the greatest players in history. Distinguished by exceptional strategic intelligence and deep thinking ability."
+      },
+      "hikaru": {
+        "name": "Hikaru Nakamura",
+        "team": "Team Falcons",
+        "game": "Chess",
+        "description": "Chess Grandmaster and famous content creator. Distinguished by quick thinking and ability to play fast while maintaining high level."
+      },
+      "chovy": {
+        "name": "Chovy",
+        "team": "Gen.G Esports",
         "game": "League of Legends",
-        "description": "Legend of League of Legends and one of the greatest players in esports history. Distinguished by tactical intelligence and ability to perform under pressure."
+        "description": "An exceptional Korean mid-lane player in League of Legends. Distinguished by high individual skills and ability to control the game from his position."
       },
-      "shroud": {
-        "name": "Michael Grzesiek (shroud)",
-        "team": "Retired",
-        "game": "Multi-game",
-        "description": "Multi-talented player known for exceptional skills in shooting games. Distinguished by calmness, accuracy, and ability to adapt to any game."
-      },
-      "ninja": {
-        "name": "Richard Blevins (Ninja)",
-        "team": "Content Creator",
-        "game": "Fortnite",
-        "description": "One of the most famous Fortnite players in the world and influential content creator. Distinguished by high energy and advanced skills in building and combat."
-      },
-      "uzi": {
-        "name": "Jian Zi-Hao (Uzi)",
-        "team": "Retired",
+      "ruler": {
+        "name": "Ruler",
+        "team": "Gen.G Esports",
         "game": "League of Legends",
-        "description": "One of the best ADC players in League of Legends history. Distinguished by aggressive play and ability to carry the team in difficult situations."
+        "description": "A professional Korean ADC player distinguished by stable and reliable performance. Known for his ability to deal high damage in team fights."
       },
-      "coldzera": {
-        "name": "Marcelo David (coldzera)",
-        "team": "00NATION",
-        "game": "CS:GO",
-        "description": "Talented Brazilian player distinguished by tactical intelligence and calmness under pressure. Known for ability to make right decisions in crucial moments."
+      "manubachoore": {
+        "name": "ManuBachoore",
+        "team": "Team Liquid",
+        "game": "EA Sports FC 25",
+        "description": "A professional FIFA player distinguished by technical skills and creativity in play. Known for his ability to execute complex moves and score amazing goals."
       },
-      "caps": {
-        "name": "Rasmus Winther (Caps)",
-        "team": "G2 Esports",
-        "game": "League of Legends",
-        "description": "Creative and versatile mid-lane player distinguished by bold and innovative playstyle. Known for ability to play multiple characters and change team strategy."
+      "vejrgang": {
+        "name": "Vejrgang",
+        "team": "Team Falcons",
+        "game": "EA Sports FC 25",
+        "description": "A Danish professional FIFA player distinguished by calmness and focus. Known for his balanced style and ability to perform under pressure."
       },
-      "tfue": {
-        "name": "Turner Tenney (Tfue)",
-        "team": "Content Creator",
-        "game": "Fortnite",
-        "description": "Professional Fortnite player and famous content creator. Distinguished by high technical skills and ability to adapt to continuous game updates."
-      },
-      "device": {
-        "name": "Nicolai Reedtz (device)",
-        "team": "Astralis",
-        "game": "CS:GO",
-        "description": "Exceptional sniper distinguished by accuracy and stability. Known for ability to perform consistently in all matches and major tournaments."
-      },
-      "rekkles": {
-        "name": "Martin Larsson (Rekkles)",
-        "team": "KC",
-        "game": "League of Legends",
-        "description": "Reliable and stable ADC player distinguished by consistent performance and ability to work effectively with the team. Known for safe and smart style."
-      },
-      "scream": {
-        "name": "Adrien Lacroix (ScreaM)",
-        "team": "Karmine Corp",
-        "game": "VALORANT",
-        "description": "Belgian player distinguished by exceptional aiming accuracy. Known for unique headshot style and ability to achieve amazing individual performances."
-      },
-      "tenz": {
-        "name": "Tyson Ngo (TenZ)",
-        "team": "Sentinels",
-        "game": "VALORANT",
-        "description": "Young talented Canadian player distinguished by quick reflexes and high technical skills. Known for ability to play multiple characters at high level."
-      },
-      "anomaly": {
-        "name": "Ludvig Lagerstedt (Anomaly)",
-        "team": "Content Creator",
-        "game": "CS:GO",
-        "description": "Famous Swedish content creator distinguished by cheerful personality and entertaining content. Known for ability to make games fun and entertaining for audience."
-      },
-      "theshy": {
-        "name": "Kang Seung-lok (TheShy)",
-        "team": "WBG",
-        "game": "League of Legends",
-        "description": "Korean player distinguished by aggressive and creative playstyle in top lane. Known for ability to play diverse characters and achieve amazing plays."
-      },
-      "perkz": {
-        "name": "Luka Perković (Perkz)",
-        "team": "Vitality",
-        "game": "League of Legends",
-        "description": "Multi-talented Croatian player who can play in multiple positions. Distinguished by leadership and ability to adapt to different team needs."
+      "exnid": {
+        "name": "Exnid",
+        "team": "Team Falcons",
+        "game": "Call of Duty",
+        "description": "A professional Call of Duty player distinguished by advanced combat skills. Known for his ability to adapt to different playstyles."
+      }
       }
     }
   }
-}
+
 
