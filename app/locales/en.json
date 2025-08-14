@@ -8,7 +8,8 @@
     "news": "News",
     "contact": "Contact",
     "arabic": "عربي",
-    "english": "English"
+    "english": "English",
+    "quizCharacters": "Characters Quiz"
   },
   "footer": {
     "title": "LAG Initiative",
@@ -263,5 +264,199 @@
     "Mobile Legends": "Mobile Legends",
     "PUBG Mobile": "PUBG Mobile",
     "PUBG Battlegrounds": "PUBG Battlegrounds"
+  },
+
+  "quizCharacters": {
+    "title": "Professional Characters Quiz",
+    "description": "Discover which professional player matches your gaming personality",
+    "startButton": "Start Quiz",
+    "nextButton": "Next",
+    "previousButton": "Previous",
+    "finishButton": "Finish Quiz",
+    "restartButton": "Restart",
+    "result": "Your Professional Character",
+    "q1": {
+      "question": "What is your preferred playstyle?",
+      "options": {
+        "a": "Aggressive and offensive",
+        "b": "Defensive and calculated",
+        "c": "Balanced and adaptive",
+        "d": "Creative and unpredictable"
+      }
+    },
+    "q2": {
+      "question": "How do you handle pressure in crucial moments?",
+      "options": {
+        "a": "Stay calm and focused",
+        "b": "Rely on experience and training",
+        "c": "Adapt quickly to the situation",
+        "d": "Take risks and try something new"
+      }
+    },
+    "q3": {
+      "question": "What is your preferred role in the team?",
+      "options": {
+        "a": "Leader and director",
+        "b": "Support and helper",
+        "c": "Main attacker",
+        "d": "Strategist and planner"
+      }
+    },
+    "q4": {
+      "question": "How do you prepare for important matches?",
+      "options": {
+        "a": "Intensive training for long hours",
+        "b": "Study opponent and analyze their style",
+        "c": "Focus on mental fitness",
+        "d": "Experiment and innovate strategies"
+      }
+    },
+    "q5": {
+      "question": "What is your main strength?",
+      "options": {
+        "a": "Quick reflexes",
+        "b": "Strategic thinking",
+        "c": "Teamwork",
+        "d": "Creativity and innovation"
+      }
+    },
+    "q6": {
+      "question": "How do you deal with defeat?",
+      "options": {
+        "a": "Analyze it and learn from it",
+        "b": "Focus on the next match",
+        "c": "Discuss it with the team",
+        "d": "Try new approaches"
+      }
+    },
+    "q7": {
+      "question": "What is the most important thing in winning?",
+      "options": {
+        "a": "Outstanding individual performance",
+        "b": "Executing the plan precisely",
+        "c": "Coordination with the team",
+        "d": "Surprise and creativity"
+      }
+    },
+    "q8": {
+      "question": "How do you develop your skills?",
+      "options": {
+        "a": "Continuous training and practice",
+        "b": "Watching and studying professionals",
+        "c": "Playing with stronger players",
+        "d": "Experimentation and self-discovery"
+      }
+    },
+    "q9": {
+      "question": "What is your communication style with the team?",
+      "options": {
+        "a": "Direct and clear",
+        "b": "Calm and encouraging",
+        "c": "Interactive and enthusiastic",
+        "d": "Creative and motivating"
+      }
+    },
+    "q10": {
+      "question": "What is your main goal in playing?",
+      "options": {
+        "a": "Achieve best personal performance",
+        "b": "Win championships",
+        "c": "Build a strong team",
+        "d": "Leave a unique mark in the game"
+      }
+    },
+    "players": {
+      "s1mple": {
+        "name": "Oleksandr Kostyliev (s1mple)",
+        "team": "NAVI",
+        "game": "CS:GO",
+        "description": "An exceptional player with incredible individual skills and the ability to change the course of a match in a single moment. Distinguished by high accuracy and creativity in play."
+      },
+      "faker": {
+        "name": "Lee Sang-hyeok (Faker)",
+        "team": "T1",
+        "game": "League of Legends",
+        "description": "Legend of League of Legends and one of the greatest players in esports history. Distinguished by tactical intelligence and ability to perform under pressure."
+      },
+      "shroud": {
+        "name": "Michael Grzesiek (shroud)",
+        "team": "Retired",
+        "game": "Multi-game",
+        "description": "Multi-talented player known for exceptional skills in shooting games. Distinguished by calmness, accuracy, and ability to adapt to any game."
+      },
+      "ninja": {
+        "name": "Richard Blevins (Ninja)",
+        "team": "Content Creator",
+        "game": "Fortnite",
+        "description": "One of the most famous Fortnite players in the world and influential content creator. Distinguished by high energy and advanced skills in building and combat."
+      },
+      "uzi": {
+        "name": "Jian Zi-Hao (Uzi)",
+        "team": "Retired",
+        "game": "League of Legends",
+        "description": "One of the best ADC players in League of Legends history. Distinguished by aggressive play and ability to carry the team in difficult situations."
+      },
+      "coldzera": {
+        "name": "Marcelo David (coldzera)",
+        "team": "00NATION",
+        "game": "CS:GO",
+        "description": "Talented Brazilian player distinguished by tactical intelligence and calmness under pressure. Known for ability to make right decisions in crucial moments."
+      },
+      "caps": {
+        "name": "Rasmus Winther (Caps)",
+        "team": "G2 Esports",
+        "game": "League of Legends",
+        "description": "Creative and versatile mid-lane player distinguished by bold and innovative playstyle. Known for ability to play multiple characters and change team strategy."
+      },
+      "tfue": {
+        "name": "Turner Tenney (Tfue)",
+        "team": "Content Creator",
+        "game": "Fortnite",
+        "description": "Professional Fortnite player and famous content creator. Distinguished by high technical skills and ability to adapt to continuous game updates."
+      },
+      "device": {
+        "name": "Nicolai Reedtz (device)",
+        "team": "Astralis",
+        "game": "CS:GO",
+        "description": "Exceptional sniper distinguished by accuracy and stability. Known for ability to perform consistently in all matches and major tournaments."
+      },
+      "rekkles": {
+        "name": "Martin Larsson (Rekkles)",
+        "team": "KC",
+        "game": "League of Legends",
+        "description": "Reliable and stable ADC player distinguished by consistent performance and ability to work effectively with the team. Known for safe and smart style."
+      },
+      "scream": {
+        "name": "Adrien Lacroix (ScreaM)",
+        "team": "Karmine Corp",
+        "game": "VALORANT",
+        "description": "Belgian player distinguished by exceptional aiming accuracy. Known for unique headshot style and ability to achieve amazing individual performances."
+      },
+      "tenz": {
+        "name": "Tyson Ngo (TenZ)",
+        "team": "Sentinels",
+        "game": "VALORANT",
+        "description": "Young talented Canadian player distinguished by quick reflexes and high technical skills. Known for ability to play multiple characters at high level."
+      },
+      "anomaly": {
+        "name": "Ludvig Lagerstedt (Anomaly)",
+        "team": "Content Creator",
+        "game": "CS:GO",
+        "description": "Famous Swedish content creator distinguished by cheerful personality and entertaining content. Known for ability to make games fun and entertaining for audience."
+      },
+      "theshy": {
+        "name": "Kang Seung-lok (TheShy)",
+        "team": "WBG",
+        "game": "League of Legends",
+        "description": "Korean player distinguished by aggressive and creative playstyle in top lane. Known for ability to play diverse characters and achieve amazing plays."
+      },
+      "perkz": {
+        "name": "Luka Perković (Perkz)",
+        "team": "Vitality",
+        "game": "League of Legends",
+        "description": "Multi-talented Croatian player who can play in multiple positions. Distinguished by leadership and ability to adapt to different team needs."
+      }
+    }
   }
 }
+
