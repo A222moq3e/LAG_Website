@@ -37,11 +37,13 @@ export default function Navbar() {
     { href: `/${locale}`, label: 'navbar.home' },
     { href: `/${locale}#who-we-are-section`, label: 'navbar.about' },
     { href: `/${locale}/quiz`, label: 'navbar.quiz' },
+    { href: `/${locale}/quiz-characters`, label: 'navbar.quizCharacters' }, // 👈 أضفناه هنا
     { href: `/${locale}/aid`, label: 'navbar.aid' },
     { href: `/${locale}/team`, label: 'navbar.team' },
     { href: `/${locale}/news`, label: 'navbar.news' },
     { href: `/${locale}/contact-us`, label: 'navbar.contact' },
   ];
+  
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
