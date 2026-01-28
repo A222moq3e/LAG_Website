@@ -21,7 +21,7 @@
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
     "lucide-react": "^0.525.0",
-    "next": "15.3.4",
+    "next": "16.1.5",
     "posthog-js": "^1.258.3",
     "posthog-node": "^5.6.0",
     "react": "^19.0.0",
